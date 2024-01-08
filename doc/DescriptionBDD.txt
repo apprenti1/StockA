@@ -13,7 +13,7 @@ salle :
 Libelle
 
 rdv :
-date, heure, ref_etudiant, ref_utilisateur_prof
+date, heure, ref_etudiant, ref_utilisateur_prof, ref_salle
 
 demande fourniture :
 raison, fourniture, quantiter,etat, ref_utilisateur_prof, ref_utilisateur_gestionaire_stock
