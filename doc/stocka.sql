@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 15 jan. 2024 à 10:59
+-- Généré le : lun. 15 jan. 2024 à 15:07
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `commandefourniture`;
 CREATE TABLE IF NOT EXISTS `commandefourniture` (
   `id` int NOT NULL AUTO_INCREMENT,
   `valid` int NOT NULL,
-  `raison` text NOT NULL,
+  `raison` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `etat` int NOT NULL,
   `ref_utilisateur` int NOT NULL,
   `ref_fournisseur` int NOT NULL,
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `dossier` (
   `id` int NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `filliere` varchar(15) NOT NULL,
-  `motivation` text NOT NULL,
+  `motivation` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `ref_utilisateur` int NOT NULL,
   `ref_etudiant` int NOT NULL,
   PRIMARY KEY (`id`),
@@ -162,8 +162,8 @@ CREATE TABLE IF NOT EXISTS `fournitpar` (
 DROP TABLE IF EXISTS `fourniture`;
 CREATE TABLE IF NOT EXISTS `fourniture` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `description` int NOT NULL,
-  `libelle` int NOT NULL,
+  `description` varchar(64) DEFAULT NULL,
+  `libelle` varchar(64) NOT NULL,
   `qte_stock` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -196,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `rdv` (
 DROP TABLE IF EXISTS `salle`;
 CREATE TABLE IF NOT EXISTS `salle` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `libelle` int NOT NULL,
+  `libelle` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
