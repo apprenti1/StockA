@@ -1,4 +1,4 @@
-package lasuperteam.stocka2;
+package lasuperteam.stocka;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

@@ -1,9 +1,9 @@
-module lasuperteam.stocka2 {
+module lasuperteam.stocka {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires org.kordamp.bootstrapfx.core;
 
-    opens lasuperteam.stocka2 to javafx.fxml;
-    exports lasuperteam.stocka2;
+    opens lasuperteam.stocka to javafx.fxml;
+    exports lasuperteam.stocka;
 }

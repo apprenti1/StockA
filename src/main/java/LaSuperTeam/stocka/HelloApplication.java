@@ -1,4 +1,4 @@
-package lasuperteam.stocka2;
+package lasuperteam.stocka;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

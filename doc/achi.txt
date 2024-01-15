@@ -1,4 +1,19 @@
 StockA
-    main
-    java
-    test
+    doc
+        images
+
+    src
+        main
+            java
+                lasuperteam
+                    stocka
+                        main
+                            #main.java
+                        repo
+                        entity
+                        controller
+                        #env.java
+            ressources
+                lasuperteam
+                    stocka
+                        images

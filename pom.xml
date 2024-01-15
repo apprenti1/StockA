@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>LaSuperTeam</groupId>
-    <artifactId>StockA2</artifactId>
+    <artifactId>StockA</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>StockA2</name>
+    <name>StockA</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -64,7 +64,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>lasuperteam.stocka2/lasuperteam.stocka2.HelloApplication</mainClass>
+                            <mainClass>lasuperteam.stocka/lasuperteam.stocka.HelloApplication</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
