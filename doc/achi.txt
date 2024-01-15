@@ -1,0 +1,4 @@
+StockA
+    main
+    java
+    test
