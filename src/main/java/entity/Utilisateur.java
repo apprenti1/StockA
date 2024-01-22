@@ -6,15 +6,15 @@ public class Utilisateur {
     private String prenom;
     private String email;
     private String mdp;
-    private int roles;
+    private Role role;
 
-    public Utilisateur(int id, String nom, String prenom, String email, String mdp, int roles) {
+    public Utilisateur(int id, String nom, String prenom, String email, String mdp, Role role) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.mdp = mdp;
-        this.roles = roles;
+        this.role = role;
     }
 
     public int getId() {
@@ -57,11 +57,68 @@ public class Utilisateur {
         this.mdp = mdp;
     }
 
-    public int getRoles() {
-        return roles;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoles(int roles) {
-        this.roles = roles;
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Utilisateur{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", email='" + email + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
+
+    public enum Role {
+        GESTIONNAIRE_STOCK,
+        PROFESSEUR,
+        SECRETAIRE
+    }
+
+    public class GestionnaireStock extends Utilisateur {
+        public GestionnaireStock(int id, String nom, String prenom, String email, String mdp) {
+            super(id, nom, prenom, email, mdp, Role.GESTIONNAIRE_STOCK);
+        }
+
+        // Ajoutez des méthodes spécifiques à un gestionnaire de stock si nécessaire
+        // ...
+
+        @Override
+        public String toString() {
+            return "GestionnaireStock{" +
+                    "id=" + getId() +
+                    ", nom='" + getNom() + '\'' +
+                    ", prenom='" + getPrenom() + '\'' +
+                    ", email='" + getEmail() + '\'' +
+                    ", role='" + Role.GESTIONNAIRE_STOCK + '\'' +
+                    '}';
+        }
+    }
+
+    public class Professeur extends Utilisateur {
+        public Professeur(int id, String nom, String prenom, String email, String mdp) {
+            super(id, nom, prenom, email, mdp, Role.PROFESSEUR);
+        }
+
+        // Ajoutez des méthodes spécifiques à un professeur si nécessaire
+        // ...
+
+        @Override
+        public String toString() {
+            return "Professeur{" +
+                    "id=" + getId() +
+                    ", nom='" + getNom() + '\'' +
+                    ", prenom='" + getPrenom() + '\'' +
+                    ", email='" + getEmail() + '\'' +
+                    ", role='" + Role.PROFESSEUR + '\'' +
+                    '}';
+        }
     }
 }
