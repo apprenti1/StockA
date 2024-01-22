@@ -1,21 +1,28 @@
 package entity;
 
 import java.util.Date;
-
+import entity.Utilisateur.Professeur;
 public class RDV {
 
     private int id;
     private Date date;
-    private int ref_utilisateur;
-    private int ref_salle;
-    private int ref_dossier;
 
-    public RDV(int id, Date date, int ref_utilisateur, int ref_salle, int ref_dossier) {
+    private DemandeFournitureProfesseur demandeFourniture;
+
+    private Professeur professeur;
+
+    private Etudiant etudiant;
+
+    private Salle salle;
+
+
+    public RDV(int id, Date date, DemandeFournitureProfesseur demandeFourniture, Professeur professeur, Etudiant etudiant, Salle salle) {
         this.id = id;
         this.date = date;
-        this.ref_utilisateur = ref_utilisateur;
-        this.ref_salle = ref_salle;
-        this.ref_dossier = ref_dossier;
+        this.demandeFourniture = demandeFourniture;
+        this.professeur = professeur;
+        this.etudiant = etudiant;
+        this.salle = salle;
     }
 
     public int getId() {
@@ -34,27 +41,48 @@ public class RDV {
         this.date = date;
     }
 
-    public int getRef_utilisateur() {
-        return ref_utilisateur;
+    public DemandeFournitureProfesseur getDemandeFourniture() {
+        return demandeFourniture;
     }
 
-    public void setRef_utilisateur(int ref_utilisateur) {
-        this.ref_utilisateur = ref_utilisateur;
+    public void setDemandeFourniture(DemandeFournitureProfesseur demandeFourniture) {
+        this.demandeFourniture = demandeFourniture;
     }
 
-    public int getRef_salle() {
-        return ref_salle;
+    public Professeur getProfesseur() {
+        return professeur;
     }
 
-    public void setRef_salle(int ref_salle) {
-        this.ref_salle = ref_salle;
+    public void setProfesseur(Professeur professeur) {
+        this.professeur = professeur;
     }
 
-    public int getRef_dossier() {
-        return ref_dossier;
+    public Etudiant getEtudiant() {
+        return etudiant;
     }
 
-    public void setRef_dossier(int ref_dossier) {
-        this.ref_dossier = ref_dossier;
+    public void setEtudiant(Etudiant etudiant) {
+        this.etudiant = etudiant;
+    }
+
+    public Salle getSalle() {
+        return salle;
+    }
+
+    public void setSalle(Salle salle) {
+        this.salle = salle;
+    }
+
+    @Override
+    public String toString() {
+        return "RDV{" +
+                "id=" + id +
+                ", date=" + date +
+                ", demandeFourniture=" + demandeFourniture +
+                ", professeur=" + professeur +
+                ", etudiant=" + etudiant +
+                ", salle=" + salle +
+                '}';
     }
 }
+
