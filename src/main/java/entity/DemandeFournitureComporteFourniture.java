@@ -1,37 +1,46 @@
 package entity;
-
+import java.util.List;
 public class DemandeFournitureComporteFourniture {
-    private int quantite;
-    private int ref_fourniture;
-    private int ref_demandefourniture;
+    private int id;
+    private DemandeFournitureProfesseur demandeFourniture;
+    private List<Fourniture> fournitures;
 
-    public DemandeFournitureComporteFourniture(int quantite, int ref_fourniture, int ref_demandefourniture) {
-        this.quantite = quantite;
-        this.ref_fourniture = ref_fourniture;
-        this.ref_demandefourniture = ref_demandefourniture;
+    public DemandeFournitureComporteFourniture(int id, DemandeFournitureProfesseur demandeFourniture, List<Fourniture> fournitures){
+        this.id =id;
+        this.demandeFourniture = demandeFourniture;
+        this.fournitures = fournitures;
     }
 
-    public int getQuantite() {
-        return quantite;
+    public int getid (){
+        return id;
     }
 
-    public void setQuantite(int quantite) {
-        this.quantite = quantite;
+    public void setId (int id) {
+        this.id = id;
     }
 
-    public int getRef_fourniture() {
-        return ref_fourniture;
+    public DemandeFournitureProfesseur getDemandeFourniture() {
+        return demandeFourniture;
     }
 
-    public void setRef_fourniture(int ref_fourniture) {
-        this.ref_fourniture = ref_fourniture;
+    public void setDemandeFourniture(DemandeFournitureProfesseur demandeFourniture) {
+        this.demandeFourniture = demandeFourniture;
     }
 
-    public int getRef_demandefourniture() {
-        return ref_demandefourniture;
+    public List<Fourniture> getFournitures() {
+        return fournitures;
     }
 
-    public void setRef_demandefourniture(int ref_demandefourniture) {
-        this.ref_demandefourniture = ref_demandefourniture;
+    public void setFournitures(List<Fourniture> fournitures) {
+        this.fournitures = fournitures;
+    }
+
+    @Override
+    public String toString() {
+        return "DemandeFournitureComporteFourniture{" +
+                "id=" + id +
+                ", demandeFourniture=" + demandeFourniture +
+                ", fournitures=" + fournitures +
+                '}';
     }
 }
