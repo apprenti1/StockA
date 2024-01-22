@@ -6,16 +6,16 @@ public class CommandeFourniture {
     private int valid;
     private String raison ;
     private int etat;
-    private int ref_utilisateur;
-    private int ref_fournisseur;
+    private Utilisateur utilisateur;
+    private Fournisseur fournisseur;
 
     public CommandeFourniture(int id, int valid, String raison, int etat, int ref_utilisateur, int ref_fournisseur) {
         this.id = id;
         this.valid = valid;
         this.raison = raison;
         this.etat = etat;
-        this.ref_utilisateur = ref_utilisateur;
-        this.ref_fournisseur = ref_fournisseur;
+        this.utilisateur = utilisateur;
+        this.fournisseur = fournisseur;
     }
 
     public int getId() {
@@ -50,19 +50,19 @@ public class CommandeFourniture {
         this.etat = etat;
     }
 
-    public int getRef_utilisateur() {
-        return ref_utilisateur;
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
     }
 
-    public void setRef_utilisateur(int ref_utilisateur) {
-        this.ref_utilisateur = ref_utilisateur;
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
     }
 
-    public int getRef_fournisseur() {
-        return ref_fournisseur;
+    public Fournisseur getFournisseur() {
+        return fournisseur;
     }
 
-    public void setRef_fournisseur(int ref_fournisseur) {
-        this.ref_fournisseur = ref_fournisseur;
+    public void setFournisseur(Fournisseur fournisseur) {
+        this.fournisseur = fournisseur;
     }
 }
