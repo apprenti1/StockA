@@ -1,5 +1,7 @@
 package application;
 
+
+import controller.ConnexionController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,7 +20,7 @@ public class Main extends Application {
     }
     public static void changeScene(String fxml, Object controller, String title){
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml+".fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/application/"+ fxml + ".fxml"));
             fxmlLoader.setController(controller);
             fxmlLoader.setCharset(StandardCharsets.UTF_8);
             Scene scene = new Scene(fxmlLoader.load());
@@ -29,5 +31,12 @@ public class Main extends Application {
             throw new RuntimeException(e);
         }
     }
+    public static void main(String[] args) {
+        launch(args);
+    }
 
+    public static void switchToConnexion() {
+        changeScene("Connexion", new ConnexionController(), "Connexion");
+    }
 }
+
