@@ -2,17 +2,17 @@ package entity;
 
 public class Etudiant {
     private int id;
-    private String dernier_diplome;
-    private int tel;
+    private String dernierDiplome;
+    private String  tel;
     private String adresse;
-    private int ref_utilisateur;
+    private Utilisateur utilisateur;
 
-    public Etudiant(int id, String dernier_diplome, int tel, String adresse, int ref_utilisateur) {
+    public Etudiant(int id, String dernierDiplome, String tel, String adresse, Utilisateur utilisateur) {
         this.id = id;
-        this.dernier_diplome = dernier_diplome;
+        this.dernierDiplome = dernierDiplome;
         this.tel = tel;
         this.adresse = adresse;
-        this.ref_utilisateur = ref_utilisateur;
+        this.utilisateur = utilisateur;
     }
 
     public int getId() {
@@ -23,19 +23,19 @@ public class Etudiant {
         this.id = id;
     }
 
-    public String getDernier_diplome() {
-        return dernier_diplome;
+    public String getDernierDiplome() {
+        return dernierDiplome;
     }
 
-    public void setDernier_diplome(String dernier_diplome) {
-        this.dernier_diplome = dernier_diplome;
+    public void setDernierDiplome(String dernierDiplome) {
+        this.dernierDiplome = dernierDiplome;
     }
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 
@@ -47,11 +47,20 @@ public class Etudiant {
         this.adresse = adresse;
     }
 
-    public int getRef_utilisateur() {
-        return ref_utilisateur;
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
     }
 
-    public void setRef_utilisateur(int ref_utilisateur) {
-        this.ref_utilisateur = ref_utilisateur;
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+    }
+
+    @Override
+    public String toString() {
+        return "Etudiant{" +
+                ", dernierDiplome='" + dernierDiplome + '\'' +
+                ", telephone='" + tel + '\'' +
+                ", adresse='" + adresse + '\'' +
+                '}';
     }
 }
