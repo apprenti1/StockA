@@ -45,4 +45,13 @@ public class Fournisseur {
     public void setEmail(String email) {
         this.email = email;
     }
+    @Override
+    public String toString() {
+        return "Fournisseur{" +
+                "id=" + id +
+                ", nom='" + libelle + '\'' +
+                ", telephone='" + tel + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
