@@ -5,13 +5,13 @@ public class Fourniture {
     private int id;
     private String description;
     private String libelle;
-    private int qte_stock;
+    private int quantiteEnStock;
 
-    public Fourniture(int id, String description, String libelle, int qte_stock) {
+    public Fourniture(int id, String description, String libelle, int quantiteEnStock) {
         this.id = id;
         this.description = description;
         this.libelle = libelle;
-        this.qte_stock = qte_stock;
+        this.quantiteEnStock = quantiteEnStock;
     }
 
 
@@ -39,11 +39,21 @@ public class Fourniture {
         this.libelle = libelle;
     }
 
-    public int getQte_stock() {
-        return qte_stock;
+    public int getQuantiteEnStock() {
+        return quantiteEnStock;
     }
 
-    public void setQte_stock(int qte_stock) {
-        this.qte_stock = qte_stock;
+    public void setQuantiteEnStock(int quantiteEnStock) {
+        this.quantiteEnStock = quantiteEnStock;
+    }
+
+    @Override
+    public String toString() {
+        return "Fourniture{" +
+                "id=" + id +
+                ", libelle='" + libelle + '\'' +
+                ", description='" + description + '\'' +
+                ", quantiteEnStock=" + quantiteEnStock +
+                '}';
     }
 }
