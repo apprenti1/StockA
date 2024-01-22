@@ -1,37 +1,45 @@
 package entity;
-
+import java.util.List;
 public class CommandeFournitureComporteFourniture {
-    private int quantite;
-    private int ref_commandefourniture;
-    private int ref_fourniture;
-
-    public CommandeFournitureComporteFourniture(int quantite, int ref_commandefourniture, int ref_fourniture) {
-        this.quantite = quantite;
-        this.ref_commandefourniture = ref_commandefourniture;
-        this.ref_fourniture = ref_fourniture;
+    private int id;
+    private CommandeFourniture commandeFourniture;
+    private List<Fourniture> fournitures;
+    public CommandeFournitureComporteFourniture(int id, CommandeFourniture commandeFourniture, List<Fourniture> fournitures) {
+        this.id = id;
+        this.commandeFourniture = commandeFourniture;
+        this.fournitures = fournitures;
     }
 
-    public int getQuantite() {
-        return quantite;
+    public int getId() {
+        return id;
     }
 
-    public void setQuantite(int quantite) {
-        this.quantite = quantite;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getRef_commandefourniture() {
-        return ref_commandefourniture;
+    public CommandeFourniture getCommandeFourniture() {
+        return commandeFourniture;
     }
 
-    public void setRef_commandefourniture(int ref_commandefourniture) {
-        this.ref_commandefourniture = ref_commandefourniture;
+    public void setCommandeFourniture(CommandeFourniture commandeFourniture) {
+        this.commandeFourniture = commandeFourniture;
     }
 
-    public int getRef_fourniture() {
-        return ref_fourniture;
+    public List<Fourniture> getFournitures() {
+        return fournitures;
     }
 
-    public void setRef_fourniture(int ref_fourniture) {
-        this.ref_fourniture = ref_fourniture;
+    public void setFournitures(List<Fourniture> fournitures) {
+        this.fournitures = fournitures;
+    }
+
+    @Override
+    public String toString() {
+        return "CommandeFournitureComporteFourniture{" +
+                "id=" + id +
+                ", commandeFourniture=" + commandeFourniture +
+                ", fournitures=" + fournitures +
+                '}';
     }
 }
