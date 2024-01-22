@@ -20,7 +20,9 @@ public class Accueil {
     public Accueil(){}
     public void initialize(){}
     @FXML void switchAccueil(MouseEvent event) {}
-    @FXML void switchConnexion(ActionEvent event) {}
+    @FXML void switchConnexion(ActionEvent event) {
+        Main.switchToConnexion();
+    }
     @FXML void switchInscription(ActionEvent event) {}
     @FXML void switchEditProfil(ActionEvent event) {}
     @FXML void switchMineListes(ActionEvent event) {}
