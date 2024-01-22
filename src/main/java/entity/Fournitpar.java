@@ -1,37 +1,59 @@
 package entity;
 
-public class Fournitpar {
-    private int prix;
-    private int ref_fournisseur;
-    private int ref_fourniture;
 
-    public Fournitpar(int prix, int ref_fournisseur, int ref_fourniture) {
-        this.prix = prix;
-        this.ref_fournisseur = ref_fournisseur;
-        this.ref_fourniture = ref_fourniture;
+
+
+public class Fournitpar {
+    private int id;
+    private Fourniture fourniture;
+    private Fournisseur fournisseur;
+    private double prix;
+
+    public Fournitpar(int id, Fourniture fourniture, Fournisseur fournisseur, double prix) {
+        this.id = id;
+        this.fourniture = fourniture;
+        this.fournisseur = fournisseur;
     }
 
-    public int getPrix() {
+    public int getIdx() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Fourniture getFourniture() {
+        return fourniture;
+    }
+
+    public void setFourniture(Fourniture fourniture) {
+        this.fourniture = fourniture;
+    }
+
+    public Fournisseur getFournisseur() {
+        return fournisseur;
+    }
+
+    public void setFournisseur(Fournisseur fournisseur) {
+        this.fournisseur = fournisseur;
+    }
+    public double getPrix() {
         return prix;
     }
 
-    public void setPrix(int prix) {
+    public void setPrix(double prix) {
         this.prix = prix;
     }
 
-    public int getRef_fournisseur() {
-        return ref_fournisseur;
-    }
-
-    public void setRef_fournisseur(int ref_fournisseur) {
-        this.ref_fournisseur = ref_fournisseur;
-    }
-
-    public int getRef_fourniture() {
-        return ref_fourniture;
-    }
-
-    public void setRef_fourniture(int ref_fourniture) {
-        this.ref_fourniture = ref_fourniture;
+    @Override
+    public String toString() {
+        return "FournitPar{" +
+                "id=" + id +
+                ", fourniture=" + fourniture +
+                ", fournisseur=" + fournisseur +
+                ", prix=" + prix +
+                '}';
     }
 }
+
