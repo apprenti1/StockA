@@ -21,7 +21,7 @@ public class Accueil {
     public void initialize(){}
     @FXML void switchAccueil(MouseEvent event) {}
     @FXML void switchConnexion(ActionEvent event) {
-        Main.switchToConnexion();
+        Main.changeScene("Connexion", new ConnexionController(), "Connexion");
     }
     @FXML void switchInscription(ActionEvent event) {}
     @FXML void switchEditProfil(ActionEvent event) {}

@@ -1,0 +1,16 @@
+StockA
+  doc
+    images
+  src
+    main
+      java
+        application
+          #main.java
+        repo
+        entity
+        controller
+        #env.java
+        #security.java
+        ressources
+          application
+            images
