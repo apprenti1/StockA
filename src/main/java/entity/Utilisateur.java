@@ -6,9 +6,9 @@ public class Utilisateur {
     private String prenom;
     private String email;
     private String mdp;
-    private Role role;
+    private int role;
 
-    public Utilisateur(int id, String nom, String prenom, String email, String mdp, Role role) {
+    public Utilisateur(int id, String nom, String prenom, String email, String mdp, int role) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -57,11 +57,11 @@ public class Utilisateur {
         this.mdp = mdp;
     }
 
-    public Role getRole() {
+    public int getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(int role) {
         this.role = role;
     }
 
@@ -74,51 +74,5 @@ public class Utilisateur {
                 ", email='" + email + '\'' +
                 ", role='" + role + '\'' +
                 '}';
-    }
-
-    public enum Role {
-        GESTIONNAIRE_STOCK,
-        PROFESSEUR,
-        SECRETAIRE
-    }
-
-    public class GestionnaireStock extends Utilisateur {
-        public GestionnaireStock(int id, String nom, String prenom, String email, String mdp) {
-            super(id, nom, prenom, email, mdp, Role.GESTIONNAIRE_STOCK);
-        }
-
-        // Ajoutez des méthodes spécifiques à un gestionnaire de stock si nécessaire
-        // ...
-
-        @Override
-        public String toString() {
-            return "GestionnaireStock{" +
-                    "id=" + getId() +
-                    ", nom='" + getNom() + '\'' +
-                    ", prenom='" + getPrenom() + '\'' +
-                    ", email='" + getEmail() + '\'' +
-                    ", role='" + Role.GESTIONNAIRE_STOCK + '\'' +
-                    '}';
-        }
-    }
-
-    public class Professeur extends Utilisateur {
-        public Professeur(int id, String nom, String prenom, String email, String mdp) {
-            super(id, nom, prenom, email, mdp, Role.PROFESSEUR);
-        }
-
-        // Ajoutez des méthodes spécifiques à un professeur si nécessaire
-        // ...
-
-        @Override
-        public String toString() {
-            return "Professeur{" +
-                    "id=" + getId() +
-                    ", nom='" + getNom() + '\'' +
-                    ", prenom='" + getPrenom() + '\'' +
-                    ", email='" + getEmail() + '\'' +
-                    ", role='" + Role.PROFESSEUR + '\'' +
-                    '}';
-        }
     }
 }
