@@ -6,7 +6,7 @@ public class Salle {
 
     private boolean occupee;
 
-    public Salle(int id, String nom) {
+    public Salle(int id, String nom, boolean occupee) {
         this.id = id;
         this.nom = nom;
         this.occupee = false;
@@ -28,10 +28,10 @@ public class Salle {
         this.nom = nom;
     }
 
-    public boolean estOccupee(){
+    public boolean getOccupee(){
         return occupee;
     }
-    public void setOccupee(boolean occupee){
+    public void SetOccupee(boolean occupee){
         this.occupee = occupee;
     }
     @Override

@@ -1,24 +1,23 @@
 package entity;
-import entity.Utilisateur.GestionnaireStock;
+import entity.GestionnaireStock;
+import entity.Utilisateur;
 
 public class DemandeFournitureProfesseur {
     private int id;
     private String raison;
-
-    private  String fournituresDemandees;
-
+    private String fournituresDemandees;
     private int quantiteDemandee;
-
     private boolean validee;
     private GestionnaireStock gestionnaireStock;
 
-    public DemandeFournitureProfesseur(int id, String raison, String fournituresDemandees, int quantiteDemandee, Utilisateur.GestionnaireStock gestionnaireStock) {
+    public DemandeFournitureProfesseur(int id, String raison, String fournituresDemandees, int quantiteDemandee, GestionnaireStock gestionnaireStock) {
         this.id = id;
         this.raison = raison;
         this.fournituresDemandees = fournituresDemandees;
         this.quantiteDemandee = quantiteDemandee;
         this.validee = false;
         this.gestionnaireStock = gestionnaireStock;
+
     }
 
     public int getId() {
