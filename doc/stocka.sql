@@ -116,7 +116,7 @@ DROP TABLE IF EXISTS `etudiant`;
 CREATE TABLE IF NOT EXISTS `etudiant` (
   `id` int NOT NULL AUTO_INCREMENT,
   `dernier_diplome` varchar(15) NOT NULL,
-  `tel` int NOT NULL,
+  `tel` varchar NOT NULL,
   `adresse` varchar(100) NOT NULL,
   `ref_utilisateur` int NOT NULL,
   PRIMARY KEY (`id`),
@@ -133,7 +133,7 @@ DROP TABLE IF EXISTS `fournisseur`;
 CREATE TABLE IF NOT EXISTS `fournisseur` (
   `id` int NOT NULL AUTO_INCREMENT,
   `libelle` varchar(100) NOT NULL,
-  `tel` int NOT NULL,
+  `tel` vachar NOT NULL,
   `email` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
