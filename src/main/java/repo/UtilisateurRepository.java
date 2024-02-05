@@ -1,10 +1,10 @@
 package repo;
 
-import application.Env;
+import bdd.Env;
 import entity.Utilisateur;
 import java.sql.*;
 import java.util.ArrayList;
-import application.Security;
+import security.Security;
 
 
 public class UtilisateurRepository {
@@ -26,9 +26,9 @@ public class UtilisateurRepository {
     public boolean Update(Utilisateur entity){
         try {
             PreparedStatement req = Env.getBdd().prepareStatement("UPDATE Utilisateur set nom = ?, prenom = ?, email = ?, mdp = ?, role = ? WHERE id = ?;");
-            req.setString(1,Security.crypt(entity.getNom()));
-            req.setString(2,Security.crypt(entity.getPrenom()));
-            req.setString(3,Security.crypt(entity.getEmail()));
+            req.setString(1,Security.encrypt(entity.getNom()));
+            req.setString(2,Security.encrypt(entity.getPrenom()));
+            req.setString(3,Security.encrypt(entity.getEmail()));
             req.setString(4,Security.hash(entity.getMdp()));
             req.setInt(5,entity.getRole());
             req.setInt(6,entity.getId());

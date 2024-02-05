@@ -1,3 +1,11 @@
+package repo;
+
+import application.Env;
+import entity.Utilisateur;
+import java.sql.*;
+import java.util.ArrayList;
+import application.Security;
+
 public class NameRepository{
 
     public ArrayList<Name> FindAll(){
@@ -18,7 +26,7 @@ public class NameRepository{
     public boolean Update(Name entity){
         try {
             EntityRepository entityRepo = new EntityRepository();
-            entityRepo.update( entity.getEntity())
+            entityRepo.update( entity.getEntity());
             PreparedStatement req = Env.getBdd().prepareStatement("UPDATE Name set attr1 = ?, attr2 = ? WHERE id = ?;");
             req.setInt(1,entity.getAttr1());
             req.setInt(2,entity.getAttr2());
@@ -79,7 +87,7 @@ public class NameRepository{
             req.setInt(1,entity.getId());
             ResultSet res = req.executeQuery();
             EntityRepository entityRepo = new EntityRepository();
-            res.next()
+            res.next();
             Name rep = new Name( res.getInt("id"), entityRepo.find(res.getInt("refEntity")) );
             return list;
         } catch (SQLException e) {
