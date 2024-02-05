@@ -37,7 +37,7 @@ public class Accueil {
     @FXML private Button admin;
     @FXML
     void switchToPageAdmin(ActionEvent event) {
-        Main.changeScene("PageAdmin", new PageAdminController(), "PageAdmin");
+        Main.changeScene("PageAdminSalle", new PageAdminSalle(), "PageAdminSalle");
     }
 
     @FXML
