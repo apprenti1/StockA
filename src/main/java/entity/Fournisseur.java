@@ -4,10 +4,10 @@ public class Fournisseur {
 
     private int id;
     private String libelle;
-    private int tel;
+    private String tel;
     private String email;
 
-    public Fournisseur(int id, String libelle, int tel, String email) {
+    public Fournisseur(int id, String libelle, String tel, String email) {
         this.id = id;
         this.libelle = libelle;
         this.tel = tel;
@@ -30,11 +30,11 @@ public class Fournisseur {
         this.libelle = libelle;
     }
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 

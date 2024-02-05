@@ -1,7 +1,7 @@
 package entity;
 
 import java.util.Date;
-import entity.Professeur;
+
 public class RDV {
 
     private int id;
