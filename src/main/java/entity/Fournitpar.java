@@ -15,7 +15,7 @@ public class Fournitpar {
         this.fournisseur = fournisseur;
     }
 
-    public int getIdx() {
+    public int getId() {
         return id;
     }
 
