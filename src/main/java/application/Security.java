@@ -20,7 +20,7 @@ public class Security {
             byte[] encryptedValue = cipher.doFinal(value.getBytes());
             return Base64.getEncoder().encodeToString(encryptedValue);
         } catch (NoSuchAlgorithmException | NoSuchPaddingException | IllegalBlockSizeException | BadPaddingException |
-                 InvalidKeyException e) {throw new RuntimeException(e);}
+                    InvalidKeyException e) {throw new RuntimeException(e);}
     }
     public static String crypt(String value) {
         return  crypt(value, Env.getEncryptionKey());
