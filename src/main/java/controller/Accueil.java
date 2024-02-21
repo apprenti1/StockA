@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 
+
 public class Accueil {
 
     @FXML
@@ -32,7 +33,7 @@ public class Accueil {
 
     @FXML
     void switchConnexion(ActionEvent event) {
-        Main.changeScene("Connexion", new ConnexionController(), "Connexion");
+        Main.changeScene("Connexion", new Connexion(), "Connexion");
     }
     @FXML private Button admin;
     @FXML
