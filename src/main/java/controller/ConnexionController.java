@@ -1,39 +1,65 @@
 package controller;
 
-
+import application.Main;
+import entity.UtilisateurConnecte;
+import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
+import javamailer.MdpOublier;
+import javafx.scene.paint.Color;
+import entity.Utilisateur;
+import bdd.Format;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
+
 
 public class ConnexionController {
 
-    @FXML
-    private TextField emailField;
 
     @FXML
-    private PasswordField passwordField;
+    private MFXPasswordField Mdp;
 
     @FXML
-    private Button LoginButton;
+    private TextField email;
 
     @FXML
-    private void initialize() {
-        // Initialisation du contrôleur, si nécessaire
+    private Text erreur;
+
+    @FXML
+    void connexion(ActionEvent event) throws SQLException, NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA1");
+        md.update(this.Mdp.getText().getBytes());
+        byte byteData[] = md.digest();
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < byteData.length; i++) {
+            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+        }
+        UtilisateurConnecte utilisateur = UtilisateurConnecte.connectUser(this.email.getText(),sb.toString());
+        if (utilisateur.getId() != 0) {
+            Main.changeScene("/Admin/PageAdminlog", new PageAdminlog(), "Page Admin");
+        }
+        else {
+            this.erreur.setVisible(true);
+            System.out.println(sb);
+            UtilisateurConnecte.setUniqueInstance();
+        }
     }
 
+
     @FXML
-    private void handleConnectButton(ActionEvent event) {
-        // Code à exécuter lors du clic sur le bouton de connexion
-        String email = emailField.getText();
-        String password = passwordField.getText();
+    void switchAccueil(MouseEvent event) {
+        Main.changeScene("Accueil", new Accueil(),"Accueil");
 
-        // Ajoutez ici le code pour traiter la connexion en utilisant les informations email et mot de passe
-        // Par exemple, vous pouvez vérifier les informations dans une base de données ou un service d'authentification
-
-        // Après la connexion réussie, vous pouvez rediriger l'utilisateur vers une autre vue
-        // Vous pouvez utiliser la classe Main pour gérer les changements de scène, par exemple:
-        // Main.switchToAccueil(); // Supposons que vous avez une méthode switchToAccueil dans votre classe Main
     }
-}
+
+
+
+    @FXML void mdpOubli(MouseEvent event)
+        {Main.changeScene("/javamailer/MdpOublier",new MdpOublier(), "");}
+    }
+

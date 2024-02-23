@@ -11,49 +11,38 @@ public class Accueil {
 
     @FXML
     private Button connexion;
-    @FXML
-    private Button editProfil;
+
     @FXML
     private Button inscription;
-    @FXML
-    private Button mineListes;
-    @FXML
-    private Button mineTypes;
 
+    @FXML
+    void Connexion(ActionEvent event) {
+        Main.changeScene("Connexion", new ConnexionController(), "Connexion");
 
-    public Accueil() {
     }
 
-    public void initialize() {
+    @FXML
+    void Inscription(ActionEvent event) {
+        Main.changeScene("Inscription", new Inscription(),"");
+
     }
 
     @FXML
     void switchAccueil(MouseEvent event) {
+        Main.changeScene("Accueil", new Accueil(),"Accueil");
+
+
     }
 
-    @FXML
-    void switchConnexion(ActionEvent event) {
-        Main.changeScene("Connexion", new Connexion(), "Connexion");
-    }
-    @FXML private Button admin;
-    @FXML
-    void switchToPageAdmin(ActionEvent event) {
-        Main.changeScene("PageAdminSalle", new PageAdminSalle(), "PageAdminSalle");
-    }
 
-    @FXML
-    void switchInscription(ActionEvent event) {
-    }
 
-    @FXML
-    void switchEditProfil(ActionEvent event) {
-    }
-
-    @FXML
-    void switchMineListes(ActionEvent event) {
-    }
-
-    @FXML
-    void switchMineTypes(ActionEvent event) {
-    }
 }
+
+  /*  @FXML
+    void switchConnexion(ActionEvent event) {
+        Main.changeScene("Connexion", new ConnexionController(), "Connexion");
+    }
+*/
+
+
+

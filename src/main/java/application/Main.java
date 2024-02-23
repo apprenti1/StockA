@@ -1,15 +1,20 @@
 package application;
 
 
-import controller.ConnexionController;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import controller.Accueil;
 
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Optional;
 
 public class Main extends Application {
     public static Stage stage;
@@ -24,15 +29,21 @@ public class Main extends Application {
             fxmlLoader.setController(controller);
             fxmlLoader.setCharset(StandardCharsets.UTF_8);
             Scene scene = new Scene(fxmlLoader.load());
-            stage.setTitle(title);
+            stage.setTitle("Stocka");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-    public static void main(String[] args) {
-        launch(args);
+   
+    public static Optional<ButtonType> validationDialog(String titre, String texte){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"titre alert");
+        alert.initModality(Modality.APPLICATION_MODAL);
+        alert.initOwner(stage);
+        alert.getDialogPane().setContentText(texte);
+        alert.getDialogPane().setHeaderText(titre);
+        return alert.showAndWait();
     }
 }
 

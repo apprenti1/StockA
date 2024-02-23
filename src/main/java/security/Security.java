@@ -1,4 +1,6 @@
-package application;
+package security;
+
+import bdd.Env;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -11,8 +13,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 public class Security {
+    private static String defaultKey;
     private static final String algo = "AES";
-    public static String crypt(String value, String key) {
+    public static String encrypt(String value, String key) {
         try {
             SecretKeySpec keySpec = new SecretKeySpec(key.getBytes(), algo);
             Cipher cipher = Cipher.getInstance(algo);
@@ -22,8 +25,8 @@ public class Security {
         } catch (NoSuchAlgorithmException | NoSuchPaddingException | IllegalBlockSizeException | BadPaddingException |
                     InvalidKeyException e) {throw new RuntimeException(e);}
     }
-    public static String crypt(String value) {
-        return  crypt(value, Env.getEncryptionKey());
+    public static String encrypt(String value) {
+        return  encrypt(value, Env.getEncryptionKey());
     }
     public static String decrypt(String encryptedValue, String key) {
         try {
@@ -50,4 +53,7 @@ public class Security {
             throw new RuntimeException("Erreur lors de la création du hachage", e);
         }
     }
+
+    public static void setDefaultKey(String defaultKey) {Security.defaultKey = defaultKey;}
+
 }

@@ -1,15 +1,11 @@
-package repo;
+/*package repo;
 
 
-import application.Env;
-import entity.*;
+import bdd.Env;
 import entity.Fournisseur;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.jar.Attributes;
-
-import application.Security;
 
 
 public class FournisseurRepository {
@@ -44,3 +40,4 @@ public class FournisseurRepository {
         }
     }
 }
+*/

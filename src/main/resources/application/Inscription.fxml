@@ -59,11 +59,6 @@
             <DropShadow color="#0129701a" radius="5" spread="0.5" />
          </effect>
          <children>
-            <Button layoutX="497.0" layoutY="10.0" onAction="#Connexion" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #4154F1;" text="Connexion" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="15.0" />
-               </font>
-            </Button>
             <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="14.0" layoutY="16.0" onMouseClicked="#switchAccueil" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../ToutDouxList-FX-master/src/main/resources/application/images/logo.png" />

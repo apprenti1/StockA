@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Accueil">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Pane prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #fff;">
          <effect>
@@ -22,13 +22,6 @@
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </Button>
-
-
-            <Button fx:id="editProfil" layoutX="386.0" onAction="#switchEditProfil" prefHeight="60.0" prefWidth="98.0" style="-fx-background-color: #0000;" text="Mon Profil" textFill="#0e3c8f" visible="false">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-            </Button>
             <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="20.0" layoutY="16.0" onMouseClicked="#switchAccueil" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/logo.png" />
@@ -39,16 +32,6 @@
                   <Font name="Calibri Bold" size="25.0" />
                </font>
             </Label>
-            <Button fx:id="mineListes" layoutX="288.0" onAction="#switchMineListes" prefHeight="60.0" prefWidth="98.0" style="-fx-background-color: #0000;" text="Mes Listes" textFill="#0e3c8f" visible="false">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="mineTypes" layoutX="190.0" onAction="#switchMineTypes" prefHeight="60.0" prefWidth="98.0" style="-fx-background-color: #0000;" text="Mes types" textFill="#0e3c8f" visible="false">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-            </Button>
             <Button fx:id="inscription" layoutX="391.0" layoutY="10.0" onAction="#Inscription" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #4154F1;" text="Inscription" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
@@ -84,7 +67,7 @@
             </Label>
             <Pane prefHeight="50.0" prefWidth="300.0">
                <children>
-                  <Button fx:id="inscription" layoutY="5.0" onAction="#switchInscription" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="Commencer ici ▶" textFill="WHITE">
+                  <Button layoutY="5.0" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="Commencer ici ▶" textFill="WHITE">
                      <font>
                         <Font name="Calibri Bold" size="15.0" />
                      </font>

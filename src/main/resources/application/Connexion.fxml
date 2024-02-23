@@ -25,7 +25,7 @@
                         <Image url="@images/logo.png" />
                     </image>
                 </ImageView>
-                <Label layoutX="43.0" onDragDetected="#switchAccueil" onMouseClicked="#switchAccueil" prefHeight="60.0" prefWidth="144.0" text="Stock@" textFill="#012970">
+                <Label layoutX="43.0" onMouseClicked="#switchAccueil" prefHeight="60.0" prefWidth="144.0" text="Stock@" textFill="#012970">
                     <font>
                         <Font name="Calibri Bold" size="25.0" />
                     </font>

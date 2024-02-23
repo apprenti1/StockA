@@ -3,9 +3,11 @@ module lasuperteam.stocka {
     requires javafx.fxml;
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
-    requires jakarta.mail;
+    requires javax.mail;
     requires org.apache.commons.lang3;
     requires MaterialFX;
+
+    requires activation;
 
     opens application to javafx.fxml;
     exports application;
