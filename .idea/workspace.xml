@@ -5,25 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="upl : entity&#10;&#10;creation des entity de la base de donnée">
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/entityexemple.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Liste.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repo/FournisseurRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repo/RDVRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application/plus/images/hero-img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application/plus/images/hero-img.png edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application/plus/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application/plus/style/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/stocka.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/stocka.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Inscription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/UtilisateurController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/UtilisateurConnecte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/Achat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/Admin/PageAdminlog.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/DemandeFourniture.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/DossierInscription.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/FicheEtudiant.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/ListeAchat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/ListeDemande.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/ListeDossier.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/ListeFicheetudiant.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/ListeFourniture.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/ListeRdv.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/ListeUtilisateur.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/Rdv.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Fournisseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Fournisseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/Env.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bdd/Env.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/Security.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/security/Security.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Accueil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Accueil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ConnexionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ConnexionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EditProfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EditProfil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ValidEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ValidEmail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/RDV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/RDV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Secretaire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Utilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repo/FournisseurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repo/FournisseurRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repo/FournitparRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repo/FournitparRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repo/FournitureRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repo/FournitureRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repo/RDVRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repo/RDVRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repo/SalleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repo/SalleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repo/UtilisateurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repo/UtilisateurRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Accueil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Accueil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Admin/PageAdminSalle.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Admin/PageAdminUtilisateur.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Connexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Connexion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/EditProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/MonProfil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Inscription.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Inscription.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/PageAdmin.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +60,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -45,6 +69,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php8.3.0\php.exe" />
   <component name="ProblemsViewState">
@@ -63,16 +90,17 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Nicolas/IdeaProjects/StockA",
+    "last_opened_file_path": "C:/Users/megan/IdeaProjects/StockA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -90,7 +118,7 @@
       <module name="StockA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="application.*" />
+          <option name="PATTERN" value="bdd.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,6 +156,8 @@
       <workItem from="1706614318895" duration="595000" />
       <workItem from="1707118741442" duration="1895000" />
       <workItem from="1707122196535" duration="2911000" />
+      <workItem from="1708609298396" duration="17626000" />
+      <workItem from="1708679157396" duration="13627000" />
     </task>
     <task id="LOCAL-00001" summary="upl : entity&#10;&#10;creation des entity de la base de donnée">
       <option name="closed" value="true" />
