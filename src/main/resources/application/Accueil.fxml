@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Accueil">
    <children>
       <Pane prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #fff;">
          <effect>
@@ -14,7 +17,7 @@
          </effect>
          <children>
 
-            <Button fx:id="connexion" layoutX="497.0" layoutY="10.0" onAction="#switchConnexion" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #4154F1;" text="Connexion" textFill="WHITE">
+            <Button fx:id="connexion" layoutX="497.0" layoutY="10.0" onAction="#Connexion" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #4154F1;" text="Connexion" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
@@ -46,7 +49,7 @@
                   <Font name="Calibri Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="inscription" layoutX="391.0" layoutY="10.0" onAction="#switchInscription" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #4154F1;" text="Inscription" textFill="WHITE">
+            <Button fx:id="inscription" layoutX="391.0" layoutY="10.0" onAction="#Inscription" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #4154F1;" text="Inscription" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
