@@ -39,11 +39,10 @@ public class ConnexionController {
         for (int i = 0; i < byteData.length; i++) {
             sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
         }
-        UtilisateurConnecte utilisateur = UtilisateurConnecte.connectUser(this.email.getText(),sb.toString());
+        UtilisateurConnecte utilisateur = UtilisateurConnecte.connectUser(this.email.getText(), sb.toString());
         if (utilisateur.getId() != 0) {
-            Main.changeScene("/Admin/PageAdminlog", new PageAdminlog(), "Page Admin");
-        }
-        else {
+            Main.changeScene("/application/Admin/PageAdminlog", new PageAdminlog());
+        } else {
             this.erreur.setVisible(true);
             System.out.println(sb);
             UtilisateurConnecte.setUniqueInstance();
@@ -53,13 +52,14 @@ public class ConnexionController {
 
     @FXML
     void switchAccueil(MouseEvent event) {
-        Main.changeScene("Accueil", new Accueil(),"Accueil");
+        Main.changeScene("/application/Accueil");
 
     }
 
 
-
-    @FXML void mdpOubli(MouseEvent event)
-        {Main.changeScene("/javamailer/MdpOublier",new MdpOublier(), "");}
+    @FXML
+    void MdpOubli(MouseEvent event) {
+        Main.changeScene("/application/javamailer/MdpOublier",new MdpOublier());
     }
+}
 

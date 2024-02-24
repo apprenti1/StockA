@@ -45,48 +45,48 @@ public class PageAdminlog implements Initializable {
 
     @FXML
     void achat(ActionEvent event) {
-        Main.changeScene("ListeAchat",new ListeAchat(),"Liste achat");
+        Main.changeScene("/application/ListeAchat",new ListeAchat());
     }
 
     @FXML
     void demande(ActionEvent event) {
-        Main.changeScene("ListeDemande",new ListeDemande(),"Liste demande");
+        Main.changeScene("/application/ListeDemande",new ListeDemande());
     }
 
     @FXML
     void dossierInscription(ActionEvent event) throws SQLException {
-        Main.changeScene("ListeDossier",new ListeDossier(), "Liste dossier");
+        Main.changeScene("/application/ListeDossier",new ListeDossier());
     }
 
     @FXML
     void ficheEtudiant(ActionEvent event) {
-        Main.changeScene("ListeFicheetudiant", new ListeFicheetudiant(), "liste fiche etudiant");
+        Main.changeScene("/application/ListeFicheetudiant", new ListeFicheetudiant());
     }
 
     @FXML
     void fourniture(ActionEvent event) {
-        Main.changeScene("ListeFourniture", new ListeFourniture(), "Liste fourniture");
+        Main.changeScene("/application/ListeFourniture", new ListeFourniture());
     }
 
     @FXML
     void gestionUtilisateurs(ActionEvent event) {
-        Main.changeScene("ListeUtilisateur", new ListeUtilisateur(), "Liste utilisateur");
+        Main.changeScene("/application/ListeUtilisateur", new ListeUtilisateur());
     }
 
     @FXML
     void rendezVous(ActionEvent event) {
-        Main.changeScene("ListeRdv", new ListeRdv(), "Liste Rdv");
+        Main.changeScene("/application/ListeRdv", new ListeRdv());
     }
     @FXML
     void Deconnexion(MouseEvent event) {
 
         UtilisateurConnecte.setUniqueInstance();
-        Main.changeScene("Accueil",new  Accueil(),"Accueil");
+        Main.changeScene("/application/Accueil");
     }
 
     @FXML
     void utilisateurShow(MouseEvent event) {
-        Main.changeScene("MonProfil", new MonProfil(),"Mon profil");
+        Main.changeScene("/application/MonProfil");
     }
 
     @Override

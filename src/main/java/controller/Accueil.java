@@ -17,19 +17,19 @@ public class Accueil {
 
     @FXML
     void Connexion(ActionEvent event) {
-        Main.changeScene("Connexion", new ConnexionController(), "Connexion");
+        Main.changeScene("/application/Connexion");
 
     }
 
     @FXML
     void Inscription(ActionEvent event) {
-        Main.changeScene("Inscription", new Inscription(),"");
+        Main.changeScene("/application/Inscription");
 
     }
 
     @FXML
     void switchAccueil(MouseEvent event) {
-        Main.changeScene("Accueil", new Accueil(),"Accueil");
+        Main.changeScene("/application/Accueil");
 
 
     }

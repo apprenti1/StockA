@@ -17,26 +17,58 @@ import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 public class Main extends Application {
-    public static Stage stage;
+    private static Stage stage;
+
     @Override
-    public void start(Stage stage) throws IOException {
-        Main.stage = stage;
-        changeScene("Accueil", new Accueil(), "Bienvenue dans StockA");
+    public void start(Stage firstStage) throws IOException {
+        stage = firstStage;
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/application/Accueil.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("stocka");
+        stage.setScene(scene);
+        stage.show();
     }
-    public static void changeScene(String fxml, Object controller, String title){
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+    public static void changeScene(String fichierFxml, Object controller){
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fichierFxml+".fxml"));
+        System.out.println(controller.getClass().getName());
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/application/"+ fxml + ".fxml"));
             fxmlLoader.setController(controller);
-            fxmlLoader.setCharset(StandardCharsets.UTF_8);
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("stocka");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void changeScene(String fichierFxml){
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fichierFxml+".fxml"));
+        try {
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Stocka");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
-   
+    public static void newStage(String fxml) {
+        Stage window = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml+".fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }        window.setTitle("test!");
+        window.setScene(scene);
+        window.show();
+    }
     public static Optional<ButtonType> validationDialog(String titre, String texte){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"titre alert");
         alert.initModality(Modality.APPLICATION_MODAL);
@@ -46,4 +78,3 @@ public class Main extends Application {
         return alert.showAndWait();
     }
 }
-

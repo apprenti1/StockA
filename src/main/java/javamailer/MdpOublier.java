@@ -7,13 +7,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import controller.PageAdminlog;
+import javafx.scene.input.MouseEvent;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 public class MdpOublier {
-    public MdpOublier(){}
+    public MdpOublier() {
+    }
 
     @FXML
     private Label Erreur;
@@ -23,18 +25,18 @@ public class MdpOublier {
 
     @FXML
     void Suivant(ActionEvent event) throws SQLException, NoSuchAlgorithmException {
-        if(this.Email.getText().equals("")){
+        if (this.Email.getText().equals("")) {
             this.Erreur.setVisible(true);
-        }
-        else{
-            Main.changeScene("/javamailer/codemailer",new CodeMailer(this.Email.getText()),"code Mailer");
+        } else {
+            Main.changeScene("/javamailer/codemailer", new CodeMailer(this.Email.getText()));
         }
     }
 
     @FXML
-    void Retour(ActionEvent event) {
-        Main.changeScene("Connexion"," ConnexionController","Connexion");
-    }
+    void switchAccueil(MouseEvent event) {
+        Main.changeScene("/application/Accueil");
 
+
+    }
 }
 

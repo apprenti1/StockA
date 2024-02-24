@@ -17,4 +17,8 @@ module lasuperteam.stocka {
     opens bdd to javafx.fxml;
     exports security;
     opens security to javafx.fxml;
+    exports entity;
+    opens entity to javafx.fxml;
+    exports javamailer;
+    opens javamailer to javafx.fxml;
 }

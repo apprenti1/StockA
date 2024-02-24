@@ -30,6 +30,12 @@ public class Modification {
     private MFXPasswordField Mdpconfirmer;
 
     @FXML
+    void switchAccueil(MouseEvent event) {
+        Main.changeScene("application/Accueil");
+
+    }
+
+        @FXML
     void modifier(MouseEvent event) throws NoSuchAlgorithmException, SQLException {
         if(this.Mdp.getText().equals(this.Mdpconfirmer.getText())){
             String mdp = this.Mdp.getText();
@@ -57,7 +63,7 @@ public class Modification {
                 }
                 Utilisateur moncompte = new Utilisateur(sb.toString(),this.email);
                 moncompte.updateMdp(this.Mdp.getText(), this.email);
-                Main.changeScene("Connexion", "ConnexionController","");
+                Main.changeScene("/application/Connexion");
             }else {
                 this.Error.setVisible(true);
             }

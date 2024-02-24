@@ -1,7 +1,6 @@
 package controller;
 
 import application.Main;
-import controller.UtilisateurController;
 import io.github.palexdev.materialfx.controls.MFXFilterComboBox;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -56,7 +55,7 @@ public class Inscription implements Initializable {
 
 
     @FXML
-    void switchAccueil(MouseEvent event){Main.changeScene("Accueil", new Accueil(), "Bienvenue dans Stocka");}
+    void switchAccueil(MouseEvent event){Main.changeScene("/application/Accueil");}
 
 
     @FXML
@@ -94,7 +93,7 @@ public class Inscription implements Initializable {
                 }
                 Utilisateur moncompte = new Utilisateur(this.Nom.getText(), this.Prenom.getText(), this.Email.getText(), sb.toString(), this.Role.getText());
                 moncompte.insert();
-                Main.changeScene("Connexion", new  ConnexionController(), "Connexion");
+                Main.changeScene("/application/Connexion");
             }else {
                 this.Error.setVisible(true);
             }
