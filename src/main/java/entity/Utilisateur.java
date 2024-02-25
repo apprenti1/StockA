@@ -46,8 +46,8 @@ public class Utilisateur {
     }
 
 
-    public Utilisateur(int id_user, String nom, String prenom, String email, String mdp, String role) {
-        this.id=id_user;
+    public Utilisateur(int id_utilisateur, String nom, String prenom, String email, String mdp, String role) {
+        this.id=id_utilisateur;
         this.nom=nom;
         this.prenom=prenom;
         this.email=email;

@@ -57,7 +57,16 @@ public class PageAdminlog implements Initializable {
     void dossierInscription(ActionEvent event) throws SQLException {
         Main.changeScene("/application/ListeDossier",new ListeDossier());
     }
+    @FXML
+    void switchAccueil(MouseEvent event) {
+        Main.changeScene("/application/Accueil");
 
+    }
+
+    @FXML
+    void switchEditProfil(ActionEvent event) {
+
+    }
     @FXML
     void ficheEtudiant(ActionEvent event) {
         Main.changeScene("/application/ListeFicheetudiant", new ListeFicheetudiant());

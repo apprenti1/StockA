@@ -28,7 +28,7 @@ public class MdpOublier {
         if (this.Email.getText().equals("")) {
             this.Erreur.setVisible(true);
         } else {
-            Main.changeScene("/javamailer/codemailer", new CodeMailer(this.Email.getText()));
+            Main.changeScene("/application/javamailer/CodeMailer", new CodeMailer(this.Email.getText()));
         }
     }
 

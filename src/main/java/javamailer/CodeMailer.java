@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 
 public class CodeMailer implements Initializable  {
     private String email;
-    public CodeMailer(String mail){
+    public CodeMailer(String email){
         this.email=email;
         this.mailerLost =  new MailerLost(this.email);
     }
@@ -30,12 +30,12 @@ public class CodeMailer implements Initializable  {
         if(this.Code.getText().equals("") || Integer.parseInt(this.Code.getText())!= mailerLost.getValue()){
             this.Erreur.setVisible(true);
         }else{
-           Main.changeScene("/application/javamailer/modification", new Modification(this.email));
+           Main.changeScene("/application/javamailer/Modification", new Modification(this.email));
         }
     }
     @FXML
     void switchAccueil(MouseEvent event) {
-        Main.changeScene("application/Accueil");
+        Main.changeScene("/application/Accueil");
 
     }
 

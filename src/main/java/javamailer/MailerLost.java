@@ -28,12 +28,13 @@ public class MailerLost {
     }
     public void main() {
 
+
         // Configuration des propriétés du serveur de courrier sortant
         Properties properties = System.getProperties();
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.user", "stockalprs@gmail.com");
-        properties.put("mail.smtp.password", "laurineeliasnico");
+        properties.put("mail.smtp.user", "egm.lprs@gmail.com");
+        properties.put("mail.smtp.password", "3gM!LpR5");
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.auth", "true");
 
@@ -45,7 +46,7 @@ public class MailerLost {
             MimeMessage message = new MimeMessage(session);
 
             // Définition de l'expéditeur et du destinataire
-            message.setFrom(new InternetAddress("stockalprs@gmail.com"));
+            message.setFrom(new InternetAddress("egm.lprs@gmail.com"));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(this.email));
             System.out.println(this.email);
 
@@ -55,7 +56,7 @@ public class MailerLost {
 
             // Envoi du message
             Transport transport = session.getTransport("smtp");
-            transport.connect("smtp.gmail.com", "stockalprs@gmail.com", "laurineeliasnico");
+            transport.connect("smtp.gmail.com", "egm.lprs@gmail.com", "wnbfizfitxonnpkm");
             transport.sendMessage(message, message.getAllRecipients());
             transport.close();
             System.out.println("Ceci est un mail automatique \n Vous avez demandé une réinitialisation de votre mot de passe \n \n Voici le code automatique : " + value);
@@ -70,4 +71,3 @@ public class MailerLost {
         return value;
     }
 }
-

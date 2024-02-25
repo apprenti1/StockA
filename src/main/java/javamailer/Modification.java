@@ -31,7 +31,7 @@ public class Modification {
 
     @FXML
     void switchAccueil(MouseEvent event) {
-        Main.changeScene("application/Accueil");
+        Main.changeScene("/application/Accueil");
 
     }
 

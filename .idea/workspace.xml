@@ -4,25 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="add controller + fix accueil">
+    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment=" fix controller">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6960ff3-485f-4314-b441-6716671ca72f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e6960ff3-485f-4314-b441-6716671ca72f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Accueil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Accueil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ConnexionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ConnexionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Inscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Inscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PageAdminlog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PageAdminlog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UtilisateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UtilisateurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Utilisateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/CodeMailer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/CodeMailer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/MailerLost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/MailerLost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/MdpOublier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/MdpOublier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/Modification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/Modification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Accueil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Accueil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Connexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Connexion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Inscription.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Inscription.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/MonProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/MonProfil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/javamailer/CodeMailer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/javamailer/CodeMailer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Admin/PageAdminlog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Admin/PageAdminlog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application/javamailer/MdpOublier.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/javamailer/MdpOublier.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/javamailer/Modification.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/javamailer/Modification.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +126,7 @@
       <workItem from="1708609298396" duration="17626000" />
       <workItem from="1708679157396" duration="17397000" />
       <workItem from="1708709408826" duration="14218000" />
-      <workItem from="1708790208851" duration="10353000" />
+      <workItem from="1708790208851" duration="18313000" />
     </task>
     <task id="LOCAL-00001" summary="upl : entity&#10;&#10;creation des entity de la base de donnée">
       <option name="closed" value="true" />
@@ -209,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708724411023</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary=" fix controller">
+      <created>1708801768193</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708801768193</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +234,18 @@
     <MESSAGE value="add dependance" />
     <MESSAGE value="delete interface" />
     <MESSAGE value="add controller + fix accueil" />
-    <option name="LAST_COMMIT_MESSAGE" value="add controller + fix accueil" />
+    <MESSAGE value=" fix controller" />
+    <option name="LAST_COMMIT_MESSAGE" value=" fix controller" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/StockA$Main.ic" NAME="Main Coverage Results" MODIFIED="1708718576758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
