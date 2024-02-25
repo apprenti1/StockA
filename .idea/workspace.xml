@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment=" fix controller">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6960ff3-485f-4314-b441-6716671ca72f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e6960ff3-485f-4314-b441-6716671ca72f.xml" afterDir="false" />
+    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="add envoi mail + interface">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Utilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/CodeMailer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/CodeMailer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/MailerLost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/MailerLost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/MdpOublier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/MdpOublier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/Modification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/Modification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MonProfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MonProfil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PageAdminlog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PageAdminlog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application/Admin/PageAdminlog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Admin/PageAdminlog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/javamailer/MdpOublier.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/javamailer/MdpOublier.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/MonProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/MonProfil.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +57,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/megan/IdeaProjects/JAVA-LPRS-master enzo",
+    "last_opened_file_path": "C:/Users/megan/IdeaProjects/StockA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -126,7 +122,8 @@
       <workItem from="1708609298396" duration="17626000" />
       <workItem from="1708679157396" duration="17397000" />
       <workItem from="1708709408826" duration="14218000" />
-      <workItem from="1708790208851" duration="18313000" />
+      <workItem from="1708790208851" duration="18647000" />
+      <workItem from="1708884461103" duration="2689000" />
     </task>
     <task id="LOCAL-00001" summary="upl : entity&#10;&#10;creation des entity de la base de donnée">
       <option name="closed" value="true" />
@@ -207,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708801768193</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add envoi mail + interface">
+      <created>1708825874488</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708825874488</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +239,8 @@
     <MESSAGE value="delete interface" />
     <MESSAGE value="add controller + fix accueil" />
     <MESSAGE value=" fix controller" />
-    <option name="LAST_COMMIT_MESSAGE" value=" fix controller" />
+    <MESSAGE value="add envoi mail + interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="add envoi mail + interface" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

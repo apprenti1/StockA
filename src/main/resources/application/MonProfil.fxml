@@ -30,11 +30,6 @@
                         <Font name="Calibri Bold" size="25.0" />
                     </font>
                 </Label>
-                <Button layoutX="386.0" prefHeight="60.0" prefWidth="98.0" style="-fx-background-color: #0000;" text="Mon Profil" textFill="#0e3c8f">
-                    <font>
-                        <Font name="Calibri Bold" size="14.0" />
-                    </font>
-                </Button>
 
             </children>
         </Pane>
@@ -58,17 +53,17 @@
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="nom" layoutX="217.0" layoutY="139.0" prefHeight="39.0" prefWidth="89.0">
+      <Label fx:id="nom" layoutX="217.0" layoutY="139.0" prefHeight="39.0" prefWidth="311.0">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="prenom" layoutX="217.0" layoutY="208.0" prefHeight="39.0" prefWidth="89.0">
+      <Label fx:id="prenom" layoutX="217.0" layoutY="208.0" prefHeight="39.0" prefWidth="268.0">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="role" layoutX="217.0" layoutY="268.0" prefHeight="39.0" prefWidth="89.0">
+      <Label fx:id="role" layoutX="217.0" layoutY="268.0" prefHeight="39.0" prefWidth="268.0">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>

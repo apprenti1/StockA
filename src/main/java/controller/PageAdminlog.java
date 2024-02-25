@@ -64,10 +64,6 @@ public class PageAdminlog implements Initializable {
     }
 
     @FXML
-    void switchEditProfil(ActionEvent event) {
-
-    }
-    @FXML
     void ficheEtudiant(ActionEvent event) {
         Main.changeScene("/application/ListeFicheetudiant", new ListeFicheetudiant());
     }
@@ -94,7 +90,7 @@ public class PageAdminlog implements Initializable {
     }
 
     @FXML
-    void utilisateurShow(MouseEvent event) {
+    void MonProfil(MouseEvent event) {
         Main.changeScene("/application/MonProfil");
     }
 
