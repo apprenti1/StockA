@@ -59,7 +59,7 @@ public class PageAdminlog implements Initializable {
     }
     @FXML
     void switchAccueil(MouseEvent event) {
-        Main.changeScene("/application/Accueil");
+        Main.changeScene("/application/Admin/PageAdminlog", new PageAdminlog());
 
     }
 

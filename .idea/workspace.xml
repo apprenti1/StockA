@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="add page admin + page profil">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6960ff3-485f-4314-b441-6716671ca72f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e6960ff3-485f-4314-b441-6716671ca72f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FicheEtudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/FicheEtudiant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ListeFicheetudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ListeFicheetudiant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Etudiant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/MdpOublier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/MdpOublier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/FicheEtudiant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/FicheEtudiant.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/ListeFicheetudiant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/ListeFicheetudiant.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/javamailer/MdpOublier.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/javamailer/MdpOublier.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="add entity Etudiant  + REPOSITORY etudiant" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +117,7 @@
       <workItem from="1708679157396" duration="17397000" />
       <workItem from="1708709408826" duration="14218000" />
       <workItem from="1708790208851" duration="18647000" />
-      <workItem from="1708884461103" duration="15597000" />
+      <workItem from="1708884461103" duration="15934000" />
     </task>
     <task id="LOCAL-00001" summary="upl : entity&#10;&#10;creation des entity de la base de donnée">
       <option name="closed" value="true" />
@@ -222,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708887690905</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add entity Etudiant  + REPOSITORY etudiant">
+      <created>1708907750003</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708907750003</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +249,8 @@
     <MESSAGE value=" fix controller" />
     <MESSAGE value="add envoi mail + interface" />
     <MESSAGE value="add page admin + page profil" />
-    <option name="LAST_COMMIT_MESSAGE" value="add page admin + page profil" />
+    <MESSAGE value="add entity Etudiant  + REPOSITORY etudiant" />
+    <option name="LAST_COMMIT_MESSAGE" value="add entity Etudiant  + REPOSITORY etudiant" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
