@@ -12,9 +12,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label fx:id="Erreur" layoutX="253.0" layoutY="254.0" prefHeight="17.0" prefWidth="153.0" text="Saisissez votre adresse mail" textFill="#f21212" visible="false" />
         <MFXTextField fx:id="Email" alignment="TOP_CENTER" borderGap="0.0" floatingTextGap="0.0" layoutX="251.0" layoutY="209.0" prefHeight="40.0" prefWidth="166.0" promptText="email" AnchorPane.bottomAnchor="231.0" AnchorPane.topAnchor="209.0" />
-      <Pane layoutX="-2.0" prefHeight="70.0" prefWidth="640.0" style="-fx-background-color: #fff;">
+      <Pane prefHeight="70.0" prefWidth="640.0" style="-fx-background-color: #fff;">
          <effect>
             <DropShadow color="#0129701a" radius="5" spread="0.5" />
          </effect>
@@ -41,5 +40,6 @@
             <Font name="Calibri Bold" size="15.0" />
          </font>
       </Button>
+      <Label fx:id="Erreur" layoutX="235.0" layoutY="287.0" text="Aucun compte n'est associé à ce mail" textFill="#940000" visible="false" />
     </children>
 </AnchorPane>
