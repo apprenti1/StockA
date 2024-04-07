@@ -1,19 +1,21 @@
 package entity;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class RDV {
 
     // attribute déclaration
     private int id;
-    private Date date;
-    private int heure;
+    private LocalDate date;
+    private LocalTime heure;
     private Utilisateur utilisateur;
     private Salle salle;
     private Dossier dossier;
 
 
-    public RDV(int id, Date date, int heure, Utilisateur utilisateur, Salle salle, Dossier dossier) {
+    public RDV(int id, LocalDate date, LocalTime heure, Utilisateur utilisateur, Salle salle, Dossier dossier) {
         this.id = id;
         this.date = date;
         this.heure = heure;
@@ -27,11 +29,11 @@ public class RDV {
         return id;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public int getHeure() {
+    public LocalTime getHeure() {
         return heure;
     }
 
@@ -52,11 +54,11 @@ public class RDV {
         this.id = id;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public void setHeure(int heure) {
+    public void setHeure(LocalTime heure) {
         this.heure = heure;
     }
 
