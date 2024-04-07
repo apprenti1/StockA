@@ -20,7 +20,7 @@ public class RDVRepository {
             ResultSet res = req.executeQuery();
             ArrayList<RDV> list = new ArrayList<RDV>();
             while (res.next()){
-                list.add( new RDV( res.getInt("id"), res.getDate("date"), res.getInt("heure"), utilisateurRepo.findById(res.getInt("ref_utilisateur")) , salleRepo.findById(res.getInt("ref_salle")) , dossierRepo.findById(res.getInt("ref_dossier"))  ) );
+                list.add( new RDV( res.getInt("id"), res.getDate("date").toLocalDate(), res.getTime("heure").toLocalTime(), utilisateurRepo.findById(res.getInt("ref_utilisateur")) , salleRepo.findById(res.getInt("ref_salle")) , dossierRepo.findById(res.getInt("ref_dossier"))  ) );
             }
             return list;
         } catch (SQLException e) {
@@ -59,8 +59,8 @@ public class RDVRepository {
         
             PreparedStatement req = Env.getBdd().prepareStatement("UPDATE RDV set date = ?,  heure = ?,  ref_utilisateur = ?,  ref_salle = ?,  ref_dossier = ? WHERE id = ?;");
 
-            req.setDate(1, new Date(entity.getDate().getTime()));
-            req.setInt(2, entity.getHeure());
+            req.setDate(1, Date.valueOf(entity.getDate()));
+            req.setTime(2, Time.valueOf(entity.getHeure()));
             req.setInt(3, entity.getUtilisateur().getId());
             req.setInt(4, entity.getSalle().getId());
             req.setInt(5, entity.getDossier().getId());
@@ -89,8 +89,8 @@ public class RDVRepository {
     public int upload(RDV entity){
         try {
             PreparedStatement req = Env.getBdd().prepareStatement("INSERT into RDV(date, heure, Utilisateur, Salle, Dossier) VALUES (?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
-            req.setDate(1, new Date(entity.getDate().getTime()));
-            req.setInt(2, entity.getHeure());
+            req.setDate(1, Date.valueOf(entity.getDate()));
+            req.setTime(2, Time.valueOf(entity.getHeure()));
             req.setInt(3, entity.getUtilisateur().getId());
             req.setInt(4, entity.getSalle().getId());
             req.setInt(5, entity.getDossier().getId());
@@ -116,7 +116,7 @@ public class RDVRepository {
             ResultSet res = req.executeQuery();
             ArrayList<RDV> list = new ArrayList<RDV>();
             while (res.next()){
-                list.add( new RDV( res.getInt("id"), res.getDate("date"), res.getInt("heure"), utilisateurRepo.findById(res.getInt("ref_utilisateur")) , salleRepo.findById(res.getInt("ref_salle")) , dossierRepo.findById(res.getInt("ref_dossier"))  ) );
+                list.add( new RDV( res.getInt("id"), res.getDate("date").toLocalDate(), res.getTime("heure").toLocalTime(), utilisateurRepo.findById(res.getInt("ref_utilisateur")) , salleRepo.findById(res.getInt("ref_salle")) , dossierRepo.findById(res.getInt("ref_dossier"))  ) );
             }
             return list;
         } catch (SQLException e) {
@@ -136,7 +136,7 @@ public class RDVRepository {
             req.setInt(1, id);
             ResultSet res = req.executeQuery();
             res.next();
-            RDV rep = new RDV( res.getInt("id"), res.getDate("date"), res.getInt("heure"), utilisateurRepo.findById(res.getInt("ref_utilisateur")) , salleRepo.findById(res.getInt("ref_salle")) , dossierRepo.findById(res.getInt("ref_dossier"))  );
+            RDV rep = new RDV( res.getInt("id"), res.getDate("date").toLocalDate(), res.getTime("heure").toLocalTime(), utilisateurRepo.findById(res.getInt("ref_utilisateur")) , salleRepo.findById(res.getInt("ref_salle")) , dossierRepo.findById(res.getInt("ref_dossier"))  );
             return rep;
         } catch (SQLException e) {
             throw new RuntimeException(e);

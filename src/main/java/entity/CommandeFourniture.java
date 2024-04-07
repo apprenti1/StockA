@@ -1,7 +1,7 @@
 package entity;
 
 public class CommandeFourniture {
-
+//commande gestionnaire de stock qui réalise la commande auprès du fournisseur
     // attribute déclaration
     private int id;
     private boolean valid;

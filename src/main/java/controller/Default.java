@@ -108,7 +108,7 @@ public class Default {
 
                 break;
             case 4: // Admin
-                Main.changeScene("CRUD", new CRUD( Salle.class, utilisateur), "CRUD | salles");
+                Main.changeScene("CRUD", new CRUD( Salles.class, utilisateur), "CRUD | salles");
 
                 break;
         }

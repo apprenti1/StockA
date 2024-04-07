@@ -51,7 +51,13 @@ public class Etudiant {
         return utilisateur;
     }
 
-
+    public String getNom() {
+        if (utilisateur != null) {
+            return utilisateur.getNom();
+        } else {
+            return null;
+        }
+    }
     public void setId(int id) {
         this.id = id;
     }

@@ -1,7 +1,7 @@
 package entity;
 
 public class DemandeFourniture {
-
+//demande fourniture par le professeur
     // attribute déclaration
     private int id;
     private boolean valid;
