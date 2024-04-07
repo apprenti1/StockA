@@ -9,6 +9,7 @@ import javafx.scene.input.MouseEvent;
 
 public class Default {
 
+    @FXML private Button connexion;
     @FXML private Button navElement1;
     @FXML private Button navElement2;
     @FXML private Button navElement3;
@@ -49,6 +50,10 @@ public class Default {
                     navElement3.setVisible(true);
                     break;
             }
+            connexion.setText("Profil");
+        }
+        else {
+            connexion.setText("Connexion");
         }
     }
 
@@ -112,6 +117,15 @@ public class Default {
     @FXML void switchAccueil(MouseEvent event) {
         Main.changeScene("Accueil", new Accueil(utilisateur), "Accueil");
     }
+    @FXML void switchConnexion(ActionEvent event) {
+        if (this.getUtilisateur() == null){
+            Main.changeScene("Connexion", new Connexion(), "Connexion");
+        }
+        else {
+            Main.changeScene("Profil", new Profil(this.getUtilisateur()), ("Profil | " + this.getUtilisateur().getPrenom()));
+        }
+    }
+
     public Utilisateur getUtilisateur() {return utilisateur;}
     public void setUtilisateur(Utilisateur utilisateur) {this.utilisateur = utilisateur;}
 }

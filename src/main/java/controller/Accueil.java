@@ -10,7 +10,6 @@ import javafx.scene.input.MouseEvent;
 
 public class Accueil extends Default{
 
-    @FXML private Button connexion;
     @FXML private Button inscription;
     @FXML private Label role;
     @FXML private Label title;
@@ -23,7 +22,6 @@ public class Accueil extends Default{
         super.initialize();
         if (super.getUtilisateur() != null) {
             title.setText(super.getUtilisateur().getPrenom());
-            connexion.setText("Profil");
             inscription.setText("Déconnexion");
             role.setText(
                     (super.getUtilisateur().getRoles() == 1)?"Professeur": (
@@ -37,14 +35,6 @@ public class Accueil extends Default{
         Main.changeScene("Accueil", new Accueil(null), "Bienvenue dans StockA");
     }
 
-    @FXML void switchConnexion(ActionEvent event) {
-        if (super.getUtilisateur() == null){
-            Main.changeScene("Connexion", new Connexion(), "Connexion");
-        }
-        else {
-            Main.changeScene("Profil", new Profil(super.getUtilisateur()), ("Profil | " + super.getUtilisateur().getPrenom()));
-        }
-    }
 
     @FXML void switchInscription(ActionEvent event) {
         if (super.getUtilisateur() == null){

@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #fff;">
          <effect>
@@ -85,13 +77,8 @@
                   <Pane fx:id="colorType" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: #000000; -fx-border-radius: 10px; -fx-border-width: 25px;" visible="false" />
                </children>
             </VBox>
-            <ToolBar prefHeight="56.0" prefWidth="176.0" style="-fx-background-color: transparent;">
+            <ToolBar prefHeight="56.0" prefWidth="120.0" style="-fx-background-color: transparent;">
               <items>
-                <Button minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#edit" text="📝">
-                     <font>
-                        <Font size="22.0" />
-                     </font>
-                  </Button>
                   <Button fx:id="add" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#switchAddTache" text="➕">
                      <font>
                         <Font size="22.0" />

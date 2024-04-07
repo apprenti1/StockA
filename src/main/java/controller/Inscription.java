@@ -22,7 +22,7 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class Inscription implements Initializable {
+public class Inscription extends Default {
 
     @FXML
     private PasswordField conf;
@@ -49,6 +49,10 @@ public class Inscription implements Initializable {
 
 
     private UtilisateurRepository utilisateurRepository;
+
+    public Inscription(Utilisateur utilisateur) {
+        super(utilisateur);
+    }
 
     @FXML
     void connexion(MouseEvent event) throws SQLException, NoSuchAlgorithmException {
@@ -102,7 +106,6 @@ public class Inscription implements Initializable {
     }
 
 
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         for (String role : choix) {
             MenuItem item = new MenuItem(role);
@@ -120,9 +123,5 @@ public class Inscription implements Initializable {
         utilisateurRepository = new UtilisateurRepository();
     }
 
-    @FXML
-    void switchAccueil(MouseEvent event) {
-
-    }
 
 }

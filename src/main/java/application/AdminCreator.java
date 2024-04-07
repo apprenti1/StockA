@@ -6,7 +6,7 @@ import repo.UtilisateurRepository;
 public class AdminCreator {
     public static void main(String[] args) {
         String nom = "admin";
-        String prenom = "admin";
+        String prenom = "aedmin";
         String email = "a";
         String mdp = "a";
         System.out.println(Security.hash(mdp));
