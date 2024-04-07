@@ -100,7 +100,7 @@ public class CRUD extends Default {
     }
     @FXML void searsh(ActionEvent event) { }
     @FXML void switchAddTache(ActionEvent event) {
-        Main.changeScene("Profil", new Profil(super.getUtilisateur()),"Inscription");
+        Main.changeScene("Profil", new Profil(super.getUtilisateur(), true),"Inscription");
     }
     @FXML void viewTache(MouseEvent event) {
         switch (this.type.getTypeName()){
@@ -110,7 +110,7 @@ public class CRUD extends Default {
                     this.description.setText(((Utilisateur)this.table.getSelectionModel().getSelectedItem()).getEmail());
                 }
                 else {
-                    Main.changeScene("EditProfil",new EditProfil(super.getUtilisateur(),((Utilisateur)this.table.getSelectionModel().getSelectedItem()), false),  "EditProfil");
+                    Main.changeScene("Profil",new Profil(super.getUtilisateur(),((Utilisateur)this.table.getSelectionModel().getSelectedItem())),  "EditProfil");
 
                 }
                 break;

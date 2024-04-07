@@ -122,7 +122,7 @@ public class Default {
             Main.changeScene("Connexion", new Connexion(), "Connexion");
         }
         else {
-            Main.changeScene("Profil", new Profil(this.getUtilisateur()), ("Profil | " + this.getUtilisateur().getPrenom()));
+            Main.changeScene("Profil", new Profil(this.getUtilisateur(), false), ("Profil | " + this.getUtilisateur().getPrenom()));
         }
     }
 

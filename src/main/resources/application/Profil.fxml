@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <VBox alignment="CENTER" fillWidth="false" layoutY="60.0" prefHeight="340.0" prefWidth="300.0">
             <children>
@@ -66,7 +74,7 @@
                   <Font name="Calibri" size="20.0" />
                </font>
             </PasswordField>
-            <Label onMouseClicked="#switchAccueil" prefHeight="24.0" prefWidth="175.0" text="Mot de passe" textFill="#979797">
+            <Label fx:id="lmdp" onMouseClicked="#switchAccueil" prefHeight="24.0" prefWidth="175.0" text="Mot de passe" textFill="#979797">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>
@@ -79,13 +87,13 @@
                   <Font name="Calibri" size="20.0" />
                </font>
             </PasswordField>
-            <Label onMouseClicked="#switchAccueil" prefHeight="24.0" prefWidth="175.0" text="Confirmation" textFill="#979797">
+            <Label fx:id="lconf" onMouseClicked="#switchAccueil" prefHeight="24.0" prefWidth="175.0" text="Confirmation" textFill="#979797">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>
             </Label>
             <Pane prefHeight="23.0" prefWidth="200.0" />
-            <Button onAction="#modification" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="Modifier" textFill="WHITE">
+            <Button fx:id="modif" onAction="#modification" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="Modifier" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
@@ -129,6 +137,14 @@
             </Button>
          </children>
       </Pane>
+      <MenuButton fx:id="roles" layoutX="353.0" layoutY="198.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="196.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 10px 0px 10px;" text="Roles" visible="false">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Professeur" />
+            <MenuItem mnemonicParsing="false" text="Secrétaire" />
+            <MenuItem mnemonicParsing="false" text="Gestionnaire de stock" />
+            <MenuItem mnemonicParsing="false" text="Admin" />
+         </items>
+      </MenuButton>
     </children>
 
 </Pane>
