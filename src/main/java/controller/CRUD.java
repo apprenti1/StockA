@@ -2,16 +2,16 @@ package controller;
 
 import application.Main;
 import entity.*;
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -26,6 +26,9 @@ import repo.FournisseurRepository;
 import repo.FournitureRepository;
 import repo.EtudiantRepository;
 import repo.DemandeFournitureRepository;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 
 
 public class CRUD extends Default {
@@ -74,10 +77,81 @@ public class CRUD extends Default {
                 dossiersData.addAll(dossierRepository.findAll());
                 System.out.println(dossierRepository.findAll().get(0).getDate());
 
-                TableColumn<Salle, String> colonneLibelle = new TableColumn<>("Nom");
+                TableColumn<Dossier, String> colonneDate = new TableColumn<>("Date");
+                colonneDate.setCellValueFactory(cellData -> new SimpleStringProperty(new SimpleDateFormat("yyyy-MM-dd").format(cellData.getValue().getDate())));
+                TableColumn<Dossier, String> colonneFiliere = new TableColumn<>("Filiere");
+                colonneFiliere.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFiliere()));
+                TableColumn<Dossier, String> colonneMotivation = new TableColumn<>("Motivation");
+                colonneMotivation.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMotivation()));
+                TableColumn<Dossier, String> colonneUtilisateur = new TableColumn<>("Utilisateur");
+                colonneUtilisateur.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUtilisateur().getNom()));
+                TableColumn<Dossier, String> colonneEtudiant = new TableColumn<>("Etudiant");
+                colonneEtudiant.setCellValueFactory(cellData ->  {
+                    Etudiant etudiant = cellData.getValue().getEtudiant();
+                    if (etudiant != null) {
+                        return new SimpleStringProperty(etudiant.getNom());
+                    } else {
+                        return new SimpleStringProperty("");
+                    }
+                });
+                table.getColumns().addAll(colonneDate, colonneFiliere, colonneMotivation, colonneUtilisateur, colonneEtudiant);
+                table.setItems(dossiersData);
+                break;
+            case "entity.RDV":
+                RDVRepository rdvRepository = new RDVRepository();
+                ObservableList<RDV> rdvsData = FXCollections.observableArrayList();
+                rdvsData.addAll(rdvRepository.findAll());
+                System.out.println(rdvRepository.findAll().get(0).getDate());
+
+                TableColumn<RDV, String> colonneDates = new TableColumn<>("Date");
+                colonneDates.setCellValueFactory(cellData -> new SimpleStringProperty(new SimpleDateFormat("yyyy-MM-dd").format(cellData.getValue().getDate())));
+                TableColumn<RDV, String> colonneUtilisateures = new TableColumn<>("Utilisateures");
+                colonneUtilisateures.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUtilisateur().toString()));
+                TableColumn<RDV, LocalTime> colonneHeure = new TableColumn<>("Heure");
+                colonneHeure.setCellValueFactory(cellData -> {
+                    LocalTime heure = cellData.getValue().getHeure();
+                    return new SimpleObjectProperty<>(LocalTime.of(3, 0));
+                });
+                colonneHeure.setCellFactory(column -> new TableCell<RDV, LocalTime>() {
+                    @Override
+                    protected void updateItem(LocalTime time, boolean empty) {
+                        super.updateItem(time, empty);
+                        if (empty || time == null) {
+                            setText(null);
+                        } else {
+                            setText(time.toString());
+                        }
+                    }
+                });
+
+                TableColumn<RDV, String> colonneSalle = new TableColumn<>("Salle");
+                colonneSalle.setCellValueFactory(cellData -> {
+                    Salle salle = cellData.getValue().getSalle();
+                    String salleString = salle != null ? salle.toString() : "";
+                    return new SimpleStringProperty(salleString);
+                });
+                TableColumn<RDV, String> colonneDossier = new TableColumn<>("Dossier");
+                colonneDossier.setCellValueFactory(cellData -> {
+                    Dossier dossier = cellData.getValue().getDossier();
+                    String dossierString = dossier != null ? dossier.toString() : "";
+                    return new SimpleStringProperty(dossierString);
+                });
+
+
+                table.getColumns().addAll(colonneDates, colonneHeure, colonneUtilisateures, colonneSalle, colonneDossier);
+                table.setItems(rdvsData);
+                break;
+
+            case "entity.Salle":
+                SalleRepository salleRepository = new SalleRepository();
+                ObservableList<Salle> sallesData = FXCollections.observableArrayList();
+                sallesData.addAll(salleRepository.findAll());
+                System.out.println(salleRepository.findAll().get(0).getLibelle());
+
+                TableColumn<Salle, String> colonneLibelle = new TableColumn<>("Libelle");
                 colonneLibelle.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibelle()));
                 table.getColumns().addAll(colonneLibelle);
-                table.setItems(dossiersData);
+                table.setItems(sallesData);
                 break;
             case "entity.CommandeFourniture":
                 CommandeFournitureRepository commandeFournitureRepository = new CommandeFournitureRepository();
@@ -85,11 +159,29 @@ public class CRUD extends Default {
                 commandeFournituresData.addAll(commandeFournitureRepository.findAll());
                 System.out.println(commandeFournitureRepository.findAll().get(0).getFournisseur().getLibelle());
 
-                TableColumn<Salle, String> colonneFournisseurLibelle = new TableColumn<>("Nom");
-                colonneFournisseurLibelle.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibelle()));
-                table.getColumns().addAll(colonneFournisseurLibelle);
+                TableColumn<CommandeFourniture, Boolean> colonneValid = new TableColumn<>("Valid");
+                colonneValid.setCellValueFactory(cellData -> new SimpleBooleanProperty(cellData.getValue().isValid()));
+                TableColumn<CommandeFourniture, String> colonneRaison = new TableColumn<>("Raison");
+                colonneRaison.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRaison()));
+                TableColumn<CommandeFourniture, Integer> colonneEtat = new TableColumn<>("Etat");
+                colonneEtat.setCellValueFactory(cellData -> {
+                    int etat = cellData.getValue().getEtat();
+                    return Bindings.createObjectBinding(() -> etat);
+                });
+
+                TableColumn<CommandeFourniture, String> colonneUtilisateurs = new TableColumn<>("Utilisateurs");
+                colonneUtilisateurs.setCellValueFactory(cellData -> {
+                    Utilisateur utilisateur = cellData.getValue().getUtilisateur();
+                    String utilisateurString = utilisateur != null ? utilisateur.toString() : "";
+                    return new SimpleStringProperty(utilisateurString);
+                });
+
+                TableColumn<CommandeFourniture, String> colonneFournisseur = new TableColumn<>("Fournisseur");
+                colonneFournisseur.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFournisseur().toString()));
+                table.getColumns().addAll(colonneValid, colonneRaison, colonneEtat, colonneUtilisateurs, colonneFournisseur);
                 table.setItems(commandeFournituresData);
                 break;
+
         }
 
     }
@@ -119,7 +211,7 @@ public class CRUD extends Default {
                     salleRepository.delete(salleASupprimer);
 
                     // Rafraîchir la liste des salles TableView après la suppression
-                    refreshUserList();
+
                 }
                 break;
 
@@ -247,8 +339,14 @@ public class CRUD extends Default {
     }
 
     @FXML void switchAddTache(ActionEvent event) {
-        Main.changeScene("Inscription", new Inscription(),"Inscription");
-    }
+        switch (this.type.getTypeName()){
+            case "entity.Utilisateur" :
+        Main.changeScene("Inscription", new Inscription(getUtilisateur()),"Inscription");
+        break;
+            case "entity.Salle" :
+                Main.changeScene("Salle", new Salles(),"Salle" );
+                break;
+    }}
     @FXML void switchConnexion(ActionEvent event) { }
     @FXML void viewTache(MouseEvent event) {
         switch (this.type.getTypeName()){
