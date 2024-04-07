@@ -1,15 +1,12 @@
 package javamailer;
 
-import entity.UtilisateurConnecte;
 import application.Main;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import controller.PageAdminlog;
 import javafx.scene.input.MouseEvent;
 
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
@@ -30,13 +27,13 @@ public class MdpOublier {
         if (this.Email.getText().equals("")) {
             this.Erreur.setVisible(true);
         } else {
-            Main.changeScene("/application/javamailer/CodeMailer", new CodeMailer(this.Email.getText()));
+            Main.changeScene("javamailer/CodeMailer", new CodeMailer(this.Email.getText()),"codemailer");
         }
     }
 
     @FXML
     void switchAccueil(MouseEvent event) {
-        Main.changeScene("/application/Accueil");
+
 
 
     }

@@ -1,8 +1,9 @@
 package javamailer;
 
-import entity.Utilisateur;
 import application.Main;
-
+import repo.UtilisateurRepository;
+import controller.Connexion;
+import entity.Utilisateur;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -21,7 +22,7 @@ public class Modification {
     }
     MailerLost mailerLost;
     @FXML
-    private MFXPasswordField Mdp;
+    private MFXPasswordField mdp;
 
     @FXML
     private Label Error;
@@ -31,14 +32,14 @@ public class Modification {
 
     @FXML
     void switchAccueil(MouseEvent event) {
-        Main.changeScene("/application/Accueil");
+
 
     }
 
         @FXML
     void modifier(MouseEvent event) throws NoSuchAlgorithmException, SQLException {
-        if(this.Mdp.getText().equals(this.Mdpconfirmer.getText())){
-            String mdp = this.Mdp.getText();
+        if(this.mdp.getText().equals(this.Mdpconfirmer.getText())){
+            String mdp = this.mdp.getText();
             boolean aSpe = false,aMin=false,aMaj=false;
             String min ="azertyuiopqsdfghjklmwxcvbn";
             String max ="AZERTYUIOPQSDFGHJKLMWXCVBN";
@@ -55,15 +56,20 @@ public class Modification {
             }
             if(aSpe && aMaj && aMin){
                 MessageDigest md = MessageDigest.getInstance("SHA1");
-                md.update(this.Mdp.getText().getBytes());
+                md.update(this.mdp.getText().getBytes());
                 byte byteData[] = md.digest();
                 StringBuffer sb = new StringBuffer();
                 for (int i = 0; i < byteData.length; i++) {
                     sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
                 }
-                Utilisateur moncompte = new Utilisateur(sb.toString(),this.email);
-                moncompte.updateMdp(this.Mdp.getText(), this.email);
-                Main.changeScene("/application/Connexion");
+                UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
+                Utilisateur utilisateur = utilisateurRepository.findByEmail(this.email);
+
+                // Mettez à jour le mot de passe de l'utilisateur
+                utilisateur.setMdp(sb.toString());
+                utilisateurRepository.updateMdp(utilisateur);
+
+                Main.changeScene("/application/Connexion", new Connexion(),"connexion");
             }else {
                 this.Error.setVisible(true);
             }

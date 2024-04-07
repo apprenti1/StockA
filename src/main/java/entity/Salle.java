@@ -1,45 +1,32 @@
 package entity;
 
 public class Salle {
+
+    // attribute déclaration
     private int id;
-    private String nom;
+    private String libelle;
 
-    private boolean occupee;
 
-    public Salle(int id, String nom, boolean occupee) {
+    public Salle(int id, String libelle) {
         this.id = id;
-        this.nom = nom;
-        this.occupee = false;
+        this.libelle = libelle;
     }
+
 
     public int getId() {
         return id;
     }
 
+    public String getLibelle() {
+        return libelle;
+    }
+
+
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public boolean getOccupee(){
-        return occupee;
-    }
-    public void SetOccupee(boolean occupee){
-        this.occupee = occupee;
-    }
-    @Override
-    public String toString() {
-        return "Salle{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", occupee=" + occupee +
-                '}';
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
     }
 }

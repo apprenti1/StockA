@@ -9,30 +9,32 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Accueil" >
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #fff;">
          <effect>
             <DropShadow color="#0129701a" radius="5" spread="0.5" />
          </effect>
          <children>
-
-            <Button fx:id="connexion" layoutX="497.0" layoutY="10.0" onAction="#Connexion" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #4154F1;" text="Connexion" textFill="WHITE">
+            <Button fx:id="navElement1" layoutX="190.0" onAction="#navElement1" prefHeight="60.0" prefWidth="98.0" style="-fx-background-color: #0000;" text="nav" textFill="#0e3c8f" visible="false">
                <font>
-                  <Font name="Calibri Bold" size="15.0" />
+                  <Font name="Calibri Bold" size="14.0" />
                </font>
             </Button>
-            <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="20.0" layoutY="16.0" onMouseClicked="#switchAccueil" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/logo.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="63.0" onMouseClicked="#switchAccueil" prefHeight="60.0" prefWidth="144.0" text="Stock@" textFill="#012970">
+            <Button fx:id="navElement2" layoutX="288.0" onAction="#navElement2" prefHeight="60.0" prefWidth="98.0" style="-fx-background-color: #0000;" text="nav" textFill="#0e3c8f" visible="false">
                <font>
-                  <Font name="Calibri Bold" size="25.0" />
+                  <Font name="Calibri Bold" size="14.0" />
                </font>
-            </Label>
-            <Button fx:id="inscription" layoutX="391.0" layoutY="10.0" onAction="#Inscription" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #4154F1;" text="Inscription" textFill="WHITE">
+            </Button>
+
+
+            <Button fx:id="navElement3" layoutX="386.0" onAction="#navElement3" prefHeight="60.0" prefWidth="98.0" style="-fx-background-color: #0000;" text="nav" textFill="#0e3c8f" visible="false">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Button>
+
+            <Button fx:id="connexion" layoutX="497.0" layoutY="10.0" onAction="#switchConnexion" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #4154F1;" text="Connexion" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
@@ -55,19 +57,19 @@
                   <Font name="Calibri Bold" size="30.0" />
                </font>
             </Label>
-            <Label prefHeight="35.0" prefWidth="230.0" text="sur Stock@" textFill="#012970">
+            <Label fx:id="title" prefHeight="35.0" prefWidth="230.0" text="sur Stock@" textFill="#012970">
                <font>
                   <Font name="Calibri Bold" size="30.0" />
                </font>
             </Label>
-            <Label prefHeight="29.0" prefWidth="200.0" text="Gestion scolaire" textFill="#4c4c4c">
+            <Label fx:id="role" prefHeight="29.0" prefWidth="200.0" text="Gestion scolaire" textFill="#4c4c4c">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>
             </Label>
             <Pane prefHeight="50.0" prefWidth="300.0">
                <children>
-                  <Button layoutY="5.0" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="Commencer ici ▶" textFill="WHITE">
+                  <Button fx:id="inscription" layoutY="5.0" onAction="#switchInscription" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="Commencer ici ▶" textFill="WHITE">
                      <font>
                         <Font name="Calibri Bold" size="15.0" />
                      </font>
@@ -76,6 +78,16 @@
             </Pane>
          </children>
       </VBox>
+      <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="14.0" layoutY="16.0" onDragDetected="#switchAccueil" onMouseClicked="#switchAccueil" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@plus/images/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="43.0" onDragDetected="#switchAccueil" onMouseClicked="#switchAccueil" prefHeight="60.0" prefWidth="144.0" text="Stock@" textFill="#012970">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+      </Label>
    </children>
 
 </Pane>

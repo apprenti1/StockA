@@ -1,74 +1,66 @@
 package controller;
-
 import application.Main;
-import io.github.palexdev.materialfx.controls.MFXFilterComboBox;
-import io.github.palexdev.materialfx.controls.MFXPasswordField;
-import io.github.palexdev.materialfx.controls.MFXTextField;
+import application.Env;
+import javafx.scene.control.Label;
 
-import javafx.event.ActionEvent;
+import controller.CRUD;
+import entity.Utilisateur;
+import repo.UtilisateurRepository;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import java.util.Map;
+import java.util.HashMap;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-
-import entity.Utilisateur;
-import bdd.Format;
-
-
 
 public class Inscription implements Initializable {
 
     @FXML
-    private MFXTextField Email;
+    private PasswordField conf;
 
     @FXML
-    private Label Error;
+    private TextField email;
+    @FXML
+    private Label error;
+    @FXML
+    private PasswordField mdp;
 
     @FXML
-    private MFXPasswordField Mdp;
+    private TextField nom;
 
     @FXML
-    private MFXPasswordField Mdpconfirmer;
+    private TextField prenom;
 
     @FXML
-    private MFXTextField Nom;
+    private MenuButton roles;
 
-    @FXML
-    private MFXTextField Prenom;
-
-    @FXML
-    private MFXFilterComboBox<String> Role;
+    private String[] choix = {"Professeur", "Secretaire", "Gestionnaire"};
+    private Map<String, Integer> rolesMapping = new HashMap<>();
 
 
 
-    private String[] choix = {"Professeur","Secretaire","Gestionnaire"};
-
-
-
-    @FXML
-    void switchAccueil(MouseEvent event){Main.changeScene("/application/Accueil");}
-
+    private UtilisateurRepository utilisateurRepository;
 
     @FXML
     void connexion(MouseEvent event) throws SQLException, NoSuchAlgorithmException {
 
         // check si info vide et mdp ok
-        if (this.Mdp.getText().equals(this.Mdpconfirmer.getText()) && (!this.Email.getText().equals("") && !this.Nom.getText().equals("") && !this.Prenom.getText().equals(""))) {
+        if (this.mdp.getText().equals(this.conf.getText()) && (!this.email.getText().equals("") && !this.nom.getText().equals("") && !this.prenom.getText().equals(""))) {
             //vérifier la conformité du mdp
             // -> 10 char
             // -> 1 MAJ
             // -> 1 min
             // -> 1 spé
-            String mdp = this.Mdp.getText();
+            String mdp = this.mdp.getText();
             boolean aSpe = false,aMin=false,aMaj=false;
             String min ="azertyuiopqsdfghjklmwxcvbn";
             String max ="AZERTYUIOPQSDFGHJKLMWXCVBN";
@@ -85,26 +77,52 @@ public class Inscription implements Initializable {
             }
             if(aSpe && aMaj && aMin){
                 MessageDigest md = MessageDigest.getInstance("SHA1");
-                md.update(this.Mdp.getText().getBytes());
+                md.update(this.mdp.getText().getBytes());
                 byte byteData[] = md.digest();
                 StringBuffer sb = new StringBuffer();
                 for (int i = 0; i < byteData.length; i++) {
                     sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
                 }
-                Utilisateur moncompte = new Utilisateur(this.Nom.getText(), this.Prenom.getText(), this.Email.getText(), sb.toString(), this.Role.getText());
-                moncompte.insert();
-                Main.changeScene("/application/Connexion");
-            }else {
-                this.Error.setVisible(true);
+
+                String selectedRole = roles.getText();
+                int selectedRoleId = rolesMapping.get(selectedRole);
+                // Créer un nouvel utilisateur
+                Utilisateur utilisateur = new Utilisateur(0, nom.getText(), prenom.getText(), email.getText(), sb.toString(), selectedRoleId);
+
+                int userId = utilisateurRepository.upload(utilisateur);
+                // Changer de scène vers la page de connexion
+
+            Main.changeScene("CRUD", new CRUD( Utilisateur.class, utilisateur), "crud");
+            } else {
+                this.error.setVisible(true);
             }
         }else{
-            this.Error.setVisible(true);
+            this.error.setVisible(true);
         }
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Role.getItems().addAll(choix);
+        for (String role : choix) {
+            MenuItem item = new MenuItem(role);
+            item.setOnAction(e -> {
+                roles.setText(role);
+                // Lorsque l'utilisateur sélectionne un rôle, récupérez l'ID correspondant
+                int selectedRole = rolesMapping.get(role);
+            });
+            roles.getItems().add(item);
+        }
+        rolesMapping.put("Professeur", 1);
+        rolesMapping.put("Secretaire", 2);
+        rolesMapping.put("Gestionnaire", 3);
+
+        utilisateurRepository = new UtilisateurRepository();
     }
+
+    @FXML
+    void switchAccueil(MouseEvent event) {
+
+    }
+
 }

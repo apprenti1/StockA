@@ -1,19 +1,20 @@
-/*package repo;
+package repo;
 
-import bdd.Env;
+import application.Env;
 import entity.Salle;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class SalleRepository{
 
-    public ArrayList<Salle> FindAll(){
+public class SalleRepository {
+
+    public ArrayList<Salle> findAll(){
         try {
             PreparedStatement req = Env.getBdd().prepareStatement("Select * from Salle");
             ResultSet res = req.executeQuery();
             ArrayList<Salle> list = new ArrayList<Salle>();
             while (res.next()){
-                list.add(new Salle( res.getInt("id"), res.getString("nom"), res.getBoolean("occupee") ));
+                list.add( new Salle( res.getInt("id"), res.getString("libelle") ) );
             }
             return list;
         } catch (SQLException e) {
@@ -21,38 +22,14 @@ public class SalleRepository{
         }
     }
 
-    public boolean Update(Salle entity){
+    public boolean update(Salle entity){
         try {
-            PreparedStatement req = Env.getBdd().prepareStatement("UPDATE Salle set nom = ?, occupee = ? WHERE id = ?;");
-            req.setString(1,entity.getNom());
-            req.setBoolean(2,entity.getOccupee());
-            req.setInt(3,entity.getId());
-            req.executeQuery();
+            PreparedStatement req = Env.getBdd().prepareStatement("UPDATE Salle set libelle = ? WHERE id = ?;");
 
-            return true;
-        } catch (SQLException e) {
-           // return false;
-            throw new RuntimeException(e);
-        }
-    }
+            req.setString(1, entity.getLibelle());
+            req.setInt(2, entity.getId());
+            req.executeUpdate();
 
-    public boolean Delete(Salle entity){
-        try {
-            PreparedStatement req = Env.getBdd().prepareStatement("DELETE FROM Salle WHERE id = ?;");
-            req.setInt(1,entity.getId());
-            req.executeQuery();
-            return true;
-        } catch (SQLException e) {
-           // return false;
-            throw new RuntimeException(e);
-        }
-    }
-
-    public boolean Upload(Salle entity){
-        try {
-            PreparedStatement req = Env.getBdd().prepareStatement("INSERT into Salle(nom, occupee");
-            req.setInt(1,entity.getId());
-            req.executeQuery();
             return true;
         } catch (SQLException e) {
             //return false;
@@ -60,13 +37,39 @@ public class SalleRepository{
         }
     }
 
-    public ArrayList<Salle> FindBy(String filters){
+    public boolean delete(Salle entity){
+        try {
+            PreparedStatement req = Env.getBdd().prepareStatement("DELETE FROM Salle WHERE id = ?;");
+            req.setInt(1,entity.getId());
+            req.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            //return false;
+            throw new RuntimeException(e);
+        }
+    }
+
+    public int upload(Salle entity){
+        try {
+            PreparedStatement req = Env.getBdd().prepareStatement("INSERT into Salle(libelle) VALUES (?)", Statement.RETURN_GENERATED_KEYS);
+            req.setString(1, entity.getLibelle());
+            req.executeUpdate();
+            ResultSet rs = req.getGeneratedKeys();
+            rs.next();
+            return rs.getInt(1);
+        } catch (SQLException e) {
+            //return false;
+            throw new RuntimeException(e);
+        }
+    }
+
+    public ArrayList<Salle> findBy(String filters){
         try {
             PreparedStatement req = Env.getBdd().prepareStatement("Select * from Salle WHERE "+((!filters.isEmpty() && !filters.isBlank())?filters:"1 = 1"));
             ResultSet res = req.executeQuery();
             ArrayList<Salle> list = new ArrayList<Salle>();
             while (res.next()){
-                list.add(new Salle( res.getInt("id"), res.getString("nom"), res.getBoolean("occupee") ));
+                list.add( new Salle( res.getInt("id"), res.getString("libelle") ) );
             }
             return list;
         } catch (SQLException e) {
@@ -74,13 +77,13 @@ public class SalleRepository{
         }
     }
 
-    public Salle FindById(Salle entity){
+    public Salle findById(int id){
         try {
             PreparedStatement req = Env.getBdd().prepareStatement("Select * from Salle WHERE id = ?");
-            req.setInt(1,entity.getId());
+            req.setInt(1, id);
             ResultSet res = req.executeQuery();
             res.next();
-            Salle rep = new Salle( res.getInt("id"), res.getString("nom"), res.getBoolean("occupee") );
+            Salle rep = new Salle( res.getInt("id"), res.getString("libelle") );
             return rep;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -91,5 +94,3 @@ public class SalleRepository{
 
 
 }
-
- */

@@ -1,5 +1,6 @@
 package javamailer;
 import application.Main;
+import controller.Accueil;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,12 +31,12 @@ public class CodeMailer implements Initializable  {
         if(this.Code.getText().equals("") || Integer.parseInt(this.Code.getText())!= mailerLost.getValue()){
             this.Erreur.setVisible(true);
         }else{
-           Main.changeScene("/application/javamailer/Modification", new Modification(this.email));
+           Main.changeScene("javamailer/Modification", new Modification(this.email),"modification");
         }
     }
     @FXML
     void switchAccueil(MouseEvent event) {
-        Main.changeScene("/application/Accueil");
+
 
     }
 

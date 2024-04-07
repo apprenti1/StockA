@@ -1,80 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import io.github.palexdev.materialfx.controls.MFXFilterComboBox?>
-<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
-<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Inscription">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <!-- Labels pour les champs -->
-        <Label layoutX="225.0" layoutY="99.0" text="Nom" textFill="#042326">
-            <font>
-                <Font name="System Bold" size="12.0" />
-            </font>
-        </Label>
-        <Label layoutX="217.0" layoutY="143.0" text="Prenom" textFill="#042326">
-            <font>
-                <Font name="System Bold" size="12.0" />
-            </font>
-        </Label>
-        <Label layoutX="227.0" layoutY="194.0" text="Email" textFill="#042326">
-            <font>
-                <Font name="System Bold" size="12.0" />
-            </font>
-        </Label>
-        <Label layoutX="179.0" layoutY="276.0" text="Mot de passe" textFill="#042326">
-            <font>
-                <Font name="System Bold" size="12.0" />
-            </font>
-        </Label>
-        <Label layoutX="198.0" layoutY="348.0" text="Confirmer" textFill="#042326">
-            <font>
-                <Font name="System Bold" size="12.0" />
-            </font>
-        </Label>
-        <Label layoutX="226.0" layoutY="243.0" text="Role" textFill="#042326">
-            <font>
-                <Font name="System Bold" size="12.0" />
-            </font>
-        </Label>
-        <!-- Champs de texte et combobox -->
-        <MFXTextField fx:id="Nom" layoutX="263.0" layoutY="74.0" prefHeight="35.0" prefWidth="196.0" promptText="Nom" />
-        <MFXTextField fx:id="Prenom" layoutX="264.0" layoutY="127.0" prefHeight="35.0" prefWidth="196.0" promptText="Prénom" />
-        <MFXTextField fx:id="Email" layoutX="264.0" layoutY="178.0" prefHeight="35.0" prefWidth="196.0" promptText="E-mail" />
-        <MFXPasswordField fx:id="Mdp" layoutX="264.0" layoutY="276.0" prefHeight="35.0" prefWidth="196.0" promptText="Mot de passe" />
-        <MFXPasswordField fx:id="Mdpconfirmer" layoutX="264.0" layoutY="332.0" prefHeight="35.0" prefWidth="196.0" promptText="Confirmation" />
-        <MFXFilterComboBox fx:id="Role" layoutX="263.0" layoutY="232.0" prefHeight="26.0" prefWidth="196.0" />
-        <!-- Label d'erreur -->
-        <Label fx:id="Error" layoutX="262.0" layoutY="348.0" text="Erreur recommencer!" textFill="#f21212" visible="false" />
-      <Pane layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #fff;">
-         <effect>
-            <DropShadow color="#0129701a" radius="5" spread="0.5" />
-         </effect>
-         <children>
-            <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="14.0" layoutY="16.0" onMouseClicked="#switchAccueil" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../ToutDouxList-FX-master/src/main/resources/application/images/logo.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="43.0" onDragDetected="#switchAccueil" onMouseClicked="#switchAccueil" prefHeight="60.0" prefWidth="144.0" text="Stock@" textFill="#012970">
-               <font>
-                  <Font name="Calibri Bold" size="25.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Button layoutX="293.0" layoutY="401.0" onMouseClicked="#connexion" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="S'inscrire" textFill="WHITE">
-         <font>
-            <Font name="Calibri Bold" size="15.0" />
-         </font>
-      </Button>
+        <Pane prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #fff;">
+            <effect>
+                <DropShadow color="#0129701a" radius="5" spread="0.5" />
+            </effect>
+            <children>
+                <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="14.0" layoutY="16.0" onMouseClicked="#switchAccueil" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/logo.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="43.0" onMouseClicked="#switchAccueil" prefHeight="60.0" prefWidth="144.0" text="Stocka" textFill="#012970">
+                    <font>
+                        <Font name="Calibri Bold" size="25.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+      <MenuButton fx:id="roles" layoutX="395.0" layoutY="263.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="84.0" text="Roles">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </MenuButton>
+        <VBox alignment="CENTER" fillWidth="false" layoutX="95.0" layoutY="60.0" prefHeight="340.0" prefWidth="300.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="200.0" text="Inscription" textFill="#012970">
+                    <font>
+                        <Font name="Calibri Bold" size="30.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="nom" prefHeight="35.0" prefWidth="196.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 10px 0px 10px;">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <font>
+                        <Font name="Calibri" size="20.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="prenom" prefHeight="35.0" prefWidth="196.0" promptText="Prénom" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 10px 0px 10px;">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <font>
+                        <Font name="Calibri" size="20.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="email" prefHeight="35.0" prefWidth="196.0" promptText="E-mail" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 10px 0px 10px;">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <font>
+                        <Font name="Calibri" size="20.0" />
+                    </font>
+                </TextField>
+                <PasswordField fx:id="mdp" prefHeight="35.0" prefWidth="196.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 10px 0px 10px;">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <font>
+                        <Font name="Calibri" size="20.0" />
+                    </font>
+                </PasswordField>
+                <PasswordField fx:id="conf" prefHeight="35.0" prefWidth="196.0" promptText="Confirmation" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 10px 0px 10px;">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <font>
+                        <Font name="Calibri" size="20.0" />
+                    </font>
+                </PasswordField>
+            <Label fx:id="error" text="Erreur recommencer!" textFill="#f21212" visible="false" />
+                <Pane prefHeight="23.0" prefWidth="200.0" />
+                <Button onMouseClicked="#connexion" prefHeight="40.0" prefWidth="186.0" style="-fx-background-color: #4154F1;" text="S'inscrire" textFill="WHITE">
+                    <font>
+                        <Font name="Calibri Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
     </children>
-</AnchorPane>
+
+</Pane>

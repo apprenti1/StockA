@@ -1,6 +1,6 @@
-/*package repo;
+package repo;
 
-import bdd.Env;
+import application.Env;
 import entity.RDV;
 import java.sql.*;
 import java.util.ArrayList;
@@ -8,17 +8,19 @@ import java.util.ArrayList;
 
 public class RDVRepository {
 
-    public ArrayList<RDV> FindAll(){
+    public ArrayList<RDV> findAll(){
         try {
+        UtilisateurRepository utilisateurRepo = new UtilisateurRepository();
+
+        SalleRepository salleRepo = new SalleRepository();
+
+        DossierRepository dossierRepo = new DossierRepository();
+
             PreparedStatement req = Env.getBdd().prepareStatement("Select * from RDV");
             ResultSet res = req.executeQuery();
             ArrayList<RDV> list = new ArrayList<RDV>();
-            DemandeFournitureProfesseurRepository entityRepo = new DemandeFournitureProfesseurRepository();
-            ProfesseurRepository entityRepo = new ProfesseurRepository();
-            EtudiantRepository entityRepo = new EtudiantRepository();
-            SalleRepository entityRepo = new SalleRepository();
             while (res.next()){
-                list.add(new RDV( res.getInt("id"), res.getDate("date"), demandeFournitureProfesseurRepo.find(res.getInt("demandeFourniture")), profeseurRepo.find(res.getInt(res.getInt("professeur")), etudiantRepo.find(res.getInt(res.getInt("etudiant")), salleRepo.find(res.getInt(res.getInt("salle"))));
+                list.add( new RDV( res.getInt("id"), res.getDate("date"), res.getInt("heure"), utilisateurRepo.findById(res.getInt("ref_utilisateur")) , salleRepo.findById(res.getInt("ref_salle")) , dossierRepo.findById(res.getInt("ref_dossier"))  ) );
             }
             return list;
         } catch (SQLException e) {
@@ -26,22 +28,44 @@ public class RDVRepository {
         }
     }
 
-    public boolean Update(RDV entity){
+    public boolean update(RDV entity){
         try {
-            DemandeFournitureRepository demandeFournitureRepository = new DemandeFournitureRepository();
-            DemandeFournitureRepository.update(entity.getDemandeFourniture());
-            DemandeFournitureRepository demandeFournitureRepository = new DemandeFournitureRepository();
-            DemandeFournitureRepository.update(entity.getProfesseur());
-            DemandeFournitureRepository demandeFournitureRepository = new DemandeFournitureRepository();
-            DemandeFournitureRepository.update(entity.getEtudiant());
-            PreparedStatement req = Env.getBdd().prepareStatement("UPDATE RDV set date = ?, demandeFourniture = ?, professeur = ?, etudiant = ?, salle = ? WHERE id = ?;");
-            req.setDate(1,(entity.getDate()));
-            req.setInt(2,(entity.getDemandeFourniture().getId()));
-            req.setInt(3,(entity.getProfesseur().getId()));
-            req.setInt(4,entity.getEtudiant().getId());
-            req.setInt(4,entity.getSalle().getId());
-            req.setInt(6,entity.getId());
-            req.executeQuery();
+        UtilisateurRepository utilisateurRepo = new UtilisateurRepository();
+
+        SalleRepository salleRepo = new SalleRepository();
+
+        DossierRepository dossierRepo = new DossierRepository();
+
+            if(entity.getUtilisateur().getId() == 0){
+                utilisateurRepo.update( entity.getUtilisateur());
+            }
+            else{
+                entity.getUtilisateur().setId(utilisateurRepo.upload( entity.getUtilisateur()));
+            }
+        
+            if(entity.getSalle().getId() == 0){
+                salleRepo.update( entity.getSalle());
+            }
+            else{
+                entity.getSalle().setId(salleRepo.upload( entity.getSalle()));
+            }
+        
+            if(entity.getDossier().getId() == 0){
+                dossierRepo.update( entity.getDossier());
+            }
+            else{
+                entity.getDossier().setId(dossierRepo.upload( entity.getDossier()));
+            }
+        
+            PreparedStatement req = Env.getBdd().prepareStatement("UPDATE RDV set date = ?,  heure = ?,  ref_utilisateur = ?,  ref_salle = ?,  ref_dossier = ? WHERE id = ?;");
+
+            req.setDate(1, new Date(entity.getDate().getTime()));
+            req.setInt(2, entity.getHeure());
+            req.setInt(3, entity.getUtilisateur().getId());
+            req.setInt(4, entity.getSalle().getId());
+            req.setInt(5, entity.getDossier().getId());
+            req.setInt(6, entity.getId());
+            req.executeUpdate();
 
             return true;
         } catch (SQLException e) {
@@ -50,46 +74,11 @@ public class RDVRepository {
         }
     }
 
-
-
-    public boolean Upload(RDV entity){
-        try {
-            EntityRepository entityRepo = new EntityRepository();
-            entityRepo.upload( entity.getEntity());
-            PreparedStatement req = Env.getBdd().prepareStatement("INSERT into Name(attr1, attr2");
-            req.setInt(1,entity.getId());
-            req.executeQuery();
-            return true;
-        } catch (SQLException e) {
-            return false;
-            throw new RuntimeException(e);
-        }
-    }
-
-    public ArrayList<RDV> FindBy(String filters){
-        try {
-            PreparedStatement req = Env.getBdd().prepareStatement("Select * from Name WHERE "+((!filters.isEmpty() && !filters.isBlank())?filters:"1 = 1"));
-            ResultSet res = req.executeQuery();
-            ArrayList<RDV> list = new ArrayList<RDV>();
-            DemandeFournitureProfesseurRepository entityRepo = new DemandeFournitureProfesseurRepository();
-            ProfesseurRepository entityRepo = new ProfesseurRepository();
-            EtudiantRepository entityRepo = new EtudiantRepository();
-            SalleRepository entityRepo = new SalleRepository();
-            while (res.next()){
-                list.add(new RDV( res.getInt("id"), res.getDate("date"), demandeFournitureProfesseurRepo.find(res.getInt("demandeFourniture")), profeseurRepo.find(res.getInt(res.getInt("professeur")), etudiantRepo.find(res.getInt(res.getInt("etudiant")), salleRepo.find(res.getInt(res.getInt("salle"))));
-            }
-            return list;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-    public boolean Delete(RDV entity){
+    public boolean delete(RDV entity){
         try {
             PreparedStatement req = Env.getBdd().prepareStatement("DELETE FROM RDV WHERE id = ?;");
             req.setInt(1,entity.getId());
-            req.executeQuery();
+            req.executeUpdate();
             return true;
         } catch (SQLException e) {
             //return false;
@@ -97,23 +86,64 @@ public class RDVRepository {
         }
     }
 
-
-    public RDV FindById(RDV entity){
+    public int upload(RDV entity){
         try {
-            PreparedStatement req = Env.getBdd().prepareStatement("Select * from RDV WHERE id = ?");
-            req.setInt(1,entity.getId());
+            PreparedStatement req = Env.getBdd().prepareStatement("INSERT into RDV(date, heure, Utilisateur, Salle, Dossier) VALUES (?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            req.setDate(1, new Date(entity.getDate().getTime()));
+            req.setInt(2, entity.getHeure());
+            req.setInt(3, entity.getUtilisateur().getId());
+            req.setInt(4, entity.getSalle().getId());
+            req.setInt(5, entity.getDossier().getId());
+            req.executeUpdate();
+            ResultSet rs = req.getGeneratedKeys();
+            rs.next();
+            return rs.getInt(1);
+        } catch (SQLException e) {
+            //return false;
+            throw new RuntimeException(e);
+        }
+    }
+
+    public ArrayList<RDV> findBy(String filters){
+        try {
+        UtilisateurRepository utilisateurRepo = new UtilisateurRepository();
+
+        SalleRepository salleRepo = new SalleRepository();
+
+        DossierRepository dossierRepo = new DossierRepository();
+
+            PreparedStatement req = Env.getBdd().prepareStatement("Select * from RDV WHERE "+((!filters.isEmpty() && !filters.isBlank())?filters:"1 = 1"));
             ResultSet res = req.executeQuery();
-            DemandeFournitureProfesseurRepository entityRepo = new DemandeFournitureProfesseurRepository();
-            ProfesseurRepository entityRepo = new ProfesseurRepository();
-            EtudiantRepository entityRepo = new EtudiantRepository();
-            SalleRepository entityRepo = new SalleRepository();
-            res.next();
-            RDV list = (new RDV( res.getInt("id"), res.getDate("date"), demandeFournitureProfesseurRepo.find(res.getInt("demandeFourniture")), profeseurRepo.find(res.getInt(res.getInt("professeur")), etudiantRepo.find(res.getInt(res.getInt("etudiant")), salleRepo.find(res.getInt(res.getInt("salle"))));
+            ArrayList<RDV> list = new ArrayList<RDV>();
+            while (res.next()){
+                list.add( new RDV( res.getInt("id"), res.getDate("date"), res.getInt("heure"), utilisateurRepo.findById(res.getInt("ref_utilisateur")) , salleRepo.findById(res.getInt("ref_salle")) , dossierRepo.findById(res.getInt("ref_dossier"))  ) );
+            }
             return list;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
+    public RDV findById(int id){
+        try {
+        UtilisateurRepository utilisateurRepo = new UtilisateurRepository();
+
+        SalleRepository salleRepo = new SalleRepository();
+
+        DossierRepository dossierRepo = new DossierRepository();
+
+            PreparedStatement req = Env.getBdd().prepareStatement("Select * from RDV WHERE id = ?");
+            req.setInt(1, id);
+            ResultSet res = req.executeQuery();
+            res.next();
+            RDV rep = new RDV( res.getInt("id"), res.getDate("date"), res.getInt("heure"), utilisateurRepo.findById(res.getInt("ref_utilisateur")) , salleRepo.findById(res.getInt("ref_salle")) , dossierRepo.findById(res.getInt("ref_dossier"))  );
+            return rep;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+
 }
-*/

@@ -1,94 +1,74 @@
 package entity;
-import bdd.Env;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Time;
 
 import java.util.Date;
 
 public class RDV {
 
+    // attribute déclaration
     private int id;
     private Date date;
-
-    private DemandeFournitureProfesseur demandeFourniture;
-
-    private Professeur professeur;
-
-    private Etudiant etudiant;
-
+    private int heure;
+    private Utilisateur utilisateur;
     private Salle salle;
+    private Dossier dossier;
 
 
-    public RDV(int id, Date date, DemandeFournitureProfesseur demandeFourniture, Professeur professeur, Etudiant etudiant, Salle salle) {
+    public RDV(int id, Date date, int heure, Utilisateur utilisateur, Salle salle, Dossier dossier) {
         this.id = id;
         this.date = date;
-        this.demandeFourniture = demandeFourniture;
-        this.professeur = professeur;
-        this.etudiant = etudiant;
+        this.heure = heure;
+        this.utilisateur = utilisateur;
         this.salle = salle;
+        this.dossier = dossier;
     }
+
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public int getHeure() {
+        return heure;
     }
 
-    public DemandeFournitureProfesseur getDemandeFourniture() {
-        return demandeFourniture;
-    }
-
-    public void setDemandeFourniture(DemandeFournitureProfesseur demandeFourniture) {
-        this.demandeFourniture = demandeFourniture;
-    }
-
-    public Professeur getProfesseur() {
-        return professeur;
-    }
-
-    public void setProfesseur(Professeur professeur) {
-        this.professeur = professeur;
-    }
-
-    public Etudiant getEtudiant() {
-        return etudiant;
-    }
-
-    public void setEtudiant(Etudiant etudiant) {
-        this.etudiant = etudiant;
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
     }
 
     public Salle getSalle() {
         return salle;
     }
 
+    public Dossier getDossier() {
+        return dossier;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setHeure(int heure) {
+        this.heure = heure;
+    }
+
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+    }
+
     public void setSalle(Salle salle) {
         this.salle = salle;
     }
 
-    @Override
-    public String toString() {
-        return "RDV{" +
-                "id=" + id +
-                ", date=" + date +
-                ", demandeFourniture=" + demandeFourniture +
-                ", professeur=" + professeur +
-                ", etudiant=" + etudiant +
-                ", salle=" + salle +
-                '}';
+    public void setDossier(Dossier dossier) {
+        this.dossier = dossier;
     }
 }
-
