@@ -1,0 +1,201 @@
+----------StockA----------
+    ? Utilisateur
+        .id
+        *nom
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *prenom
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *email
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *mdp
+            - type:     varchar
+            ! length:   12
+            . null:     false
+
+        *roles
+            - type:     int
+            ! length:   1
+            . null:     false
+    .
+    ? Etudiant
+        .id
+        *dernierDiplome
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *tel
+            - type:     varchar
+            ! length:   10
+            . null:     false
+
+        *rue
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *cp
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *ville
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        #ref_utilisateur
+    .
+    ? Dossier
+        .id
+        *date
+            - type:     date
+            ! length:   ...
+            . null:     false
+
+        *filiere
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *motivation
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        #ref_utilisateur
+        #ref_etudiant
+    .
+    ? RDV
+        .id
+        *date
+            - type:     date
+            ! length:   ...
+            . null:     false
+
+        *heure
+            - type:     time
+            ! length:   ...
+            . null:     false
+
+        #ref_utilisateur
+        #ref_salle
+        #ref_dossier
+    .
+    ? Salle
+        .id
+        *libelle
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+    .
+    ? DemandeFourniture
+        .id
+        *valid
+            - type:     boolean
+            ! length:   ...
+            . null:     false
+
+        *raison
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *etat
+            - type:     int
+            ! length:   1
+            . null:     false
+
+        #ref_utilisateur
+    .
+    ? LinkDemmandeFournitureFourniture
+        *quantite
+            - type:     int
+            ! length:   3
+            . null:     false
+
+        #ref_demandeFourniture
+        #ref_fourniture
+    .
+    ? Fourniture
+        .id
+        *description
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *libelle
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *qte_stock
+            - type:     varchar
+            ! length:   5
+            . null:     false
+    .
+    ? LinkFournitureFournisseur
+        *prix
+            - type:     float
+            ! length:   255
+            . null:     false
+
+        #ref_fourniture
+        #ref_fournisseur
+    .
+    ? Fournisseur
+        .id
+        *libelle
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *tel
+            - type:     varchar
+            ! length:   10
+            . null:     false
+
+        *email
+            - type:     varchar
+            ! length:   255
+            . null:     false
+    .
+    ? LinkFournitureCommandeFourniture
+        *quantite
+            - type:     int
+            ! length:   5
+            . null:     false
+
+        #ref_fourniture
+        #ref_commandeFourniture
+    .
+    ? CommandeFourniture
+        .id
+        *valid
+            - type:     boolean
+            ! length:   ...
+            . null:     false
+
+        *raison
+            - type:     varchar
+            ! length:   255
+            . null:     false
+
+        *etat
+            - type:     int
+            ! length:   1
+            . null:     false
+
+        #ref_utilisateur
+        #ref_fournisseur
+----------StockA----------
