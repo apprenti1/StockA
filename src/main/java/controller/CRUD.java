@@ -26,6 +26,9 @@ import repo.FournisseurRepository;
 import repo.FournitureRepository;
 import repo.EtudiantRepository;
 import repo.DemandeFournitureRepository;
+import repo.LinkDemandeFournitureFournitureRepository;
+import repo.LinkFournitureCommandeFournitureRepository;
+import repo.LinkFournitureFournisseurRepository;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
@@ -209,8 +212,8 @@ public class CRUD extends Default {
                     // Appeler la méthode delete de SalleRepository pour supprimer la salle
                    SalleRepository salleRepository = new SalleRepository();
                     salleRepository.delete(salleASupprimer);
+                    refreshSalleList();
 
-                    // Rafraîchir la liste des salles TableView après la suppression
 
                 }
                 break;
@@ -223,9 +226,9 @@ public class CRUD extends Default {
                     // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
                    DossierRepository dossierRepository = new DossierRepository();
                     dossierRepository.delete(dossierASupprimer);
+                    refreshDossierList();
 
-                    // Rafraîchir la liste des utilisateurs dans le TableView après la suppression
-                    refreshUserList();
+
                 }
                 break;
                 case "entity.CommandeFourniture":
@@ -236,9 +239,9 @@ public class CRUD extends Default {
                     // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
                    CommandeFournitureRepository commandeFournitureRepository = new CommandeFournitureRepository();
                     commandeFournitureRepository.delete(commandeFournitureASupprimer);
+                    refreshCommandeFournitureList();
 
-                    // Rafraîchir la liste des utilisateurs dans le TableView après la suppression
-                    refreshUserList();
+
                 }
                 break;
                 case "entity.Fournisseur":
@@ -250,8 +253,8 @@ public class CRUD extends Default {
                    FournisseurRepository fournisseurRepository = new FournisseurRepository();
                     fournisseurRepository.delete(fournisseurASupprimer);
 
-                    // Rafraîchir la liste des utilisateurs dans le TableView après la suppression
-                    refreshUserList();
+                    refreshFournisseurList();
+
                 }
                 break;
                 case "entity.Fourniture":
@@ -263,8 +266,8 @@ public class CRUD extends Default {
                    FournitureRepository fournitureRepository = new FournitureRepository();
                     fournitureRepository.delete(fournitureASupprimer);
 
-                    // Rafraîchir la liste des utilisateurs dans le TableView après la suppression
-                    refreshUserList();
+                    refreshFournitureList();
+
                 }
                 break;
                 case "entity.Etudiant":
@@ -275,9 +278,8 @@ public class CRUD extends Default {
                     // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
                    EtudiantRepository etudiantRepository = new EtudiantRepository();
                     etudiantRepository.delete(etudiantASupprimer);
+                    refreshEtudiantList();
 
-                    // Rafraîchir la liste des utilisateurs dans le TableView après la suppression
-                    refreshUserList();
                 }
                 break;
                 case "entity.DemandeFourniture":
@@ -288,9 +290,9 @@ public class CRUD extends Default {
                     // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
                     DemandeFournitureRepository demandeFournitureRepository = new DemandeFournitureRepository();
                     demandeFournitureRepository.delete(demandeFournitureASupprimer);
+                    refreshDemandeFournitureList();
 
-                    // Rafraîchir la liste des utilisateurs dans le TableView après la suppression
-                    refreshUserList();
+
                 }
                 break;
                 case "entity.RDV":
@@ -301,9 +303,48 @@ public class CRUD extends Default {
                     // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
                     RDVRepository rdvRepository = new RDVRepository();
                     rdvRepository.delete(rdvASupprimer);
+                    refreshRDVList();
 
-                    // Rafraîchir la liste des utilisateurs dans le TableView après la suppression
-                    refreshUserList();
+
+                }
+                break;
+ case "entity.LinkDemandeFournitureFourniture":
+     LinkDemandeFournitureFourniture linkDemandeFournitureFournitureASupprimer = (LinkDemandeFournitureFourniture) table.getSelectionModel().getSelectedItem();
+
+                // Vérifier si un utilisateur est sélectionné
+                if (linkDemandeFournitureFournitureASupprimer != null) {
+                    // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
+                    LinkDemandeFournitureFournitureRepository linkDemandeFournitureFournitureRepository = new LinkDemandeFournitureFournitureRepository();
+                    linkDemandeFournitureFournitureRepository.delete(linkDemandeFournitureFournitureASupprimer);
+
+                    refreshLinkDemandeFournitureFournitureList();
+
+                }
+                break;
+            case "entity.LinkFournitureCommandeFourniture":
+                LinkFournitureCommandeFourniture linkFournitureCommandeFournitureASupprimer = (LinkFournitureCommandeFourniture) table.getSelectionModel().getSelectedItem();
+
+                // Vérifier si un utilisateur est sélectionné
+                if (linkFournitureCommandeFournitureASupprimer != null) {
+                    // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
+                    LinkFournitureCommandeFournitureRepository linkFournitureCommandeFournitureRepository = new LinkFournitureCommandeFournitureRepository();
+                    linkFournitureCommandeFournitureRepository.delete(linkFournitureCommandeFournitureASupprimer);
+
+                    refreshLinkFournitureCommandeFournitureList();
+
+                }
+                break;
+            case "entity.LinkFournitureFournisseur":
+                LinkFournitureFournisseur linkFournitureFournisseurASupprimer = (LinkFournitureFournisseur) table.getSelectionModel().getSelectedItem();
+
+                // Vérifier si un utilisateur est sélectionné
+                if (linkFournitureFournisseurASupprimer != null) {
+                    // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
+                    LinkFournitureFournisseurRepository linkFournitureFournisseurRepository = new LinkFournitureFournisseurRepository();
+                    linkFournitureFournisseurRepository.delete(linkFournitureFournisseurASupprimer);
+
+                    refreshLinkFournitureFournisseurList();
+
                 }
                 break;
 
@@ -336,12 +377,68 @@ public class CRUD extends Default {
         ObservableList<Utilisateur> utilisateursData = FXCollections.observableArrayList();
         utilisateursData.addAll(utilisateurRepository.findAll());
         table.setItems(utilisateursData);
+    } private void refreshSalleList() {
+        SalleRepository salleRepository = new SalleRepository();
+        ObservableList<Salle> sallesData = FXCollections.observableArrayList();
+        sallesData.addAll(salleRepository.findAll());
+        table.setItems(sallesData);
+    } private void refreshRDVList() {
+        RDVRepository rdvRepository = new RDVRepository();
+        ObservableList<RDV> rdvsData = FXCollections.observableArrayList();
+        rdvsData.addAll(rdvRepository.findAll());
+        table.setItems(rdvsData);
+    } private void refreshLinkFournitureFournisseurList() {
+        LinkFournitureFournisseurRepository  linkFournitureFournisseurRepository = new  LinkFournitureFournisseurRepository();
+        ObservableList< LinkFournitureFournisseur>  linkFournitureFournisseursData = FXCollections.observableArrayList();
+        linkFournitureFournisseursData.addAll( linkFournitureFournisseurRepository.findAll());
+        table.setItems( linkFournitureFournisseursData);
+    } private void refreshLinkFournitureCommandeFournitureList() {
+        LinkFournitureCommandeFournitureRepository linkFournitureCommandeFournitureRepository = new LinkFournitureCommandeFournitureRepository();
+        ObservableList<LinkFournitureCommandeFourniture> linkFournitureCommandeFournituresData = FXCollections.observableArrayList();
+        linkFournitureCommandeFournituresData.addAll(linkFournitureCommandeFournitureRepository.findAll());
+        table.setItems(linkFournitureCommandeFournituresData);
+    } private void refreshLinkDemandeFournitureFournitureList() {
+        LinkDemandeFournitureFournitureRepository linkDemandeFournitureFournitureRepository = new LinkDemandeFournitureFournitureRepository();
+        ObservableList<LinkDemandeFournitureFourniture> linkDemandeFournitureFournituresData = FXCollections.observableArrayList();
+        linkDemandeFournitureFournituresData.addAll(linkDemandeFournitureFournitureRepository.findAll());
+        table.setItems(linkDemandeFournitureFournituresData);
+    } private void refreshFournitureList() {
+        FournitureRepository fournitureRepository = new FournitureRepository();
+        ObservableList<Fourniture>fournituresData = FXCollections.observableArrayList();
+        fournituresData.addAll(fournitureRepository.findAll());
+        table.setItems(fournituresData);
+    } private void refreshFournisseurList() {
+        FournisseurRepository fournisseurRepository = new FournisseurRepository();
+        ObservableList<Fournisseur> fournisseursData = FXCollections.observableArrayList();
+        fournisseursData.addAll(fournisseurRepository.findAll());
+        table.setItems(fournisseursData);
+    } private void refreshEtudiantList() {
+        EtudiantRepository etudiantRepository = new EtudiantRepository();
+        ObservableList<Etudiant> etudiantsData = FXCollections.observableArrayList();
+        etudiantsData.addAll(etudiantRepository.findAll());
+        table.setItems(etudiantsData);
+    } private void refreshDossierList() {
+        DossierRepository  dossierRepository = new  DossierRepository();
+        ObservableList<  Dossier>   dossiersData = FXCollections.observableArrayList();
+        dossiersData.addAll(  dossierRepository.findAll());
+        table.setItems( dossiersData);
+    } private void refreshDemandeFournitureList() {
+        DemandeFournitureRepository demandeFournitureRepository = new DemandeFournitureRepository();
+        ObservableList<DemandeFourniture> demandeFournituresData = FXCollections.observableArrayList();
+        demandeFournituresData.addAll(demandeFournitureRepository.findAll());
+        table.setItems(demandeFournituresData);
+    } private void refreshCommandeFournitureList() {
+        CommandeFournitureRepository commandeFournitureRepository = new CommandeFournitureRepository();
+        ObservableList<CommandeFourniture> commandeFournituresData = FXCollections.observableArrayList();
+        commandeFournituresData.addAll(commandeFournitureRepository.findAll());
+        table.setItems(commandeFournituresData);
     }
+
 
     @FXML void switchAddTache(ActionEvent event) {
         switch (this.type.getTypeName()){
             case "entity.Utilisateur" :
-        Main.changeScene("Inscription", new Inscription(getUtilisateur(), true),"Inscription");
+        Main.changeScene("Inscription", new Inscription(getUtilisateur()),"Inscription");
         break;
             case "entity.Salle" :
                 Main.changeScene("Salle", new Salles(),"Salle" );
