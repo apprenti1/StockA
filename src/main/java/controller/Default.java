@@ -16,10 +16,12 @@ public class Default {
     private Utilisateur utilisateur;
     private Salle salle;
 
+    private RDV rdv;
     public Default(Utilisateur utilisateur){
         this.utilisateur = utilisateur;
     }
     public Default(Salle salle){this.salle = salle;}
+    public Default(RDV rdv){this.rdv = rdv;}
 
     public void initialize() {
         System.out.println("|--------------------Chargement interface--------------------|");
@@ -129,6 +131,8 @@ public class Default {
     }
 public Salle getSalle() {return salle;}
     public void setSalle (Salle salle) {this.salle = salle;}
+    public RDV getRdv() {return rdv;}
+    public void setRdv (RDV rdv) {this.rdv = rdv;}
     public Utilisateur getUtilisateur() {return utilisateur;}
     public void setUtilisateur(Utilisateur utilisateur) {this.utilisateur = utilisateur;}
 }

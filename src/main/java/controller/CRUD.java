@@ -450,6 +450,8 @@ public class CRUD extends Default {
             case "entity.Salle" :
                 Main.changeScene("Salles", new Salles(getSalle()), "Salle");
                 break;
+            case "entity.RDV":
+                Main.changeScene("RDV", new RDVs(getRdv()),"RDV");
     }}
     @FXML void switchConnexion(ActionEvent event) { }
     @FXML void viewTache(MouseEvent event) {
