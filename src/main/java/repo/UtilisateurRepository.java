@@ -45,12 +45,15 @@ public class UtilisateurRepository {
     }
 
     public int updateMdp(Utilisateur entity)throws SQLException{
-        Env connexion = new Env();
-        PreparedStatement req = connexion.getBdd().prepareStatement(" UPDATE `utilisateur` set `mdp`=? WHERE `email`=?");
-        req.setString(2, entity.getMdp());
-        req.setString(1, entity.getEmail());
-        System.out.println(req);
-        return req.executeUpdate();
+        try {
+            PreparedStatement req = Env.getBdd().prepareStatement("UPDATE `utilisateur` SET `mdp`=? WHERE `email`=?");
+            req.setString(1, Security.hash(entity.getMdp())); // Mettre à jour le mot de passe avec le nouveau hash
+            req.setString(2, entity.getEmail()); // Pour l'utilisateur avec cet e-mail
+            System.out.println(req);
+            return req.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public Utilisateur findByEmail(String email) {

@@ -69,7 +69,7 @@ public class Modification {
                 utilisateur.setMdp(sb.toString());
                 utilisateurRepository.updateMdp(utilisateur);
 
-                Main.changeScene("/application/Connexion", new Connexion(),"connexion");
+                Main.changeScene("Connexion", new Connexion(),"connexion");
             }else {
                 this.Error.setVisible(true);
             }

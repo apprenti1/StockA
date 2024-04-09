@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="CRUD user">
+    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="add salle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Default.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Default.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Profil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Profil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/Modification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/Modification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repo/UtilisateurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repo/UtilisateurRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/PageAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/PageAdmin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -58,18 +59,17 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "07da505d",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/megan/IdeaProjects/StockA-main",
+    "last_opened_file_path": "C:/Users/megan/IdeaProjects/StockA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "inlay.hints",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -153,8 +153,9 @@
       <workItem from="1707118741442" duration="1895000" />
       <workItem from="1707122196535" duration="2911000" />
       <workItem from="1710144193662" duration="8866000" />
-      <workItem from="1712417273382" duration="919000" />
-      <workItem from="1712483963257" duration="13195000" />
+      <workItem from="1712406452327" duration="1309000" />
+      <workItem from="1712484757986" duration="16041000" />
+      <workItem from="1712654029892" duration="10054000" />
     </task>
     <task id="LOCAL-00001" summary="upl : entity&#10;&#10;creation des entity de la base de donnée">
       <option name="closed" value="true" />
@@ -204,28 +205,42 @@
       <option name="project" value="LOCAL" />
       <updated>1709030701702</updated>
     </task>
-    <task id="LOCAL-00007" summary="generic crud upd &amp; fix &#10;v2 branch">
-      <created>1712484300813</created>
+    <task id="LOCAL-00007" summary="fix modification mdp">
+      <created>1711821546890</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1712484300813</updated>
+      <updated>1711821546890</updated>
     </task>
-    <task id="LOCAL-00008" summary="fix &#10;v2 branch">
-      <created>1712484350688</created>
+    <task id="LOCAL-00008" summary="add fonction delete crud">
+      <created>1712489440401</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1712484350688</updated>
+      <updated>1712489440401</updated>
     </task>
-    <task id="LOCAL-00009" summary="CRUD user">
-      <created>1712487685168</created>
+    <task id="LOCAL-00009" summary="fix crud">
+      <created>1712516727799</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1712487685168</updated>
+      <updated>1712516727799</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix rdv - Localtime and localdate">
+      <created>1712516764135</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712516764135</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add salle">
+      <created>1712516780308</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712516780308</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +257,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -260,11 +275,12 @@
     <MESSAGE value="fix Utilisateur hash password" />
     <MESSAGE value="upd connexion, accueil, profil" />
     <MESSAGE value="set AdminCreator" />
-    <MESSAGE value="generic crud upd &amp; fix" />
-    <MESSAGE value="generic crud upd &amp; fix &#10;v2 branch" />
-    <MESSAGE value="fix &#10;v2 branch" />
-    <MESSAGE value="CRUD user" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD user" />
+    <MESSAGE value="fix modification mdp" />
+    <MESSAGE value="add fonction delete crud" />
+    <MESSAGE value="fix crud" />
+    <MESSAGE value="fix rdv - Localtime and localdate" />
+    <MESSAGE value="add salle" />
+    <option name="LAST_COMMIT_MESSAGE" value="add salle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
