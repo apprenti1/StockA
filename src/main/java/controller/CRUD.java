@@ -32,6 +32,7 @@ import repo.LinkFournitureFournisseurRepository;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
+import java.util.List;
 
 
 public class CRUD extends Default {
@@ -52,6 +53,7 @@ public class CRUD extends Default {
         super(utilisateur);
         this.type = type;
     }
+
 
     public void initialize() {
         super.initialize();
@@ -148,13 +150,18 @@ public class CRUD extends Default {
             case "entity.Salle":
                 SalleRepository salleRepository = new SalleRepository();
                 ObservableList<Salle> sallesData = FXCollections.observableArrayList();
-                sallesData.addAll(salleRepository.findAll());
-                System.out.println(salleRepository.findAll().get(0).getLibelle());
 
-                TableColumn<Salle, String> colonneLibelle = new TableColumn<>("Libelle");
-                colonneLibelle.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibelle()));
-                table.getColumns().addAll(colonneLibelle);
-                table.setItems(sallesData);
+                List<Salle> allSalles = salleRepository.findAll();
+                if (!allSalles.isEmpty()) {
+                    sallesData.addAll(allSalles);
+
+                    TableColumn<Salle, String> colonneLibelle = new TableColumn<>("Libelle");
+                    colonneLibelle.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibelle()));
+                    table.getColumns().addAll(colonneLibelle);
+                    table.setItems(sallesData);
+                } else {
+                    System.out.println("Aucune salle trouvée.");
+                }
                 break;
             case "entity.CommandeFourniture":
                 CommandeFournitureRepository commandeFournitureRepository = new CommandeFournitureRepository();
@@ -438,10 +445,10 @@ public class CRUD extends Default {
     @FXML void switchAddTache(ActionEvent event) {
         switch (this.type.getTypeName()){
             case "entity.Utilisateur" :
-        Main.changeScene("Inscription", new Inscription(getUtilisateur()),"Inscription");
+                Main.changeScene("Inscription", new Inscription(getUtilisateur()),"Inscription");
         break;
             case "entity.Salle" :
-                Main.changeScene("Salle", new Salles(),"Salle" );
+                Main.changeScene("Salles", new Salles(getSalle()), "Salle");
                 break;
     }}
     @FXML void switchConnexion(ActionEvent event) { }
@@ -457,6 +464,7 @@ public class CRUD extends Default {
 
                 }
                 break;
+
         }
     }
 

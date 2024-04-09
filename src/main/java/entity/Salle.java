@@ -1,11 +1,18 @@
 package entity;
 
+import controller.Default;
+
 public class Salle {
 
     // attribute déclaration
     private int id;
     private String libelle;
 
+
+    public Salle( String libelle) {
+
+        this.libelle = libelle;
+    }
 
     public Salle(int id, String libelle) {
         this.id = id;

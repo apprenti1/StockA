@@ -14,49 +14,51 @@ public class Default {
     @FXML private Button navElement2;
     @FXML private Button navElement3;
     private Utilisateur utilisateur;
+    private Salle salle;
 
     public Default(Utilisateur utilisateur){
         this.utilisateur = utilisateur;
     }
+    public Default(Salle salle){this.salle = salle;}
 
     public void initialize() {
         System.out.println("|--------------------Chargement interface--------------------|");
-        if (utilisateur != null) {
-            switch (utilisateur.getRoles()) {
-                case 1: // Professeur
-                    navElement3.setText("commander");
-                    navElement3.setVisible(true);
-                    break;
-                case 2: // Secrétaire
-                    navElement1.setText("dossiers");
-                    navElement1.setVisible(true);
-                    navElement2.setText("etudiants");
-                    navElement2.setVisible(true);
-                    navElement3.setText("commander");
-                    navElement3.setVisible(true);
-                    break;
-                case 3: // Gestionnaire de stock
-                    navElement1.setText("stock");
-                    navElement1.setVisible(true);
-                    navElement2.setText("demandes");
-                    navElement2.setVisible(true);
-                    navElement3.setText("commander");
-                    navElement3.setVisible(true);
-                    break;
-                case 4: // Admin
-                    navElement2.setText("Gestion utilisateur");
-                    navElement2.setVisible(true);
-                    navElement3.setText("Gestion Salle");
-                    navElement3.setVisible(true);
-                    break;
+        if (connexion != null) {
+            if (utilisateur != null) {
+                switch (utilisateur.getRoles()) {
+                    case 1: // Professeur
+                        navElement3.setText("commander");
+                        navElement3.setVisible(true);
+                        break;
+                    case 2: // Secrétaire
+                        navElement1.setText("dossiers");
+                        navElement1.setVisible(true);
+                        navElement2.setText("etudiants");
+                        navElement2.setVisible(true);
+                        navElement3.setText("commander");
+                        navElement3.setVisible(true);
+                        break;
+                    case 3: // Gestionnaire de stock
+                        navElement1.setText("stock");
+                        navElement1.setVisible(true);
+                        navElement2.setText("demandes");
+                        navElement2.setVisible(true);
+                        navElement3.setText("commander");
+                        navElement3.setVisible(true);
+                        break;
+                    case 4: // Admin
+                        navElement2.setText("Gestion utilisateur");
+                        navElement2.setVisible(true);
+                        navElement3.setText("Gestion Salle");
+                        navElement3.setVisible(true);
+                        break;
+                }
+                connexion.setText("Profil");
+            } else {
+                connexion.setText("Connexion");
             }
-            connexion.setText("Profil");
-        }
-        else {
-            connexion.setText("Connexion");
         }
     }
-
     @FXML void navElement1(ActionEvent event) {
         switch (utilisateur.getRoles()) {
             case 1: // Professeur
@@ -108,7 +110,7 @@ public class Default {
 
                 break;
             case 4: // Admin
-                Main.changeScene("CRUD", new CRUD( Salles.class, utilisateur), "CRUD | salles");
+                Main.changeScene("CRUD", new CRUD( Salle.class, utilisateur), "CRUD | salles");
 
                 break;
         }
@@ -125,7 +127,8 @@ public class Default {
             Main.changeScene("Profil", new Profil(this.getUtilisateur(), false), ("Profil | " + this.getUtilisateur().getPrenom()));
         }
     }
-
+public Salle getSalle() {return salle;}
+    public void setSalle (Salle salle) {this.salle = salle;}
     public Utilisateur getUtilisateur() {return utilisateur;}
     public void setUtilisateur(Utilisateur utilisateur) {this.utilisateur = utilisateur;}
 }

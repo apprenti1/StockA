@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="add salle">
+    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="add delete - refresh">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/Modification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/Modification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repo/UtilisateurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repo/UtilisateurRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Connexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Connexion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Default.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Default.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Inscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Inscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Salles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Salles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Salle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Salle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Inscription.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Inscription.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application/PageAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/PageAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Salles.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Salles.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +160,7 @@
       <workItem from="1710144193662" duration="8866000" />
       <workItem from="1712406452327" duration="1309000" />
       <workItem from="1712484757986" duration="16041000" />
-      <workItem from="1712654029892" duration="10054000" />
+      <workItem from="1712654029892" duration="26806000" />
     </task>
     <task id="LOCAL-00001" summary="upl : entity&#10;&#10;creation des entity de la base de donnée">
       <option name="closed" value="true" />
@@ -240,7 +245,21 @@
       <option name="project" value="LOCAL" />
       <updated>1712516780308</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix modification mdp">
+      <created>1712669667975</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712669667975</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add delete - refresh">
+      <created>1712669698491</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1712669698491</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,12 +294,13 @@
     <MESSAGE value="fix Utilisateur hash password" />
     <MESSAGE value="upd connexion, accueil, profil" />
     <MESSAGE value="set AdminCreator" />
-    <MESSAGE value="fix modification mdp" />
     <MESSAGE value="add fonction delete crud" />
     <MESSAGE value="fix crud" />
     <MESSAGE value="fix rdv - Localtime and localdate" />
     <MESSAGE value="add salle" />
-    <option name="LAST_COMMIT_MESSAGE" value="add salle" />
+    <MESSAGE value="fix modification mdp" />
+    <MESSAGE value="add delete - refresh" />
+    <option name="LAST_COMMIT_MESSAGE" value="add delete - refresh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
