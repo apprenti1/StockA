@@ -4,30 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="add rdv3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Dossiers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Fournisseurs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Fournitures.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application/Dossiers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="fix connexion + add dossier, fournisseur+ fourniture">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CommandeFournitures.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/CommandeFourniture.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Default.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Default.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EditProfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EditProfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Inscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Inscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Profil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Profil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RDVs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RDVs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Dossier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Dossier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Etudiant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/RDV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/RDV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Salle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Salle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/MdpOublier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/MdpOublier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Connexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Connexion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/EditProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/EditProfil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Inscription.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Inscription.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/PageAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/PageAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/RDV.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/RDV.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -83,7 +65,7 @@
     "git-widget-placeholder": "07da505d",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/megan/IdeaProjects/StockA- main",
+    "last_opened_file_path": "C:/Users/megan/IdeaProjects/JAVA-LPRS-master enzo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -179,7 +161,7 @@
       <workItem from="1712762685008" duration="573000" />
       <workItem from="1712853312390" duration="3479000" />
       <workItem from="1712873382130" duration="2611000" />
-      <workItem from="1713100548539" duration="9889000" />
+      <workItem from="1713100548539" duration="12935000" />
     </task>
     <task id="LOCAL-00001" summary="upl : entity&#10;&#10;creation des entity de la base de donnée">
       <option name="closed" value="true" />
@@ -299,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712689372460</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix connexion + add dossier, fournisseur+ fourniture">
+      <created>1713110653302</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1713110653302</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +337,8 @@
     <MESSAGE value="add salle delete and create" />
     <MESSAGE value="fix connexion" />
     <MESSAGE value="add rdv" />
-    <option name="LAST_COMMIT_MESSAGE" value="add rdv" />
+    <MESSAGE value="fix connexion + add dossier, fournisseur+ fourniture" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix connexion + add dossier, fournisseur+ fourniture" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

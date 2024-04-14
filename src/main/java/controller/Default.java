@@ -20,6 +20,7 @@ public class Default {
     private Dossier dossier;
     private Fournisseur fournisseur;
     private Fourniture fourniture;
+    private CommandeFourniture commandeFourniture;
 
 
     public Default(Utilisateur utilisateur){
@@ -28,6 +29,7 @@ public class Default {
     public Default(Salle salle){this.salle = salle;}
     public Default(RDV rdv){this.rdv = rdv;}
     public Default(Fourniture fourniture){this.fourniture = fourniture;}
+    public Default(CommandeFourniture commandeFourniture){this.commandeFourniture = commandeFourniture;}
     public Default(Dossier dossier){this.dossier = dossier;}
     public Default(Fournisseur fournisseur){this.fournisseur = fournisseur;}
 
@@ -37,21 +39,25 @@ public class Default {
             if (utilisateur != null) {
                 switch (utilisateur.getRoles()) {
                     case 1: // Professeur
+                        navElement1.setText("Dossier");
+                        navElement1.setVisible(true);
+                        navElement2.setText("Rendez vous");
+                        navElement2.setVisible(true);
                         navElement3.setText("commander");
                         navElement3.setVisible(true);
                         break;
                     case 2: // Secrétaire
-                        navElement1.setText("dossiers");
+                        navElement1.setText("Dossier");
                         navElement1.setVisible(true);
-                        navElement2.setText("etudiants");
+                        navElement2.setText("Etudiant");
                         navElement2.setVisible(true);
                         navElement3.setText("commander");
                         navElement3.setVisible(true);
                         break;
                     case 3: // Gestionnaire de stock
-                        navElement1.setText("stock");
+                        navElement1.setText("Achat");
                         navElement1.setVisible(true);
-                        navElement2.setText("demandes");
+                        navElement2.setText("Fourniture");
                         navElement2.setVisible(true);
                         navElement3.setText("commander");
                         navElement3.setVisible(true);
@@ -142,6 +148,8 @@ public Dossier getDossier() {return dossier;}
     public void setDossier (Dossier dossier) {this.dossier = dossier;}
     public Fourniture getFourniture() {return fourniture;}
     public void setFourniture (Fourniture fourniture) {this.fourniture = fourniture;}
+    public CommandeFourniture getCommandeFourniture() {return commandeFourniture;}
+    public void setCommandeFourniture (CommandeFourniture commandeFourniture) {this.commandeFourniture = commandeFourniture;}
      public Fournisseur getFournisseur() {return fournisseur;}
     public void setFournisseur (Fournisseur fournisseur) {this.fournisseur = fournisseur;}
 

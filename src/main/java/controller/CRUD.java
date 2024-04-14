@@ -459,8 +459,12 @@ public class CRUD extends Default {
             case "entity.Fourniture":
                 Main.changeScene("Fournitures", new Fournitures(getFourniture()),"Fourniture");
                  break;
-            case "entity.Fournisseurs":
+            case "entity.Fournisseur":
                 Main.changeScene("Fournisseurs", new Fournisseurs(getFournisseur()),"Fournisseur");
+
+ break;
+            case "entity.CommandeFourniture":
+                Main.changeScene("CommandeFourniture", new CommandeFournitures(getCommandeFourniture()),"CommandeFourniture");
 
 
     }}
