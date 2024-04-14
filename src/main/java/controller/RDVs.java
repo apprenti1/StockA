@@ -1,16 +1,20 @@
 package controller;
 import application.Main;
 import entity.Salle;
+import entity.Dossier;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.input.MouseEvent;
 import repo.RDVRepository;
-import entity.RDV;
 import repo.SalleRepository;
+import repo.DossierRepository;
+import entity.RDV;
 
 public class RDVs extends Default {
     private RDVRepository rdvRepository;
+    private SalleRepository salleRepository;
+    private DossierRepository dossierRepository;
 
     @FXML
     private DatePicker date;
@@ -20,6 +24,8 @@ public class RDVs extends Default {
 
     @FXML
     private ComboBox<?> salle;
+    @FXML
+    private ComboBox<?> creneau;
 
     public RDVs(RDV rdv) {
         super(rdv);

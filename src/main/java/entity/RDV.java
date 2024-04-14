@@ -1,5 +1,6 @@
 package entity;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
@@ -22,6 +23,9 @@ public class RDV {
         this.utilisateur = utilisateur;
         this.salle = salle;
         this.dossier = dossier;
+    }
+
+    public RDV(DayOfWeek jour, Salle.Creneau creneau) {
     }
 
 

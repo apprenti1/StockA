@@ -1,6 +1,7 @@
 package javamailer;
 
 import application.Main;
+import controller.Accueil;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,6 +34,7 @@ public class MdpOublier {
 
     @FXML
     void switchAccueil(MouseEvent event) {
+        Main.changeScene("Accueil", new Accueil(null), "Bienvenue sur StockA !!!");
 
 
 

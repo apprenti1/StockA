@@ -1,4 +1,5 @@
 package controller;
+import io.github.palexdev.materialfx.controls.MFXPasswordField;
 
 import application.Main;
 import entity.Utilisateur;
@@ -23,7 +24,8 @@ import java.util.Map;
 public class Inscription extends Default implements Initializable {
 
     @FXML
-    private PasswordField conf;
+    private MFXPasswordField conf;
+
 
     @FXML
     private TextField email;
@@ -32,7 +34,8 @@ public class Inscription extends Default implements Initializable {
     private Label error;
 
     @FXML
-    private PasswordField mdp;
+    private MFXPasswordField mdp;
+
 
     @FXML
     private TextField nom;
@@ -42,6 +45,20 @@ public class Inscription extends Default implements Initializable {
 
     @FXML
     private MenuButton roles;
+    @FXML
+    private Label lmdp;
+
+    @FXML
+    private Label lmdp1;
+
+    @FXML
+    private Label lmdp11;
+
+    @FXML
+    private Label lmdp2;
+
+    @FXML
+    private Label lmdp21;
 
     private UtilisateurRepository utilisateurRepository;
 
@@ -105,7 +122,7 @@ public class Inscription extends Default implements Initializable {
                         roleValue = 3;
                         break;
                     default:
-                        roleValue = 0; // Or any other default value you want
+                        roleValue = 0;
                 }
 
                 Utilisateur utilisateur = new Utilisateur(0, nom.getText(), prenom.getText(), email.getText(), sb.toString(), roleValue);

@@ -59,9 +59,13 @@
                                     <Pane layoutX="-34.0" layoutY="1.0" prefHeight="20.0" prefWidth="200.0" />
                                  </children>
                               </Pane>
+
+
                               <ComboBox fx:id="fiche" prefWidth="150.0" promptText="Fiche etudiant" />
                               <Pane prefHeight="20.0" prefWidth="200.0" />
-                              <DatePicker fx:id="date" />
+                              <DatePicker fx:id="date"  promptText="Date du Rendez-vous" />
+                              <Pane prefHeight="30.0" prefWidth="200.0" />
+                              <ComboBox fx:id="creneau" prefWidth="150.0" promptText="Créneau Horaire" />
                               <Pane layoutX="60.0" layoutY="193.0" prefHeight="20.0" prefWidth="200.0" />
                               <Button onMouseClicked="#valider" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="valider" textFill="WHITE">
                                  <font>

@@ -22,6 +22,10 @@ public class Dossier {
         this.etudiant = etudiant;
     }
 
+    public Dossier() {
+
+    }
+
 
     public int getId() {
         return id;

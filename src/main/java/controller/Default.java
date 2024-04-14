@@ -17,11 +17,19 @@ public class Default {
     private Salle salle;
 
     private RDV rdv;
+    private Dossier dossier;
+    private Fournisseur fournisseur;
+    private Fourniture fourniture;
+
+
     public Default(Utilisateur utilisateur){
         this.utilisateur = utilisateur;
     }
     public Default(Salle salle){this.salle = salle;}
     public Default(RDV rdv){this.rdv = rdv;}
+    public Default(Fourniture fourniture){this.fourniture = fourniture;}
+    public Default(Dossier dossier){this.dossier = dossier;}
+    public Default(Fournisseur fournisseur){this.fournisseur = fournisseur;}
 
     public void initialize() {
         System.out.println("|--------------------Chargement interface--------------------|");
@@ -56,8 +64,7 @@ public class Default {
                         break;
                 }
                 connexion.setText("Profil");
-            } else {
-                connexion.setText("Connexion");
+       ;
             }
         }
     }
@@ -131,6 +138,13 @@ public class Default {
     }
 public Salle getSalle() {return salle;}
     public void setSalle (Salle salle) {this.salle = salle;}
+public Dossier getDossier() {return dossier;}
+    public void setDossier (Dossier dossier) {this.dossier = dossier;}
+    public Fourniture getFourniture() {return fourniture;}
+    public void setFourniture (Fourniture fourniture) {this.fourniture = fourniture;}
+     public Fournisseur getFournisseur() {return fournisseur;}
+    public void setFournisseur (Fournisseur fournisseur) {this.fournisseur = fournisseur;}
+
     public RDV getRdv() {return rdv;}
     public void setRdv (RDV rdv) {this.rdv = rdv;}
     public Utilisateur getUtilisateur() {return utilisateur;}

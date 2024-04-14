@@ -30,6 +30,7 @@ import repo.LinkDemandeFournitureFournitureRepository;
 import repo.LinkFournitureCommandeFournitureRepository;
 import repo.LinkFournitureFournisseurRepository;
 
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.List;
@@ -442,7 +443,7 @@ public class CRUD extends Default {
     }
 
 
-    @FXML void switchAddTache(ActionEvent event) {
+    @FXML void switchAddTache(ActionEvent event) throws SQLException {
         switch (this.type.getTypeName()){
             case "entity.Utilisateur" :
                 Main.changeScene("Inscription", new Inscription(getUtilisateur()),"Inscription");
@@ -452,8 +453,25 @@ public class CRUD extends Default {
                 break;
             case "entity.RDV":
                 Main.changeScene("RDV", new RDVs(getRdv()),"RDV");
+                 case "entity.Dossier" :
+                Main.changeScene("Dossiers", new Dossiers(getDossier()), "Dossier");
+                break;
+            case "entity.Fourniture":
+                Main.changeScene("Fournitures", new Fournitures(getFourniture()),"Fourniture");
+                 break;
+            case "entity.Fournisseurs":
+                Main.changeScene("Fournisseurs", new Fournisseurs(getFournisseur()),"Fournisseur");
+
+
     }}
-    @FXML void switchConnexion(ActionEvent event) { }
+
+    @FXML
+    void switchAccueil(MouseEvent event) { Main.changeScene("Accueil", new Accueil(super.getUtilisateur()), "Bienvenue sur StockA !!!");
+
+
+    }
+    @FXML void switchConnexion(ActionEvent event) {        Main.changeScene("Accueil", new Accueil(null), "Bienvenue sur StockA !!!");
+    }
     @FXML void viewTache(MouseEvent event) {
         switch (this.type.getTypeName()){
             case "entity.Utilisateur" :

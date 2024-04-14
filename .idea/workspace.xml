@@ -4,17 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="add delete - refresh">
+    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="add rdv3">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Dossiers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Fournisseurs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Fournitures.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/Dossiers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Connexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Connexion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Default.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Default.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EditProfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EditProfil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Inscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Inscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Salles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Salles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Profil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Profil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RDVs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RDVs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Dossier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Dossier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Etudiant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/RDV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/RDV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Salle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Salle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/MdpOublier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javamailer/MdpOublier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Connexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Connexion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/EditProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/EditProfil.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application/Inscription.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Inscription.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application/PageAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/PageAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Salles.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Salles.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/RDV.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/RDV.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -39,9 +52,11 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="v2" />
+        <entry key="$PROJECT_DIR$/StockA" value="ajoutVersion1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -68,7 +83,7 @@
     "git-widget-placeholder": "07da505d",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/megan/IdeaProjects/StockA",
+    "last_opened_file_path": "C:/Users/megan/IdeaProjects/StockA- main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -160,7 +175,11 @@
       <workItem from="1710144193662" duration="8866000" />
       <workItem from="1712406452327" duration="1309000" />
       <workItem from="1712484757986" duration="16041000" />
-      <workItem from="1712654029892" duration="26806000" />
+      <workItem from="1712654029892" duration="32111000" />
+      <workItem from="1712762685008" duration="573000" />
+      <workItem from="1712853312390" duration="3479000" />
+      <workItem from="1712873382130" duration="2611000" />
+      <workItem from="1713100548539" duration="9889000" />
     </task>
     <task id="LOCAL-00001" summary="upl : entity&#10;&#10;creation des entity de la base de donnée">
       <option name="closed" value="true" />
@@ -259,7 +278,28 @@
       <option name="project" value="LOCAL" />
       <updated>1712669698491</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add salle delete and create">
+      <created>1712687595520</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1712687595520</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix connexion">
+      <created>1712687628507</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1712687628507</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add rdv">
+      <created>1712689372460</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1712689372460</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,12 +311,17 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/ajoutVersion1" />
                       </list>
                     </value>
                   </entry>
@@ -300,7 +345,10 @@
     <MESSAGE value="add salle" />
     <MESSAGE value="fix modification mdp" />
     <MESSAGE value="add delete - refresh" />
-    <option name="LAST_COMMIT_MESSAGE" value="add delete - refresh" />
+    <MESSAGE value="add salle delete and create" />
+    <MESSAGE value="fix connexion" />
+    <MESSAGE value="add rdv" />
+    <option name="LAST_COMMIT_MESSAGE" value="add rdv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -309,6 +357,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/application/AdminCreator.java</url>
           <line>16</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/security/Security.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

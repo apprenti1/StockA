@@ -1,5 +1,11 @@
 package entity;
 
+import application.Env;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Etudiant {
 
     // attribute déclaration
@@ -12,6 +18,12 @@ public class Etudiant {
     private Utilisateur utilisateur;
 
 
+    public Etudiant(){}
+    public ResultSet select()throws SQLException {
+        Env connexion = new Env();
+        PreparedStatement requete = connexion.getBdd().prepareStatement("SELECT * FROM `etudiant`");
+        return requete.executeQuery();
+    }
     public Etudiant(int id, String dernierDiplome, String tel, String rue, String cp, String ville, Utilisateur utilisateur) {
         this.id = id;
         this.dernierDiplome = dernierDiplome;

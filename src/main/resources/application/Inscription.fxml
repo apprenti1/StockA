@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -91,31 +91,44 @@
                         <Font name="Calibri" size="20.0" />
                     </font>
                 </TextField>
-                <PasswordField fx:id="mdp" prefHeight="42.0" prefWidth="254.0" promptText="mdp 12 caracteres avec A1§" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 10px 0px 10px;">
-                    <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                    </cursor>
-                    <font>
-                        <Font name="Calibri" size="20.0" />
-                    </font>
-                </PasswordField>
-                <PasswordField fx:id="conf" prefHeight="35.0" prefWidth="196.0" promptText="Confirmation" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 10px 0px 10px;">
-                    <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                    </cursor>
-                    <font>
-                        <Font name="Calibri" size="20.0" />
-                    </font>
-                </PasswordField>
+            <Pane layoutX="48.0" layoutY="222.0" prefHeight="60.0" prefWidth="223.0" />
+            <MFXPasswordField fx:id="mdp" prefHeight="29.0" prefWidth="131.0" />
+            <Label fx:id="lmdp" onMouseClicked="#switchAccueil" prefHeight="30.0" prefWidth="354.0" text="Mot de passe de 12 caracteres avec au" textFill="#979797" wrapText="true">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lmdp1" layoutX="10.0" layoutY="224.0" onMouseClicked="#switchAccueil" prefHeight="22.0" prefWidth="371.0" text="moins un chiffre, une majuscule et " textFill="#979797">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lmdp11" layoutX="10.0" layoutY="244.0" onMouseClicked="#switchAccueil" prefHeight="22.0" prefWidth="371.0" text="un caractère spécial" textFill="#979797">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Label>
+            <Pane layoutX="60.0" layoutY="350.0" prefHeight="60.0" prefWidth="223.0" />
+            <MFXPasswordField fx:id="conf" prefHeight="29.0" prefWidth="131.0" />
             <Label fx:id="error" prefHeight="80.0" prefWidth="300.0" text="Erreur le mot de passe doit avoir 12 caracteres avec au moins un chiffre, un caractere special et une majuscule!" textFill="#f21212" visible="false" />
-                <Button onMouseClicked="#connexion" prefHeight="40.0" prefWidth="186.0" style="-fx-background-color: #4154F1;" text="S'inscrire" textFill="WHITE">
-                    <font>
-                        <Font name="Calibri Bold" size="15.0" />
-                    </font>
-                </Button>
                 <Pane prefHeight="23.0" prefWidth="200.0" />
             </children>
         </VBox>
+      <Label fx:id="lmdp2" layoutX="7.0" layoutY="233.0" onMouseClicked="#switchAccueil" prefHeight="24.0" prefWidth="128.0" text="Mot de passe" textFill="#979797">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lmdp21" layoutX="7.0" layoutY="333.0" onMouseClicked="#switchAccueil" prefHeight="24.0" prefWidth="128.0" text="Confirmation" textFill="#979797">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Label>
+          <Button layoutX="386.0" layoutY="325.0" onMouseClicked="#connexion" prefHeight="40.0" prefWidth="186.0" style="-fx-background-color: #4154F1;" text="Inscrire" textFill="WHITE">
+              <font>
+                  <Font name="Calibri Bold" size="15.0" />
+              </font>
+          </Button>
     </children>
 
 </Pane>
