@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="fix connexion + add dossier, fournisseur+ fourniture">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CommandeFournitures.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application/CommandeFourniture.fxml" afterDir="false" />
+    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="add commande fourniture+ fix crud">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/DemandeFourniture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/FicheEtudiant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/DemandeFourniture.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/FicheEtudiant.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Default.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Default.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +66,7 @@
     "git-widget-placeholder": "07da505d",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/megan/IdeaProjects/JAVA-LPRS-master enzo",
+    "last_opened_file_path": "C:/Users/megan/IdeaProjects/StockA- main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -161,7 +162,8 @@
       <workItem from="1712762685008" duration="573000" />
       <workItem from="1712853312390" duration="3479000" />
       <workItem from="1712873382130" duration="2611000" />
-      <workItem from="1713100548539" duration="12935000" />
+      <workItem from="1713100548539" duration="13581000" />
+      <workItem from="1713208006858" duration="2960000" />
     </task>
     <task id="LOCAL-00001" summary="upl : entity&#10;&#10;creation des entity de la base de donnée">
       <option name="closed" value="true" />
@@ -288,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713110653302</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add commande fourniture+ fix crud">
+      <created>1713113585013</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1713113585013</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,7 +347,8 @@
     <MESSAGE value="fix connexion" />
     <MESSAGE value="add rdv" />
     <MESSAGE value="fix connexion + add dossier, fournisseur+ fourniture" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix connexion + add dossier, fournisseur+ fourniture" />
+    <MESSAGE value="add commande fourniture+ fix crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="add commande fourniture+ fix crud" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
