@@ -28,12 +28,15 @@ public class Salles extends Default {
 
     @FXML
     void Deconnexion(MouseEvent event) {
+        Main.changeScene("Accueil", new Accueil(null), "Bienvenue sur StockA !!!");
 
     }
 
     @FXML
     void switchAccueil(MouseEvent event) {
-       }
+        Main.changeScene("Accueil", new Accueil(super.getUtilisateur()), "Bienvenue sur StockA !!!");
+
+    }
 
 
     @FXML

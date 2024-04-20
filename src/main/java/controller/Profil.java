@@ -1,5 +1,7 @@
 package controller;
 
+
+import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import application.Main;
 import entity.Utilisateur;
 import javafx.event.ActionEvent;
@@ -11,10 +13,12 @@ import repo.UtilisateurRepository;
 
 public class Profil extends Default {
 
-    @FXML private PasswordField conf;
+    @FXML
+    private MFXPasswordField conf;
     @FXML private TextField email;
     @FXML private Text erreur;
-    @FXML private PasswordField mdp;
+    @FXML
+    private MFXPasswordField mdp;
     @FXML private TextField nom;
     @FXML private TextField prenom;
     //@FXML private ComboBox<Integer[]> role;
@@ -33,7 +37,7 @@ public class Profil extends Default {
     * 3 cas possible
     * modification de compte utilisateur par l'utilisateur    --> isRegistration == false && isAdminModif == false
     * modification de compte utilisateur par l'administrateur --> isRegistration == false && isAdminModif == true
-    * création     de compte utilisateur par l'administrateur --> isRegistration == true  && isAdminModif == false
+    * création de compte utilisateur par l'administrateur --> isRegistration == true  && isAdminModif == false
     * */
     public Profil(Utilisateur utilisateur, boolean isRegistration) {
         super(utilisateur);

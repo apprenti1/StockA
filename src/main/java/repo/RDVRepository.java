@@ -3,6 +3,7 @@ package repo;
 import application.Env;
 import entity.RDV;
 import java.sql.*;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 
@@ -70,6 +71,22 @@ public class RDVRepository {
             return true;
         } catch (SQLException e) {
             //return false;
+            throw new RuntimeException(e);
+        }
+    }
+    public int upload(RDV entity, LocalTime heure) {
+        try {
+            PreparedStatement req = Env.getBdd().prepareStatement("INSERT into RDV(date, heure, Utilisateur, Salle, Dossier) VALUES (?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            req.setDate(1, Date.valueOf(entity.getDate()));
+            req.setTime(2, Time.valueOf(heure)); // Utilisation de l'heure spécifiée
+            req.setInt(3, entity.getUtilisateur().getId());
+            req.setInt(4, entity.getSalle().getId());
+            req.setInt(5, entity.getDossier().getId());
+            req.executeUpdate();
+            ResultSet rs = req.getGeneratedKeys();
+            rs.next();
+            return rs.getInt(1);
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

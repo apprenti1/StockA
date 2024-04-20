@@ -13,119 +13,27 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.effect.DropShadow?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-        <Pane prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #fff;">
-            <effect>
-                <DropShadow color="#0129701a" radius="5" spread="0.5" />
-            </effect>
-            <children>
-        <AnchorPane layoutX="200.0" layoutY="50.0" maxWidth="880.0" minHeight="0.0" minWidth="0.0">
-            <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#add8e6" height="700.0" stroke="BLACK" strokeType="INSIDE" width="900.0">
-                    <effect>
-                        <GaussianBlur />
-                    </effect>
-                </Rectangle>
-                <VBox layoutX="-10.0" prefHeight="700.0" prefWidth="900.0">
-                    <children>
-                        <Label fx:id="nomEleve" alignment="CENTER" prefHeight="50.0" prefWidth="900.0" text="Bienvenue Admin" textAlignment="RIGHT">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                            <VBox.margin>
-                                <Insets top="25.0" />
-                            </VBox.margin>
-                        </Label>
-                        <VBox fx:id="VboxAttente" layoutX="10.0" />
-                        <VBox fx:id="VboxConfirme" layoutX="10.0" layoutY="263.0" />
-                        <VBox fx:id="VboxArchive" layoutX="10.0" layoutY="314.0" />
-                        <TextField fx:id="inputNom" prefHeight="50.0" prefWidth="934.0" promptText="Nom">
-                            <VBox.margin>
-                                <Insets left="150.0" right="150.0" top="80.0" />
-                            </VBox.margin>
-                            <font>
-                                <Font name="System Italic" size="24.0" />
-                            </font>
-                        </TextField>
-                        <TextField fx:id="inputPrenom" prefHeight="50.0" prefWidth="930.0" promptText="Prenom">
-                            <VBox.margin>
-                                <Insets left="150.0" right="150.0" top="20.0" />
-                            </VBox.margin>
-                            <font>
-                                <Font name="System Italic" size="24.0" />
-                            </font>
-                        </TextField>
-                        <TextField fx:id="inputEmail" prefHeight="50.0" prefWidth="612.0" promptText="Email">
-                            <VBox.margin>
-                                <Insets left="150.0" right="150.0" top="20.0" />
-                            </VBox.margin>
-                            <font>
-                                <Font name="System Italic" size="24.0" />
-                            </font>
-                        </TextField>
-                        <TextField fx:id="inputTel" prefHeight="50.0" prefWidth="900.0" promptText="Tel">
-                            <VBox.margin>
-                                <Insets left="150.0" right="150.0" top="20.0" />
-                            </VBox.margin>
-                            <font>
-                                <Font name="System Italic" size="24.0" />
-                            </font>
-                        </TextField>
-                        <TextField fx:id="inputAdresse" prefHeight="50.0" prefWidth="900.0" promptText="Adresse">
-                            <VBox.margin>
-                                <Insets left="150.0" right="150.0" top="20.0" />
-                            </VBox.margin>
-                            <font>
-                                <Font name="System Italic" size="24.0" />
-                            </font>
-                        </TextField>
-                        <TextField fx:id="inputMotdepasse" prefHeight="50.0" prefWidth="502.0" promptText="Mot de passe">
-                            <VBox.margin>
-                                <Insets left="150.0" right="150.0" top="20.0" />
-                            </VBox.margin>
-                            <font>
-                                <Font name="System Italic" size="24.0" />
-                            </font>
-                        </TextField>
-                        <HBox prefHeight="50.0" prefWidth="200.0">
-                            <children>
-                                <Button mnemonicParsing="false" onAction="#creerProf" prefHeight="50.0" prefWidth="350.0" text="Créer professeur">
-                                    <font>
-                                        <Font size="24.0" />
-                                    </font>
-                                    <HBox.margin>
-                                        <Insets left="70.0" />
-                                    </HBox.margin>
-                                </Button>
-                                <Button mnemonicParsing="false" onAction="#creerSecretaire" prefHeight="50.0" prefWidth="350.0" text="Créer  Secrétaire">
-                                    <font>
-                                        <Font size="24.0" />
-                                    </font>
-                                    <HBox.margin>
-                                        <Insets left="60.0" />
-                                    </HBox.margin>
-                                </Button>
-                                <Button mnemonicParsing="false" onAction="#creerGestionnaire" prefHeight="50.0" prefWidth="350.0" text="Créer GestionnaireStock">
-                                    <font>
-                                        <Font size="24.0" />
-                                    </font>
-                                    <HBox.margin>
-                                        <Insets left="50.0" />
-                                    </HBox.margin>
-                                </Button>
-                            </children>
-                            <VBox.margin>
-                                <Insets top="20.0" />
-                            </VBox.margin>
-                        </HBox>
-                    </children>
-                </VBox>
-            </children>
-        </AnchorPane>
-    </children>
-        </Pane>
-    </children>
+<?import javafx.scene.control.DatePicker?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+    <!-- UI components for Secretary -->
+    <VBox alignment="CENTER" spacing="10">
+        <Label text="Enregistrer un nouvel étudiant" style="-fx-font-size: 16px;"/>
+        <TextField promptText="Nom"/>
+        <TextField promptText="Prénom"/>
+        <TextField promptText="Dernier diplôme"/>
+        <TextField promptText="Email"/>
+        <TextField promptText="Téléphone"/>
+        <TextField promptText="Adresse"/>
+        <Label text="Dossier d'inscription" style="-fx-font-size: 16px;"/>
+        <DatePicker promptText="Date"/>
+        <TextField promptText="Heure"/>
+        <TextField promptText="Filière"/>
+        <TextField promptText="Motivation"/>
+
+        <Label text="Gestionnaire de fiches" style="-fx-font-size: 16px;"/>
+        <Label text="Géré par: Secrétaire XYZ"/>
+
+        <Button text="Enregistrer" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+    </VBox>
+
 </Pane>
-
-

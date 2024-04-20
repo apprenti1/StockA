@@ -30,6 +30,7 @@ import repo.LinkDemandeFournitureFournitureRepository;
 import repo.LinkFournitureCommandeFournitureRepository;
 import repo.LinkFournitureFournisseurRepository;
 
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.List;
@@ -191,7 +192,187 @@ public class CRUD extends Default {
                 table.getColumns().addAll(colonneValid, colonneRaison, colonneEtat, colonneUtilisateurs, colonneFournisseur);
                 table.setItems(commandeFournituresData);
                 break;
+            case "entity.Etudiant":
+                EtudiantRepository etudiantRepository = new EtudiantRepository();
+                ObservableList<Etudiant> etudiantsData = FXCollections.observableArrayList();
+                etudiantsData.addAll(etudiantRepository.findAll());
+                System.out.println(etudiantRepository.findAll().get(0).getNom());
 
+                TableColumn<Etudiant, String> colonnedernierDiplome = new TableColumn<>("dernierDiplome");
+                colonnedernierDiplome.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDernierDiplome()));;
+                TableColumn<Etudiant, String> colonneTel = new TableColumn<>("Telephone");
+                colonneTel.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTel()));
+                TableColumn<Etudiant, String> colonneRue = new TableColumn<>("Rue");
+                colonneRue.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRue()));
+                TableColumn<Etudiant, String> colonneCp = new TableColumn<>("Cp");
+                colonneCp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCp()));
+                TableColumn<Etudiant, String> colonneVille = new TableColumn<>("Ville");
+                colonneVille.setCellValueFactory(cellData ->  new SimpleStringProperty(cellData.getValue().getVille()));
+                TableColumn<Etudiant, String> colonneUtilisateure = new TableColumn<>("Utilisateur");
+                colonneUtilisateure.setCellValueFactory(cellData -> {
+                    Utilisateur utilisateur = cellData.getValue().getUtilisateur();
+                    String utilisateurString = utilisateur != null ? utilisateur.toString() : "";
+                    return new SimpleStringProperty(utilisateurString);
+                });
+                table.getColumns().addAll(colonnedernierDiplome, colonneTel, colonneRue, colonneCp, colonneVille, colonneUtilisateure);
+                table.setItems(etudiantsData);
+                break;
+
+            case "entity.DemandeFourniture":
+                DemandeFournitureRepository demandeFournitureRepository = new DemandeFournitureRepository();
+                ObservableList<DemandeFourniture> demandeFournituresData = FXCollections.observableArrayList();
+                demandeFournituresData.addAll(demandeFournitureRepository.findAll());
+                System.out.println(demandeFournitureRepository.findAll().get(0).getId());
+
+                TableColumn<DemandeFourniture, Boolean> colonneValide = new TableColumn<>("Valid");
+                colonneValide.setCellValueFactory(cellData -> new SimpleBooleanProperty(cellData.getValue().isValid()));
+                TableColumn<DemandeFourniture, String> colonneRaisons = new TableColumn<>("Raison");
+                colonneRaisons.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRaison()));
+                TableColumn<DemandeFourniture, Integer> colonneEtats = new TableColumn<>("Etat");
+                colonneEtats.setCellValueFactory(cellData -> {
+                    int etat = cellData.getValue().getEtat();
+                    return Bindings.createObjectBinding(() -> etat);
+                });
+
+                TableColumn<DemandeFourniture, String> colonneUtilisateurss= new TableColumn<>("Utilisateurs");
+                colonneUtilisateurss.setCellValueFactory(cellData -> {
+                    Utilisateur utilisateur = cellData.getValue().getUtilisateur();
+                    String utilisateurString = utilisateur != null ? utilisateur.toString() : "";
+                    return new SimpleStringProperty(utilisateurString);
+                });
+
+
+                table.getColumns().addAll(colonneValide, colonneRaisons, colonneEtats, colonneUtilisateurss);
+                table.setItems(demandeFournituresData);
+                break;
+
+            case "entity.Fournisseur":
+                FournisseurRepository fournisseurRepository = new FournisseurRepository();
+                ObservableList<Fournisseur> fournisseursData = FXCollections.observableArrayList();
+                fournisseursData.addAll(fournisseurRepository.findAll());
+                System.out.println(fournisseurRepository.findAll().get(0).getLibelle());
+
+                TableColumn<Fournisseur, String> colonneLibelles = new TableColumn<>("Libelle");
+                colonneLibelles.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibelle()));;
+                TableColumn<Fournisseur, String> colonneTelephone = new TableColumn<>("Telephone");
+                colonneTelephone.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTel()));
+                TableColumn<Fournisseur, String> colonneMail = new TableColumn<>("Email");
+                colonneMail.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmail()));
+
+
+                table.getColumns().addAll(colonneLibelles, colonneTelephone, colonneMail);
+                table.setItems(fournisseursData);
+                break;
+
+            case "entity.Fourniture":
+                FournitureRepository fournitureRepository = new FournitureRepository();
+                ObservableList<Fourniture> fournituresData = FXCollections.observableArrayList();
+                fournituresData.addAll(fournitureRepository.findAll());
+                System.out.println(fournitureRepository.findAll().get(0).getLibelle());
+
+                TableColumn<Fourniture, String> colonneDescriptions = new TableColumn<>("Description");
+                colonneDescriptions.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDescription()));;
+                TableColumn<Fourniture, String> colonneLibelle = new TableColumn<>("Libelle");
+                colonneLibelle.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibelle()));
+                TableColumn<Fourniture, Integer> colonneQteStock = new TableColumn<>("Quantité de stock");
+                colonneQteStock.setCellValueFactory(cellData ->
+                {
+                    int qteStock = cellData.getValue().getQteStock();
+                    return Bindings.createObjectBinding(() -> qteStock);
+                });
+
+                table.getColumns().addAll(colonneLibelle, colonneDescriptions, colonneQteStock);
+                table.setItems(fournituresData);
+                break;
+            case "entity.LinkDemandeFournitureFourniture":
+                LinkDemandeFournitureFournitureRepository linkDemandeFournitureFournitureRepository = new LinkDemandeFournitureFournitureRepository();
+                ObservableList<LinkDemandeFournitureFourniture> linkDemandeFournitureFournituresData = FXCollections.observableArrayList();
+                linkDemandeFournitureFournituresData.addAll(linkDemandeFournitureFournitureRepository.findAll());
+                System.out.println(linkDemandeFournitureFournitureRepository.findAll().get(0).getId());
+
+                TableColumn<DemandeFourniture, Integer> colonneQuantite = new TableColumn<>("Quantite");
+                colonneQuantite.setCellValueFactory(cellData -> {
+                    int quantite = cellData.getValue().getEtat();
+                    return Bindings.createObjectBinding(() -> quantite);
+                });
+
+                TableColumn<LinkDemandeFournitureFourniture, String> colonneDemandeFourniture= new TableColumn<>("Demande Fourniture");
+                colonneDemandeFourniture.setCellValueFactory(cellData -> {
+                    DemandeFourniture demandeFourniture = cellData.getValue().getDemandeFourniture();
+                    String demandeFournitureString = demandeFourniture != null ? demandeFourniture.toString() : "";
+                    return new SimpleStringProperty(demandeFournitureString);
+                });
+                TableColumn<LinkDemandeFournitureFourniture, String> colonneFourniture= new TableColumn<>(" Fourniture");
+                colonneFourniture.setCellValueFactory(cellData -> {
+                    Fourniture fourniture = cellData.getValue().getFourniture();
+                    String fournitureString = fourniture != null ? fourniture.toString() : "";
+                    return new SimpleStringProperty(fournitureString);
+                });
+
+
+                table.getColumns().addAll(colonneDemandeFourniture, colonneFourniture, colonneQuantite);
+                table.setItems(linkDemandeFournitureFournituresData);
+                break;
+
+            case "entity.LinkFournitureCommandeFourniture":
+                LinkFournitureCommandeFournitureRepository linkFournitureCommandeFournitureRepository = new LinkFournitureCommandeFournitureRepository();
+                ObservableList<LinkFournitureCommandeFourniture> linkFournitureCommandeFournituresData = FXCollections.observableArrayList();
+                linkFournitureCommandeFournituresData.addAll(linkFournitureCommandeFournitureRepository.findAll());
+                System.out.println(linkFournitureCommandeFournitureRepository.findAll().get(0).getId());
+
+                TableColumn<LinkFournitureCommandeFourniture, Integer> colonneQuantites = new TableColumn<>("Quantite");
+                colonneQuantites.setCellValueFactory(cellData -> {
+                    int quantite = cellData.getValue().getQuantite();
+                    return Bindings.createObjectBinding(() -> quantite);
+                });
+
+                TableColumn<LinkFournitureCommandeFourniture, String> colonneFournitures= new TableColumn<>("Fourniture");
+                colonneFournitures.setCellValueFactory(cellData -> {
+                    Fourniture fourniture = cellData.getValue().getFourniture();
+                    String fournitureString = fourniture != null ? fourniture.toString() : "";
+                    return new SimpleStringProperty(fournitureString);
+                });
+                TableColumn<LinkFournitureCommandeFourniture, String> colonneCommandeFourniture= new TableColumn<>(" Commande Fourniture");
+                colonneCommandeFourniture.setCellValueFactory(cellData -> {
+                    CommandeFourniture commandeFourniture = cellData.getValue().getCommandeFourniture();
+                    String commandeFournitureString = commandeFourniture != null ? commandeFourniture.toString() : "";
+                    return new SimpleStringProperty(commandeFournitureString);
+                });
+
+
+                table.getColumns().addAll(colonneFournitures, colonneCommandeFourniture, colonneQuantites);
+                table.setItems(linkFournitureCommandeFournituresData);
+                break;
+
+            case "entity.LinkFournitureFournisseur":
+                LinkFournitureFournisseurRepository linkFournitureFournisseurRepository = new LinkFournitureFournisseurRepository();
+                ObservableList<LinkFournitureFournisseur> linkFournitureFournisseursData = FXCollections.observableArrayList();
+                linkFournitureFournisseursData.addAll(linkFournitureFournisseurRepository.findAll());
+                System.out.println(linkFournitureFournisseurRepository.findAll().get(0).getId());
+
+                TableColumn<LinkFournitureFournisseur, Double> colonnePrix = new TableColumn<>("Prix");
+                colonnePrix.setCellValueFactory(cellData -> {
+                    double prix = cellData.getValue().getPrix();
+                    return Bindings.createObjectBinding(() -> prix);
+                });
+
+                TableColumn<LinkFournitureFournisseur, String> colonneFournituress= new TableColumn<>("Fourniture");
+                colonneFournituress.setCellValueFactory(cellData -> {
+                    Fourniture fourniture = cellData.getValue().getFourniture();
+                    String fournitureString = fourniture != null ? fourniture.toString() : "";
+                    return new SimpleStringProperty(fournitureString);
+                });
+                TableColumn<LinkFournitureFournisseur, String> colonneFournisseurs= new TableColumn<>(" Fournisseur");
+                colonneFournisseurs.setCellValueFactory(cellData -> {
+                    Fournisseur fournisseur = cellData.getValue().getFournisseur();
+                    String fournisseurString = fournisseur != null ? fournisseur.toString() : "";
+                    return new SimpleStringProperty(fournisseurString);
+                });
+
+
+                table.getColumns().addAll(colonneFournisseurs, colonneFournituress, colonnePrix);
+                table.setItems(linkFournitureFournisseursData);
+                break;
         }
 
     }
@@ -228,9 +409,9 @@ public class CRUD extends Default {
                 case "entity.Dossier":
                 Dossier dossierASupprimer = (Dossier) table.getSelectionModel().getSelectedItem();
 
-                // Vérifier si un utilisateur est sélectionné
+                // Vérifier si un dossier est sélectionné
                 if (dossierASupprimer != null) {
-                    // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
+                    // Appeler la méthode delete de DossierRepository pour supprimer l'utilisateur
                    DossierRepository dossierRepository = new DossierRepository();
                     dossierRepository.delete(dossierASupprimer);
                     refreshDossierList();
@@ -241,9 +422,9 @@ public class CRUD extends Default {
                 case "entity.CommandeFourniture":
                 CommandeFourniture commandeFournitureASupprimer = (CommandeFourniture) table.getSelectionModel().getSelectedItem();
 
-                // Vérifier si un utilisateur est sélectionné
+                // Vérifier si un commandefourniture  est sélectionné
                 if (commandeFournitureASupprimer != null) {
-                    // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
+                    // Appeler la méthode delete de CommandeFournitureRepository pour supprimer l'utilisateur
                    CommandeFournitureRepository commandeFournitureRepository = new CommandeFournitureRepository();
                     commandeFournitureRepository.delete(commandeFournitureASupprimer);
                     refreshCommandeFournitureList();
@@ -254,9 +435,9 @@ public class CRUD extends Default {
                 case "entity.Fournisseur":
                 Fournisseur fournisseurASupprimer = (Fournisseur) table.getSelectionModel().getSelectedItem();
 
-                // Vérifier si un utilisateur est sélectionné
+                // Vérifier si un fournisseur est sélectionné
                 if (fournisseurASupprimer != null) {
-                    // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
+                    // Appeler la méthode delete de FournisseurRepository pour supprimer l'utilisateur
                    FournisseurRepository fournisseurRepository = new FournisseurRepository();
                     fournisseurRepository.delete(fournisseurASupprimer);
 
@@ -267,9 +448,9 @@ public class CRUD extends Default {
                 case "entity.Fourniture":
                 Fourniture fournitureASupprimer = (Fourniture) table.getSelectionModel().getSelectedItem();
 
-                // Vérifier si un utilisateur est sélectionné
+                // Vérifier si un Fourniture est sélectionné
                 if (fournitureASupprimer != null) {
-                    // Appeler la méthode delete de UtilisateurRepository pour supprimer l'utilisateur
+                    // Appeler la méthode delete de FournitureRepository pour supprimer l'utilisateur
                    FournitureRepository fournitureRepository = new FournitureRepository();
                     fournitureRepository.delete(fournitureASupprimer);
 
@@ -286,7 +467,6 @@ public class CRUD extends Default {
                    EtudiantRepository etudiantRepository = new EtudiantRepository();
                     etudiantRepository.delete(etudiantASupprimer);
                     refreshEtudiantList();
-
                 }
                 break;
                 case "entity.DemandeFourniture":
@@ -442,7 +622,7 @@ public class CRUD extends Default {
     }
 
 
-    @FXML void switchAddTache(ActionEvent event) {
+    @FXML void switchAddTache(ActionEvent event) throws SQLException {
         switch (this.type.getTypeName()){
             case "entity.Utilisateur" :
                 Main.changeScene("Inscription", new Inscription(getUtilisateur()),"Inscription");
@@ -450,8 +630,31 @@ public class CRUD extends Default {
             case "entity.Salle" :
                 Main.changeScene("Salles", new Salles(getSalle()), "Salle");
                 break;
+            case "entity.RDV":
+                Main.changeScene("RDV", new RDVs(getRdv()),"RDV");
+                 case "entity.Dossier" :
+                Main.changeScene("Dossiers", new Dossiers(getDossier()), "Dossier");
+                break;
+            case "entity.Fourniture":
+                Main.changeScene("Fournitures", new Fournitures(getFourniture()),"Fourniture");
+                 break;
+            case "entity.Fournisseur":
+                Main.changeScene("Fournisseurs", new Fournisseurs(getFournisseur()),"Fournisseur");
+
+ break;
+            case "entity.CommandeFourniture":
+                Main.changeScene("CommandeFourniture", new CommandeFournitures(getCommandeFourniture()),"CommandeFourniture");
+
+
     }}
-    @FXML void switchConnexion(ActionEvent event) { }
+
+    @FXML
+    void switchAccueil(MouseEvent event) { Main.changeScene("Accueil", new Accueil(super.getUtilisateur()), "Bienvenue sur StockA !!!");
+
+
+    }
+    @FXML void switchConnexion(ActionEvent event) {        Main.changeScene("Accueil", new Accueil(null), "Bienvenue sur StockA !!!");
+    }
     @FXML void viewTache(MouseEvent event) {
         switch (this.type.getTypeName()){
             case "entity.Utilisateur" :

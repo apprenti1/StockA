@@ -1,5 +1,6 @@
 package controller;
 
+import application.Main;
 import entity.Utilisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -93,7 +94,11 @@ public class EditProfil extends Default {
 
     @FXML
     void switchConnexion(ActionEvent event) {
+        Main.changeScene("Accueil", new Accueil(null), "Bienvenue sur StockA !!!");
+    }
 
+    @FXML void switchAccueil(MouseEvent event) {
+        Main.changeScene("Accueil", new Accueil(super.getUtilisateur()), "Bienvenue sur StockA !!!");
     }
 
     @FXML

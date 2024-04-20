@@ -1,5 +1,6 @@
 package controller;
 
+
 import application.Main;
 import entity.Utilisateur;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
@@ -20,12 +21,13 @@ import java.sql.SQLException;
 
 public class Connexion extends Default{
 
+
     @FXML private TextField email;
     @FXML private Text erreur;
     @FXML private MFXPasswordField mdp;
 
     public Connexion() {
-        super(null);
+        super((Utilisateur) null);
     }
 
     public void initialize() {

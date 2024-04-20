@@ -1,8 +1,10 @@
 package entity;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RDV {
 
@@ -24,7 +26,25 @@ public class RDV {
         this.dossier = dossier;
     }
 
+    public RDV(DayOfWeek jour, Salle.Creneau creneau) {
+    }
 
+    public RDV(LocalDate date, LocalTime heureDebut, Object heure, Object utilisateur, Object salle, Object dossier) {
+    }
+
+    public static List<RDV> genererCreneaux(LocalDate date) {
+        List<RDV> creneaux = new ArrayList<>();
+
+        LocalTime heureDebut = LocalTime.of(8, 0); // 8h
+        LocalTime heureFin = LocalTime.of(16, 0); // 16h
+
+        while (heureDebut.isBefore(heureFin)) {
+            creneaux.add(new RDV(date, heureDebut, null, null, null, null));
+            heureDebut = heureDebut.plusHours(1); // Ajoute une heure
+        }
+
+        return creneaux;
+    }
     public int getId() {
         return id;
     }
