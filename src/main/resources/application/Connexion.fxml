@@ -34,69 +34,72 @@
             </children>
         </Pane>
         <VBox alignment="CENTER_LEFT" layoutY="60.0" prefHeight="340.0" prefWidth="300.0" style="-fx-padding: 0px 0px 0px 48px 0px;">
-         <children>
-            <Text fx:id="erreur" fill="#940000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="220.0">
-               <font>
-                  <Font name="Calibri Bold" size="21.0" />
-               </font>
-            </Text>
-            <Label prefHeight="30.0" prefWidth="200.0" textFill="#012970">
-               <font>
-                  <Font name="Calibri Bold" size="30.0" />
-               </font>
-            </Label>
-            <Label prefHeight="22.0" prefWidth="221.0" text="Pour une première connexion" textFill="#4c4c4c">
-               <font>
-                  <Font name="Calibri" size="18.0" />
-               </font>
-            </Label>
-            <Label prefHeight="32.0" prefWidth="218.0" style="-fx-padding: 0px 0px 10px 0px;" text="Faites mot de passe oublié" textFill="#4c4c4c">
-               <font>
-                  <Font name="Calibri" size="18.0" />
-               </font>
-            </Label>
-            <Pane prefHeight="50.0" prefWidth="300.0">
-               <children>
-                  <Button layoutY="5.0" onAction="#backswitch" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="Retour" textFill="WHITE">
-                     <font>
-                        <Font name="Calibri Bold" size="15.0" />
-                     </font>
-                  </Button>
-               </children>
-            </Pane>
-            <Pane prefHeight="21.0" prefWidth="200.0" />
-         </children>
+            <children>
+                <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/hero-img-connect.png" />
+                    </image>
+                </ImageView>
+                <Text fx:id="erreur" fill="#940000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="220.0">
+                    <font>
+                        <Font name="Calibri Bold" size="21.0" />
+                    </font>
+                </Text>
+                <Label prefHeight="22.0" prefWidth="221.0" text="Pour une première connexion" textFill="#4c4c4c">
+                    <font>
+                        <Font name="Calibri" size="18.0" />
+                    </font>
+                </Label>
+                <Label prefHeight="32.0" prefWidth="218.0" style="-fx-padding: 0px 0px 10px 0px;" text="Faites mot de passe oublié" textFill="#4c4c4c">
+                    <font>
+                        <Font name="Calibri" size="18.0" />
+                    </font>
+                </Label>
+                <Pane prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Button layoutY="5.0" onAction="#backswitch" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="Retour" textFill="WHITE">
+                            <font>
+                                <Font name="Calibri Bold" size="15.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
+                <Pane prefHeight="21.0" prefWidth="200.0" />
+            </children>
         </VBox>
-      <VBox alignment="CENTER" fillWidth="false" layoutX="300.0" layoutY="60.0" prefHeight="340.0" prefWidth="300.0">
-         <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="200.0" text="Connexion" textFill="#012970">
-               <font>
-                  <Font name="Calibri Bold" size="30.0" />
-               </font>
-            </Label>
-            <TextField fx:id="email" prefHeight="35.0" prefWidth="196.0" promptText="E-mail" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 20px 10px 0px 10px;">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-               <font>
-                  <Font name="Calibri" size="20.0" />
-               </font>
-            </TextField>
-            <Pane prefHeight="30.0" prefWidth="200.0" />
-            <MFXPasswordField fx:id="mdp" prefColumnCount="0" prefHeight="35.0" prefWidth="196.0" promptText="mot de passe" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 20px 10px 0px 10px;" />
-            <Pane prefHeight="20.0" prefWidth="200.0" />
-            <Button onAction="#connexion" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="Se connecter" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="15.0" />
-               </font>
-            </Button>
-            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#mdpOubli" prefHeight="30.0" prefWidth="187.0" text="Mot de passe oublié" textFill="#5561b9">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
+        <VBox alignment="CENTER" fillWidth="false" layoutX="300.0" layoutY="60.0" prefHeight="340.0" prefWidth="300.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="200.0" text="Connexion" textFill="#012970">
+                    <font>
+                        <Font name="Calibri Bold" size="30.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="email" prefHeight="35.0" prefWidth="196.0" promptText="E-mail" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 20px 10px 0px 10px;">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <font>
+                        <Font name="Calibri" size="20.0" />
+                    </font>
+                </TextField>
+                <Pane prefHeight="30.0" prefWidth="200.0" />
+                <MFXPasswordField fx:id="mdp" allowCopy="true" allowCut="true" allowPaste="true" borderGap="0.0" floatMode="DISABLED" floatingTextGap="0.0" graphicTextGap="0.0" prefColumnCount="0" prefHeight="30.0" prefWidth="196.0" promptText="mot de passe" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 20px 10px 0px 10px; -fx-border-radius: 0;">
+                    <font>
+                        <Font name="Calibri" size="20.0" />
+                    </font></MFXPasswordField>
+                <Pane prefHeight="20.0" prefWidth="200.0" />
+                <Button onAction="#connexion" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="Se connecter" textFill="WHITE">
+                    <font>
+                        <Font name="Calibri Bold" size="15.0" />
+                    </font>
+                </Button>
+                <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#mdpOubli" prefHeight="30.0" prefWidth="187.0" text="Mot de passe oublié" textFill="#5561b9">
+                    <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
     </children>
 
 </Pane>

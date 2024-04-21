@@ -17,12 +17,11 @@ public class Profil extends Default {
     @FXML private PasswordField mdp;
     @FXML private TextField nom;
     @FXML private TextField prenom;
-    //@FXML private ComboBox<Integer[]> role;
     @FXML private Label roleLabel;
     @FXML private Label lconf;
     @FXML private Label lmdp;
     @FXML private Button modif;
-    @FXML private MenuButton roles;
+    @FXML private ChoiceBox<String> roles;
     private boolean isRegistration;
     private boolean isAdminModif;
     private Utilisateur utilisateurAModifier;
@@ -56,6 +55,12 @@ public class Profil extends Default {
             mdp.setVisible(false);
             lmdp.setVisible(false);
             roles.setVisible(true);
+            roles.getItems().addAll("Professeur", "Secrétaire", "Gestionnaire de stock", "Admin");
+
+            roles.setValue((
+                    this.utilisateurAModifier.getRoles() == 4 ? "Admin" :
+                    this.utilisateurAModifier.getRoles() == 3 ? "Gestionnaire de stock" :
+                    this.utilisateurAModifier.getRoles() == 2 ? "Secrétaire" : "professeur"));
         }
         if (!isRegistration) {
             nom.setText(this.utilisateurAModifier.getNom());
@@ -68,26 +73,26 @@ public class Profil extends Default {
     }
 
     @FXML void modification(ActionEvent event) {
+        UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
         if (isAdminModif) {
-
+            utilisateurAModifier.setEmail(email.getText());
+            utilisateurAModifier.setNom(nom.getText());
+            utilisateurAModifier.setPrenom(prenom.getText());
+            utilisateurAModifier.setRoles((
+                    this.roles.getValue().equals("Admin")?4:
+                            this.roles.getValue().equals("Gestionnaire de stock")?3:
+                                    this.roles.getValue().equals("Secrétaire")?2:1
+            ));
+            utilisateurRepository.update(utilisateurAModifier);
+            Main.changeScene("CRUD", new CRUD( Utilisateur.class, super.getUtilisateur()), "CRUD | Utilisateur");
         }
         else if (isRegistration) {
-            if (!(mdp.getText().isBlank() || mdp.getText().isEmpty())) {
-                if (mdp.getText().equals(conf.getText())) {
-                    super.getUtilisateur().setNom(nom.getText());
-                    super.getUtilisateur().setPrenom(prenom.getText());
-                    super.getUtilisateur().setEmail(email.getText());
-                    super.getUtilisateur().setMdp(mdp.getText());
-                    UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
-                    utilisateurRepository.update(super.getUtilisateur());
-                }
-                else {
-                    erreur.setText("Erreur: le mot de passe et la confirmation ne sont pas identiques !!");
-                }
-            }
-            else {
-                erreur.setText("Erreur: vous n'avez pas défini de mot de passe !!");
-            }
+            utilisateurRepository.upload(new Utilisateur(0, this.nom.getText(), this.prenom.getText(), this.email.getText(), "", (
+                    this.roles.getValue().equals("Admin")?4:
+                    this.roles.getValue().equals("Gestionnaire de stock")?3:
+                    this.roles.getValue().equals("Secrétaire")?2:1
+            )));
+            Main.changeScene("CRUD", new CRUD( Utilisateur.class, super.getUtilisateur()), "CRUD | Utilisateur");
         }
         else {
             if (!(mdp.getText().isBlank() || mdp.getText().isEmpty())) {
@@ -96,8 +101,8 @@ public class Profil extends Default {
                     super.getUtilisateur().setPrenom(prenom.getText());
                     super.getUtilisateur().setEmail(email.getText());
                     super.getUtilisateur().setMdp(mdp.getText());
-                    UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
                     utilisateurRepository.update(super.getUtilisateur());
+                    Main.changeScene("Accueil", new Accueil(utilisateurAModifier), "Accueil");
                 }
                 else {
                     erreur.setText("Erreur: le mot de passe et la confirmation ne sont pas identiques !!");
@@ -109,17 +114,8 @@ public class Profil extends Default {
         }
     }
 
-    @FXML void switchAccueil(MouseEvent event) {
-        Main.changeScene("Accueil", new Accueil(super.getUtilisateur()), "Bienvenue sur StockA !!!");
-    }
-
-    @FXML void switchConnexion(ActionEvent event) {
-        Main.changeScene("Accueil", new Accueil(null), "Bienvenue sur StockA !!!");
-
-    }
 
     @FXML void roleSelected(ActionEvent event) {
-
     }
 
 }

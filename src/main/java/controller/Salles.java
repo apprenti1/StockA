@@ -1,54 +1,47 @@
 package controller;
+
 import application.Main;
 import entity.Salle;
 import entity.Utilisateur;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import repo.SalleRepository;
 import repo.UtilisateurRepository;
 
 public class Salles extends Default {
 
-    private SalleRepository salleRepository;
+    @FXML private TextField nom;
+    @FXML private Text erreur;@FXML private Label roleLabel;
+    @FXML private Button modif;
+    private Salle salleAModifier;
 
 
-
-    @FXML
-    private Text erreur;
-
-    @FXML
-    private TextField salle;
-
-
-    public Salles(Salle salle) {
-        super(salle);
+    public Salles(Utilisateur utilisateur, Salle saleAModifier) {
+        super(utilisateur);
+        this.salleAModifier = saleAModifier;
+    }
+    public Salles(Utilisateur utilisateur) {
+        super(utilisateur);
     }
 
-    @FXML
-    void Deconnexion(MouseEvent event) {
-
+    public void initialize() {
+        super.initialize();
+        if (salleAModifier == null) {modif.setText("Ajouter");}
+        else {nom.setText(salleAModifier.getLibelle());}
     }
 
-    @FXML
-    void switchAccueil(MouseEvent event) {
-       }
-
-
-    @FXML
-    void valider(MouseEvent event) {
-        String libelle = salle.getText(); // Récupérer le libellé depuis le champ de texte salle
-
-
-        // Enregistrer la nouvelle salle dans le SalleRepository
+    @FXML void modification(ActionEvent event) {
         SalleRepository salleRepository = new SalleRepository();
-       int idSalle =  salleRepository.upload(new Salle(libelle));
-        System.out.println("Salle enregistrée avec succès, ID : " + idSalle);
-
-        Main.changeScene("CRUD", new CRUD( Salle.class, getUtilisateur()), "CRUD | salles");
+        if (salleAModifier == null) {
+            salleRepository.upload(new Salle(nom.getText()));
+        }
+        else {
+            salleAModifier.setLibelle(nom.getText());
+            salleRepository.update(salleAModifier);
+        }
+        Main.changeScene("CRUD", new CRUD( Salle.class, super.getUtilisateur()), "CRUD | salle");
     }
 
-    }
-
-
+}

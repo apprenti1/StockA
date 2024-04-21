@@ -9,6 +9,8 @@ import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
+import java.util.Random;
+
 
 public class Security {
     private static final String algo = "AES";
@@ -50,4 +52,11 @@ public class Security {
             throw new RuntimeException("Erreur lors de la création du hachage", e);
         }
     }
+    public static String getRandomString(int minAscii, int maxAscii, int length) {
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {sb.append((char) (random.nextInt(maxAscii - minAscii + 1) + minAscii));}
+        return sb.toString();
+    }
+
 }

@@ -1,4 +1,4 @@
-/*package email;
+package email;
 
 
 import jakarta.mail.Authenticator;
@@ -34,4 +34,3 @@ public class Email {
 
     }
 }
-*/

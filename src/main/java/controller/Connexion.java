@@ -10,7 +10,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import repo.UtilisateurRepository;
-import javamailer.MdpOublier;
 
 
 import java.security.MessageDigest;
@@ -25,7 +24,7 @@ public class Connexion extends Default{
     @FXML private MFXPasswordField mdp;
 
     public Connexion() {
-        super(null);
+        super((Utilisateur) null);
     }
 
     public void initialize() {
@@ -52,7 +51,8 @@ public class Connexion extends Default{
     }
 
     @FXML void mdpOubli(MouseEvent event) {
-        Main.changeScene("javamailer/MdpOublier", new MdpOublier(),"mot de passe oublié");
+        if (!email.getText().isBlank()) {Main.changeScene("MdpOublie", new MdpOublie(email.getText()),"mot de passe oublié");}
+        else {erreur.setText("Indiquez un email d'abbord!!!");}
     }
 
     @FXML void switchAccueil(MouseEvent event) {

@@ -1,4 +1,4 @@
-/*package email;
+package email;
 
 
 import jakarta.mail.Message;
@@ -23,7 +23,7 @@ public class EmailUtil {
      * @param subject
      * @param body
      */
-   /* public static void sendEmail(Session session, String toEmail, String subject, String body) throws MessagingException, UnsupportedEncodingException {
+    public static void sendEmail(Session session, String toEmail, String subject, String body) throws MessagingException, UnsupportedEncodingException {
         MimeMessage msg = new MimeMessage(session);
         //set message headers
         msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
@@ -48,4 +48,3 @@ public class EmailUtil {
     }
 }
 
-*/

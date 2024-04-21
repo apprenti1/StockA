@@ -14,12 +14,12 @@ public class Default {
     @FXML private Button navElement2;
     @FXML private Button navElement3;
     private Utilisateur utilisateur;
-    private Salle salle;
+    private Salles salle;
 
     public Default(Utilisateur utilisateur){
         this.utilisateur = utilisateur;
     }
-    public Default(Salle salle){this.salle = salle;}
+    public Default(Salles salle){this.salle = salle;}
 
     public void initialize() {
         System.out.println("|--------------------Chargement interface--------------------|");
@@ -110,7 +110,7 @@ public class Default {
 
                 break;
             case 4: // Admin
-                Main.changeScene("CRUD", new CRUD( Salle.class, utilisateur), "CRUD | salles");
+                Main.changeScene("CRUD", new CRUD( Salle.class, utilisateur), "CRUD | salle");
 
                 break;
         }
@@ -127,8 +127,8 @@ public class Default {
             Main.changeScene("Profil", new Profil(this.getUtilisateur(), false), ("Profil | " + this.getUtilisateur().getPrenom()));
         }
     }
-public Salle getSalle() {return salle;}
-    public void setSalle (Salle salle) {this.salle = salle;}
+public Salles getSalle() {return salle;}
+    public void setSalle (Salles salle) {this.salle = salle;}
     public Utilisateur getUtilisateur() {return utilisateur;}
     public void setUtilisateur(Utilisateur utilisateur) {this.utilisateur = utilisateur;}
 }

@@ -44,18 +44,6 @@ public class UtilisateurRepository {
         }
     }
 
-    public int updateMdp(Utilisateur entity)throws SQLException{
-        try {
-            PreparedStatement req = Env.getBdd().prepareStatement("UPDATE `utilisateur` SET `mdp`=? WHERE `email`=?");
-            req.setString(1, Security.hash(entity.getMdp())); // Mettre à jour le mot de passe avec le nouveau hash
-            req.setString(2, entity.getEmail()); // Pour l'utilisateur avec cet e-mail
-            System.out.println(req);
-            return req.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public Utilisateur findByEmail(String email) {
         try {
             PreparedStatement req = Env.getBdd().prepareStatement("SELECT id, nom, prenom, email, roles FROM Utilisateur WHERE email = ?");
@@ -112,7 +100,7 @@ public class UtilisateurRepository {
 
     public ArrayList<Utilisateur> findBy(String filters){
         try {
-            PreparedStatement req = Env.getBdd().prepareStatement("Select nom, prenom, email, roles from Utilisateur WHERE "+((!filters.isEmpty() && !filters.isBlank())?filters:"1 = 1"));
+            PreparedStatement req = Env.getBdd().prepareStatement("Select id, nom, prenom, email, roles from Utilisateur WHERE "+((!filters.isEmpty() && !filters.isBlank())?filters:"1 = 1"));
             ResultSet res = req.executeQuery();
             ArrayList<Utilisateur> list = new ArrayList<Utilisateur>();
             while (res.next()){
@@ -151,6 +139,16 @@ public class UtilisateurRepository {
             else {
                 return null;
             }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public boolean emailExist(String email) {
+        try {
+            PreparedStatement req = Env.getBdd().prepareStatement("Select count(id) from Utilisateur WHERE email = ?");
+            req.setString(1, email);
+            ResultSet res = req.executeQuery();
+            return((boolean) res.next());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

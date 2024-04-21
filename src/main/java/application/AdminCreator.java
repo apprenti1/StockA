@@ -5,7 +5,7 @@ import repo.UtilisateurRepository;
 
 public class AdminCreator {
     public static void main(String[] args) {
-        String nom = "admin";
+        String nom = "adms";
         String prenom = "aedmin";
         String email = "a";
         String mdp = "a";
