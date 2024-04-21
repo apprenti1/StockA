@@ -4,40 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="CRUD user upd">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MdpOublie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application/MdpOublie.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application/Salle.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application/images/hero-img-connect.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="complete &amp; finish admin role">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Fournisseurs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Fournitures.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/Fourniture.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/Menu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/AdminCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/AdminCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/Security.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/Security.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Connexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Connexion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Default.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Default.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EditProfil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Inscription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Profil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Profil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Salles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Salles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/email/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/Email.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/email/EmailUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/EmailUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/CodeMailer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/MailerLost.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/MdpOublier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javamailer/Modification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repo/UtilisateurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repo/UtilisateurRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Connexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Connexion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/EditProfil.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Inscription.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Salles.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/javamailer/CodeMailer.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/javamailer/MdpOublier.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/javamailer/Modification.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/style/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Fournisseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Fournisseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/EditProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Fournisseur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Salle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Salle.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +67,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "07da505d",
     "ignore.virus.scanning.warn.message": "true",
@@ -121,6 +102,7 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="controller" />
+      <recent name="entity" />
       <recent name="security" />
       <recent name="javamailer" />
     </key>
@@ -188,7 +170,7 @@
       <workItem from="1712406452327" duration="1309000" />
       <workItem from="1712484757986" duration="16041000" />
       <workItem from="1712654029892" duration="26806000" />
-      <workItem from="1713282457619" duration="38588000" />
+      <workItem from="1713282457619" duration="63460000" />
     </task>
     <task id="LOCAL-00001" summary="upl : entity&#10;&#10;creation des entity de la base de donnée">
       <option name="closed" value="true" />
@@ -287,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712669698491</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="complete &amp; finish admin role">
+      <created>1713690213406</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1713690213406</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +293,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/final" />
                       </list>
                     </value>
                   </entry>
@@ -328,7 +317,8 @@
     <MESSAGE value="add salle" />
     <MESSAGE value="fix modification mdp" />
     <MESSAGE value="add delete - refresh" />
-    <option name="LAST_COMMIT_MESSAGE" value="add delete - refresh" />
+    <MESSAGE value="complete &amp; finish admin role" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete &amp; finish admin role" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

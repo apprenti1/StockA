@@ -13,7 +13,6 @@ import repo.UtilisateurRepository;
 public class Salles extends Default {
 
     @FXML private TextField nom;
-    @FXML private Text erreur;@FXML private Label roleLabel;
     @FXML private Button modif;
     private Salle salleAModifier;
 

@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.ArrayList;
+
 public class Fournisseur {
 
     // attribute déclaration
@@ -7,6 +9,7 @@ public class Fournisseur {
     private String libelle;
     private String tel;
     private String email;
+    private ArrayList<Fourniture> fournitures;
 
 
     public Fournisseur(int id, String libelle, String tel, String email) {
@@ -33,6 +36,8 @@ public class Fournisseur {
         return email;
     }
 
+    public ArrayList<Fourniture> getFournitures() {return fournitures;}
+
 
     public void setId(int id) {
         this.id = id;
@@ -49,4 +54,6 @@ public class Fournisseur {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void setFournitures(ArrayList<Fourniture> fournitures) {this.fournitures = fournitures;}
 }

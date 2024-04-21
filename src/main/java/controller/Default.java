@@ -14,12 +14,10 @@ public class Default {
     @FXML private Button navElement2;
     @FXML private Button navElement3;
     private Utilisateur utilisateur;
-    private Salles salle;
 
     public Default(Utilisateur utilisateur){
         this.utilisateur = utilisateur;
     }
-    public Default(Salles salle){this.salle = salle;}
 
     public void initialize() {
         System.out.println("|--------------------Chargement interface--------------------|");
@@ -69,7 +67,7 @@ public class Default {
 
                 break;
             case 3: // Gestionnaire de stock
-                Main.changeScene("CRUD", new CRUD( CommandeFourniture.class, utilisateur), "CRUD | Sorties de stock");
+                Main.changeScene("CRUD", new CRUD( Fourniture.class, utilisateur), "CRUD | Sorties de stock");
 
                 break;
             case 4: // Admin
@@ -87,7 +85,7 @@ public class Default {
 
                 break;
             case 3: // Gestionnaire de stock
-                Main.changeScene("CRUD", new CRUD( DemandeFourniture.class, utilisateur), "CRUD | demandes");
+                Main.changeScene("Menu", new Menu(utilisateur, "demandes"), "CRUD | demandes");
 
                 break;
             case 4: // Admin
@@ -98,15 +96,15 @@ public class Default {
     @FXML void navElement3(ActionEvent event) {
         switch (utilisateur.getRoles()) {
             case 1: // Professeur
-                Main.changeScene("CRUD", new CRUD( CommandeFourniture.class, utilisateur), "CRUD | commander");
+                Main.changeScene("CRUD", new CRUD( DemandeFourniture.class, utilisateur), "CRUD | commandes");
 
                 break;
             case 2: // Secrétaire
-                Main.changeScene("CRUD", new CRUD( CommandeFourniture.class, utilisateur), "CRUD | commander");
+                Main.changeScene("CRUD", new CRUD( CommandeFourniture.class, utilisateur), "CRUD | commandes");
 
                 break;
             case 3: // Gestionnaire de stock
-                Main.changeScene("CRUD", new CRUD( CommandeFourniture.class, utilisateur), "CRUD | commander");
+                Main.changeScene("Menu", new Menu(utilisateur, "commandes"), "CRUD | commandes");
 
                 break;
             case 4: // Admin
@@ -127,8 +125,6 @@ public class Default {
             Main.changeScene("Profil", new Profil(this.getUtilisateur(), false), ("Profil | " + this.getUtilisateur().getPrenom()));
         }
     }
-public Salles getSalle() {return salle;}
-    public void setSalle (Salles salle) {this.salle = salle;}
     public Utilisateur getUtilisateur() {return utilisateur;}
     public void setUtilisateur(Utilisateur utilisateur) {this.utilisateur = utilisateur;}
 }
