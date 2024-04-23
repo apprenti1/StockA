@@ -14,6 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.util.Pair;
 import repo.*;
 
 import java.util.ArrayList;
@@ -97,9 +98,9 @@ public class CRUD extends Default {
 
                 ArrayList<Fournisseur> fournisseurs = fournisseurRepository.findAll();
                 for (Fournisseur fournisseur : fournisseurs ) {
-                    ArrayList<Fourniture> fournitures = new ArrayList<Fourniture>();
+                    ArrayList<Pair<Fourniture, Double>> fournitures = new ArrayList<Pair<Fourniture, Double>>();
                     for (LinkFournitureFournisseur link : linkFournitureFournisseurRepository.findBy("ref_fournisseur = "+fournisseur.getId())) {
-                        fournitures.add(link.getFourniture());
+                        fournitures.add(new Pair<Fourniture, Double>(link.getFourniture(), link.getPrix()));
                     }
                     fournisseur.setFournitures(fournitures);
                 }
@@ -167,12 +168,25 @@ public class CRUD extends Default {
                         this.titre.setText(((Fourniture) this.table.getSelectionModel().getSelectedItem()).getQteStock()+((Fourniture) this.table.getSelectionModel().getSelectedItem()).getLibelle());
                         this.description.setText(((Fourniture) this.table.getSelectionModel().getSelectedItem()).getDescription());
                     }
+                    case "entity.Fournisseur" -> {
+                        titre.setText(((Fournisseur) this.table.getSelectionModel().getSelectedItem()).getLibelle());
+                        description.setText(
+                                ((Fournisseur) this.table.getSelectionModel().getSelectedItem()).getEmail() + "\n" +
+                                ((Fournisseur) this.table.getSelectionModel().getSelectedItem()).getTel()
+                        );
+                        StringBuilder text = new StringBuilder();
+                        for (Pair<Fourniture, Double> fourniture : ((Fournisseur) this.table.getSelectionModel().getSelectedItem()).getFournitures()) {
+                            text.append(fourniture.getKey().getLibelle()).append(" -> ").append(fourniture.getValue()).append("€\n");
+                        }
+                        descriptionType.setText(text.toString());
+                    }
                 }
             } else {
                 switch (this.type.getTypeName()) {
                     case "entity.Utilisateur" -> {Main.changeScene("Profil", new Profil(super.getUtilisateur(), ((Utilisateur) this.table.getSelectionModel().getSelectedItem())), "EditProfil");}
                     case "entity.Salle" -> {Main.changeScene("Salles", new Salles(super.getUtilisateur(), ((Salle) this.table.getSelectionModel().getSelectedItem())), "EditSalle");}
                     case "entity.Fourniture" -> {Main.changeScene("Fourniture", new Fournitures(super.getUtilisateur(), ((Fourniture) this.table.getSelectionModel().getSelectedItem())), "EditFourniture");}
+                    case "entity.Fournisseur" -> {Main.changeScene("Fourniture", new Fournitures(super.getUtilisateur(), ((Fourniture) this.table.getSelectionModel().getSelectedItem())), "EditFourniture");}
                 }
             }
         }

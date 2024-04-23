@@ -1,5 +1,7 @@
 package entity;
 
+import javafx.util.Pair;
+
 import java.util.ArrayList;
 
 public class Fournisseur {
@@ -9,7 +11,8 @@ public class Fournisseur {
     private String libelle;
     private String tel;
     private String email;
-    private ArrayList<Fourniture> fournitures;
+    private ArrayList<Pair<Fourniture, Double>> fournitures;
+
 
 
     public Fournisseur(int id, String libelle, String tel, String email) {
@@ -36,7 +39,7 @@ public class Fournisseur {
         return email;
     }
 
-    public ArrayList<Fourniture> getFournitures() {return fournitures;}
+    public ArrayList<Pair<Fourniture, Double>> getFournitures() {return fournitures;}
 
 
     public void setId(int id) {
@@ -55,5 +58,5 @@ public class Fournisseur {
         this.email = email;
     }
 
-    public void setFournitures(ArrayList<Fourniture> fournitures) {this.fournitures = fournitures;}
+    public void setFournitures(ArrayList<Pair<Fourniture, Double>> fournitures) {this.fournitures = fournitures;}
 }

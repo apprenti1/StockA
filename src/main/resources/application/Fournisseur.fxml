@@ -13,8 +13,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fournisseurs">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F2F5FC;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <VBox alignment="CENTER" fillWidth="false" layoutY="60.0" prefHeight="340.0" prefWidth="300.0">
             <children>
@@ -26,7 +27,21 @@
             <Pane prefHeight="23.0" prefWidth="200.0" />
             <HBox alignment="CENTER" prefHeight="62.0" prefWidth="281.0">
                <children>
-                  <ComboBox fx:id="select" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 10px 0px 10px;" />
+                  <ComboBox fx:id="select" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 10px 0px 10px;" />
+                  <Pane prefHeight="62.0" prefWidth="10.0" />
+                  <TextField fx:id="price" alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="50.0" promptText="1" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 0px 0px 10px;" text="1">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="21.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #0000FF transparent; -fx-border-width: 2px; -fx-padding: 15px 10px 0px 0px;" text="€" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Label>
                   <Pane prefHeight="62.0" prefWidth="10.0" />
                   <Button onAction="#add" prefHeight="0.0" prefWidth="40.0" style="-fx-background-color: #4154F1;" text="+" textFill="WHITE">
                      <font>
@@ -79,7 +94,11 @@
                   <Font name="Calibri" size="18.0" />
                </font>
             </Label>
-            <Pane prefHeight="23.0" prefWidth="200.0" />
+            <Text fx:id="erreur" fill="#940000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="220.0">
+               <font>
+                  <Font name="Calibri Bold" size="21.0" />
+               </font>
+            </Text>
             <Button fx:id="modif" onAction="#modification" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #4154F1;" text="Modifier" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
@@ -99,7 +118,7 @@
             </Button>
             <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="14.0" layoutY="16.0" onMouseClicked="#switchAccueil" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/logo.png" />
+                  <Image url="@../../../../../../../IdeaProjects/StockA/src/main/resources/application/images/logo.png" />
                </image>
             </ImageView>
             <Label layoutX="43.0" onMouseClicked="#switchAccueil" prefHeight="60.0" prefWidth="144.0" text="ToutDouxList" textFill="#012970">

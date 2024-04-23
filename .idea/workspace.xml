@@ -4,20 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="complete &amp; finish admin role">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Fournisseurs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Fournitures.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application/Fourniture.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application/Menu.fxml" afterDir="false" />
+    <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="upd gestionnaire de stock">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Default.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Default.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Salles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Salles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Fournisseurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Fournisseurs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Fournisseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Fournisseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/EditProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Fournisseur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Fournisseur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Fournisseur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Fourniture.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Fourniture.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Liste.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/MdpOublie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/MdpOublie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/PageAdmin.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application/Salle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Salle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application/ValidEmail.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "07da505d",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/elias/IdeaProjects/StockA/src/main/resources/application",
@@ -170,7 +172,8 @@
       <workItem from="1712406452327" duration="1309000" />
       <workItem from="1712484757986" duration="16041000" />
       <workItem from="1712654029892" duration="26806000" />
-      <workItem from="1713282457619" duration="63460000" />
+      <workItem from="1713282457619" duration="64504000" />
+      <workItem from="1713785008300" duration="16895000" />
     </task>
     <task id="LOCAL-00001" summary="upl : entity&#10;&#10;creation des entity de la base de donnée">
       <option name="closed" value="true" />
@@ -276,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713690213406</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="upd gestionnaire de stock">
+      <created>1713738702283</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1713738702284</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +328,8 @@
     <MESSAGE value="fix modification mdp" />
     <MESSAGE value="add delete - refresh" />
     <MESSAGE value="complete &amp; finish admin role" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete &amp; finish admin role" />
+    <MESSAGE value="upd gestionnaire de stock" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd gestionnaire de stock" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
