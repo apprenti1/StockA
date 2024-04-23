@@ -69,6 +69,7 @@ public class Fournisseurs extends Default {
         }
     }
     @FXML void modification(ActionEvent event) {
+        // /!\ si this.fournitures n'est pas vide
         //si c'est une modification update fournisseur
         //sinon créer fournisseur
         //comparer les produits entre la version this.fournitures et une version avant modif this.oldFournitures

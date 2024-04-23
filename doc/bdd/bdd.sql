@@ -145,3 +145,37 @@ ALTER TABLE LinkFournitureCommandeFourniture ADD FOREIGN KEY (ref_commandeFourni
 -- Table CommandeFourniture
 ALTER TABLE CommandeFourniture ADD FOREIGN KEY (ref_utilisateur) REFERENCES Utilisateur(id);
 ALTER TABLE CommandeFourniture ADD FOREIGN KEY (ref_fournisseur) REFERENCES Fournisseur(id);
+
+-- Trigger pour CommandeFourniture
+DELIMITER //
+CREATE TRIGGER update_stock_commande
+AFTER UPDATE ON CommandeFourniture
+FOR EACH ROW
+BEGIN
+    IF NEW.etat = 3 AND NEW.valid THEN
+        -- Mettre à jour le stock de fournitures pour cette commande
+        UPDATE Fourniture
+        JOIN LinkFournitureCommandeFourniture ON Fourniture.id = LinkFournitureCommandeFourniture.ref_fourniture
+        SET Fourniture.qteStock = Fourniture.qteStock + LinkFournitureCommandeFourniture.quantite
+        WHERE LinkFournitureCommandeFourniture.ref_commandeFourniture = NEW.id;
+    END IF;
+END;
+//
+DELIMITER ;
+
+-- Trigger pour DemandeFourniture
+DELIMITER //
+CREATE TRIGGER update_stock_demande
+AFTER UPDATE ON DemandeFourniture
+FOR EACH ROW
+BEGIN
+    IF NEW.etat = 3 THEN
+        -- Mettre à jour le stock de fournitures pour cette demande
+        UPDATE Fourniture
+        JOIN LinkDemmandeFournitureFourniture ON Fourniture.id = LinkDemmandeFournitureFourniture.ref_fourniture
+        SET Fourniture.qteStock = Fourniture.qteStock - LinkDemmandeFournitureFourniture.quantite
+        WHERE LinkDemmandeFournitureFourniture.ref_demandeFourniture = NEW.id;
+    END IF;
+END;
+//
+DELIMITER ;

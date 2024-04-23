@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76a2bb5f-4d75-4bd2-9833-c7bb1098d012" name="Changes" comment="upd gestionnaire de stock">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/bdd/bdd.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/bdd/bdd.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Fournisseurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Fournisseurs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Fournisseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Fournisseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Fournisseur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Fournisseur.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Fourniture.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Fourniture.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Liste.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/MdpOublie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/MdpOublie.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/PageAdmin.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Profil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/Salle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/Salle.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/ValidEmail.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="57eba5ec316dc676580921eadd9ef823bba52c2a" />
+        <entry key="$PROJECT_DIR$" value="final" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "final",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/elias/IdeaProjects/StockA/src/main/resources/application",
@@ -109,7 +98,7 @@
       <recent name="javamailer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.AdminCreator">
     <configuration name="AdminCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="application.AdminCreator" />
       <module name="StockA" />
@@ -138,8 +127,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.AdminCreator" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

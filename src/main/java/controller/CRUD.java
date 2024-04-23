@@ -150,7 +150,7 @@ public class CRUD extends Default {
     @FXML void switchAddTache(ActionEvent event) {
         switch (this.type.getTypeName()){
             case "entity.Utilisateur" -> {Main.changeScene("Profil", new Profil(super.getUtilisateur(), true), "Inscription");}
-            case "entity.Salle" -> {Main.changeScene("Salles", (new Salles(super.getUtilisateur())), "Salle");}
+            case "entity.Salle" -> {Main.changeScene("Salle", (new Salles(super.getUtilisateur())), "Salle");}
             case "entity.Fourniture" -> {Main.changeScene("Fourniture", (new Fournitures(super.getUtilisateur())), "Fourniture");}
             case "entity.Fournisseur" -> {Main.changeScene("Fournisseur", (new Fournisseurs(super.getUtilisateur())), "Fourniture");}
     }}
